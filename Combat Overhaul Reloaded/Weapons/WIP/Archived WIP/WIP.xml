@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>	
+	<Item name="Nuclear Device" description="This is an end game event item." identifier="failsafe" tags="smallitem" scale="0.150" impactsoundtag="impact_metal_heavy" hideinmenus="True" isdangerous="True">
+		<InventoryIcon texture="%ModDir%/Icon.png" sourcerect="576,128,64,64" origin="0.5,0.5" />
+		<Sprite texture="%ModDir%/failsafe_nohead.png" sourcerect="0,0,885,456" depth="0.55" origin="0.5,0.5" />
+		<Body width="150" height="230" density="15" />
+		<Holdable slots="RightHand+LeftHand" holdpos="0,0" handle1="0,0" holdangle="70" aimable="True" msg="ItemMsgPickUpSelect" />
+		<CustomInterface canbeselected="false" drawhudwhenequipped="True" allowuioverlap="True">
+			<GuiFrame relativesize="0.15,0.1" anchor="BottomCenter" pivot="BottomCenter" relativeoffset="0,0.1" style="ItemUI" />
+			<Button text="Initiate Meltdown procedure">
+				<StatusEffect type="OnUse" duration="5" target="This" targetlimbs="Torso" range="500" camerashake="5" setvalue="True" stackable="false" CheckConditionalAlways="True" tags="On">
+					<ParticleEmitter particle="steamspray" copytargetangle="True" particlespersecond="30" velocitymin="500" velocitymax="1000" anglemin="140" anglemax="140" distancemin="50" distancemax="55" />
+					<ParticleEmitter particle="steamspray" copytargetangle="True" particlespersecond="30" velocitymin="500" velocitymax="1000" anglemin="-140" anglemax="-140" distancemin="50" distancemax="55" />
+				</StatusEffect>
+				<StatusEffect type="OnUse" target="Character">
+					<Drop/>
+				</StatusEffect>
+				<StatusEffect type="Always" target="This" Condition="-0.2" delay="1" targetslot="1" stackable="false" noninteractable="true">
+					<Conditional HasTag="On" />
+				</StatusEffect>
+			</Button>			
+		</CustomInterface>
+		<ItemContainer capacity="1" maxstacksize="1" hideitems="False" drawinventory="false" SpawnWithId="failsafe_controlrod" itempos="0,400">
+			<Containable items="failsafe_controlrod" /> 
+			<!--When contained, every sec after being activated it goes up a little, slowly till fully extended then boom
+			100 = cap exposed
+			
+			400 = fully out
+			-->
+		</ItemContainer>
+	</Item>
+	
+	<Item name="Control Rod" description="This is an end game event item." identifier="failsafe_controlrod" tags="smallitem" scale="0.150" impactsoundtag="impact_metal_heavy" hideinmenus="True" isdangerous="True" health="90" noninteractable="true">
+		<InventoryIcon texture="Content/UI/CampaignUIAtlas2.png" sourcerect="256,639,128,128" origin="0.5,0.5" />
+		<Sprite texture="%ModDir%/failsafe_head.png" sourcerect="0,0,321,428" depth="0.56" origin="0.5,0.5" />
+		<Body width="150" height="230" density="15" />
+		<Holdable slots="RightHand+LeftHand" holdpos="0,0" handle1="0,0" holdangle="70" aimable="True" msg="ItemMsgPickUpSelect" />
+	</Item>
+</Items>
