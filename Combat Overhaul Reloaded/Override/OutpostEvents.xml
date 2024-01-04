@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Randomevents>
+	<!--"Alien writing 1"-->
+		<ScriptedEvent identifier="alienwriting1" commonness="100">
+			<TagAction criteria="player" tag="player" />
+			<TagAction criteria="itemtag:alienwriting1" tag="alienwriting1" />
+			<Label name="writingstart" />
+			<TriggerAction target1tag="alienwriting1" target2tag="player" applytotarget2="triggerer_player" radius="150" waitforinteraction="true"/>
+			<CheckItemAction targettag="triggerer_player" itemidentifiers="alientranslator,alienheadset">
+				<Success>
+					<ConversationAction targettag="triggerer_player" text="eventtext.alienwriting.start">
+						<Option text="eventtext.alienwriting.listen">
+							<ConversationAction targettag="triggerer_player" text="eventtext.alienwriting.writingstart"/>
+							<ConversationAction targettag="triggerer_player" text="eventtext.alienwriting.1_1"/>
+						</Option>
+						<Option text="eventtext.alienwriting.dontlisten" endconversation="true">
+							<GoTo name="writingstart" />
+						</Option>
+					</ConversationAction>
+					<GoTo name="writingstart" />
+				</Success>
+				<Failure>
+					<ConversationAction targettag="triggerer_player" text="eventtext.alienwriting.start_alt" endconversation="true"/>
+					<GoTo name="writingstart" />
+				</Failure>
+			</CheckItemAction>
+		</ScriptedEvent>
+		
+	<!--"Alien writing 2"-->
+		<ScriptedEvent identifier="alienwriting2" commonness="100">
+			<TagAction criteria="player" tag="player" />
+			<TagAction criteria="itemtag:alienwriting2" tag="alienwriting2" />
+			<Label name="writingstart" />
+			<TriggerAction target1tag="alienwriting2" target2tag="player" applytotarget2="triggerer_player" radius="150" waitforinteraction="true"/>
+			<CheckItemAction targettag="triggerer_player" itemidentifiers="alientranslator,alienheadset">
+				<Success>
+					<ConversationAction targettag="triggerer_player" text="eventtext.alienwriting.start">
+						<Option text="eventtext.alienwriting.listen">
+							<ConversationAction targettag="triggerer_player" text="eventtext.alienwriting.writingstart"/>
+							<ConversationAction targettag="triggerer_player" text="eventtext.alienwriting.2_1"/>
+						</Option>
+						<Option text="eventtext.alienwriting.dontlisten" endconversation="true">
+							<GoTo name="writingstart" />
+						</Option>
+					</ConversationAction>
+					<GoTo name="writingstart" />
+				</Success>
+				<Failure>
+					<ConversationAction targettag="triggerer_player" text="eventtext.alienwriting.start_alt" endconversation="true"/>
+					<GoTo name="writingstart" />
+				</Failure>
+			</CheckItemAction>
+		</ScriptedEvent>
+
+	<!--"Alien writing 3"-->
+		<ScriptedEvent identifier="alienwriting3" commonness="100">
+			<TagAction criteria="player" tag="player" />
+			<TagAction criteria="itemtag:alienwriting3" tag="alienwriting3" />
+			<Label name="writingstart" />
+			<TriggerAction target1tag="alienwriting3" target2tag="player" applytotarget2="triggerer_player" radius="150" waitforinteraction="true"/>
+			<CheckItemAction targettag="triggerer_player" itemidentifiers="alientranslator,alienheadset">
+				<Success>
+					<ConversationAction targettag="triggerer_player" text="eventtext.alienwriting.start">
+						<Option text="eventtext.alienwriting.listen">
+							<ConversationAction targettag="triggerer_player" text="eventtext.alienwriting.writingstart"/>
+							<ConversationAction targettag="triggerer_player" text="eventtext.alienwriting.3_1"/>
+						</Option>
+						<Option text="eventtext.alienwriting.dontlisten" endconversation="true">
+							<GoTo name="writingstart" />
+						</Option>
+					</ConversationAction>
+					<GoTo name="writingstart" />
+				</Success>
+				<Failure>
+					<ConversationAction targettag="triggerer_player" text="eventtext.alienwriting.start_alt" endconversation="true"/>
+					<GoTo name="writingstart" />
+				</Failure>
+			</CheckItemAction>
+		</ScriptedEvent>
+</Randomevents>
