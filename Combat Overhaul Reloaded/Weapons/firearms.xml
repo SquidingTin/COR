@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
 	<!--38-->
 	<Item name="" description="" identifier="revolver_38_talent" category="weapon" cargocontaineridentifier="metalcrate" tags="mountableweapon,smallitem,weapon,gun,pistolitem,gunsmith,38_gun" Scale="0.44" impactsoundtag="smallwepimpact">
@@ -138,7 +138,7 @@
 			<Containable items="revolverround" hide="true" />
 			<SlotIcon texture="Content/UI/ContainerIndicators.png" sourcerect="1,62,120,29" origin="0.5,0.5" />
 			<SlotIcon slotindex="4" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="5" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="5" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="18,3" />
 			</SubContainer>
@@ -292,9 +292,9 @@
 		</RangedWeapon>
 		<ItemContainer capacity="1" maxstacksize="1" autofill="true" hideitems="false" showcontainedstateindicator="true" itempos="-42,10" containedspritedepths="0.551">
 			<Containable items="38_magazine" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="15,2" />
 			</SubContainer>
@@ -504,7 +504,7 @@
 			<Containable items="revolverround" />
 			<SlotIcon texture="Content/UI/ContainerIndicators.png" sourcerect="1,62,120,29" origin="0.5,0.5" />
 			<SlotIcon slotindex="7" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="8" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="8" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="15,4" />
 			</SubContainer>
@@ -825,7 +825,7 @@
 			<Containable items="44_round" />
 			<SlotIcon texture="Content/UI/ContainerIndicators.png" sourcerect="1,62,120,29" origin="0.5,0.5" />
 			<SlotIcon slotindex="6" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="7" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="7" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="15,2" />
 			</SubContainer>
@@ -1052,7 +1052,7 @@
 			<Containable items="44_round" />
 			<SlotIcon texture="Content/UI/ContainerIndicators.png" sourcerect="1,62,120,29" origin="0.5,0.5" />
 			<SlotIcon slotindex="5" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="6" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="6" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="15,2" />
 			</SubContainer>
@@ -1215,7 +1215,7 @@
 			<Containable items="44_round" hide="true" />
 			<SlotIcon texture="Content/UI/ContainerIndicators.png" sourcerect="1,62,120,29" origin="0.5,0.5" />
 			<SlotIcon slotindex="8" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="9" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="9" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="17,-3" hide="false" />
 			</SubContainer>
@@ -1368,8 +1368,8 @@
 		<ItemContainer capacity="1" maxstacksize="1" autofill="true" hideitems="false" showcontainedstateindicator="true" itempos="-7,-25" containedspritedepths="0.551">
 			<Containable items="smg45_magazine" />
 			<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
-			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="31,2" />
 			</SubContainer>
@@ -1525,9 +1525,9 @@
 		</Rangedweapon>
 		<ItemContainer capacity="1" maxstacksize="1" autofill="true" hideitems="false" showcontainedstateindicator="true" itempos="-24,-6" containedspritedepths="0.551">
 			<Containable items="pistol45_magazine" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="20,27,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="1,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="11,2" hide="false" />
 			</SubContainer>
@@ -1684,9 +1684,9 @@
 		</Rangedweapon>
 		<ItemContainer capacity="1" maxstacksize="1" autofill="true" hideitems="false" showcontainedstateindicator="true" itempos="-22,-5" containedspritedepths="0.551">
 			<Containable items="pistol45_magazine" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="20,27,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="1,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="11,2" hide="false" />
 			</SubContainer>
@@ -1790,7 +1790,7 @@
 			</StatusEffect>
 		</Rangedweapon>
 		<ItemContainer capacity="1" maxstacksize="1" autofill="true" hideitems="false" showcontainedstateindicator="true" itempos="27,-25" containedspritedepths="0.551">
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
 			<Containable items="smg45_magazine" />
 		</ItemContainer>
 		<aitarget sightrange="3000" soundrange="4000" fadeouttime="2" />
@@ -1925,9 +1925,9 @@
 		</Rangedweapon>
 		<ItemContainer capacity="1" maxstacksize="1" hideitems="false" showcontainedstateindicator="true" autofill="true" itempos="-25,-5" containedspritedepths="0.551">
 			<Containable items="pistol45_magazine" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="20,27,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="1,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="11,-2" hide="false" />
 			</SubContainer>
@@ -2079,8 +2079,8 @@
 		<ItemContainer capacity="1" maxstacksize="1" hideitems="false" showcontainedstateindicator="true" itempos="22,-25" containedspritedepths="0.551">
 			<Containable items="smg45_magazine" rotation="340" />
 			<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
-			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="13,1" />
 			</SubContainer>
@@ -2239,8 +2239,8 @@
 		<ItemContainer capacity="1" maxstacksize="1" hideitems="false" showcontainedstateindicator="true" itempos="22,-25" containedspritedepths="0.551">
 			<Containable items="smg45_magazine" />
 			<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
-			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="21,1" />
 			</SubContainer>
@@ -2419,9 +2419,9 @@
 		</RangedWeapon>
 		<ItemContainer capacity="1" maxstacksize="1" hideitems="false" showcontainedstateindicator="true" autofill="true" itempos="-22,-8" containedspritedepths="0.551">
 			<Containable items="pistol45_magazine" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="20,27,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="1,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="11,2" hide="false" />
 			</SubContainer>
@@ -2593,9 +2593,9 @@
 		</Rangedweapon>
 		<ItemContainer capacity="1" maxstacksize="1" hideitems="false" showcontainedstateindicator="true" itempos="-3,-18" containedspritedepths="0.551">
 			<Containable items="smg45_magazine" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="17,2" />
 			</SubContainer>
@@ -2741,9 +2741,9 @@
 		</Rangedweapon>
 		<ItemContainer capacity="1" maxstacksize="1" hideitems="false" showcontainedstateindicator="true" autofill="true" containedspritedepths="0.551">
 			<Containable items="57_magazine" hide="true" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="20,27,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="1,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="13,3" hide="false" />
 			</SubContainer>
@@ -2888,9 +2888,9 @@
 		</Rangedweapon>
 		<ItemContainer capacity="1" maxstacksize="1" hideitems="false" showcontainedstateindicator="true">
 			<Containable items="57_magazine" hide="true" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="20,27,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="1,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="13,-1" hide="false" />
 			</SubContainer>
@@ -3049,9 +3049,9 @@
 		</Rangedweapon>
 		<ItemContainer capacity="1" maxstacksize="1" hideitems="false" showcontainedstateindicator="true" itempos="15,0" containedspritedepths="0.551">
 			<Containable items="57_magazine" hide="true" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="20,27,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="1,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="24,0" hide="false" />
 			</SubContainer>
@@ -3123,7 +3123,7 @@
 		</RangedWeapon>
 		<SkillRequirementHint identifier="weapons" level="70" />
 		<ItemContainer capacity="1" maxstacksize="1" hideitems="true" showcontainedstateindicator="false" itempos="-20,5">
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="20,27,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="1,523,240,240" origin="0.45,0.5" />
 			<Containable items="57_magazine" />
 			<SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
@@ -3283,7 +3283,7 @@
 			<Containable items="5.45mm_round" hide="true" />
 			<SlotIcon texture="Content/UI/ContainerIndicators.png" sourcerect="1,62,120,29" origin="0.5,0.5" />
 			<SlotIcon slotindex="4" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="5" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="5" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="17,-3" hide="false" />
 			</SubContainer>
@@ -3455,9 +3455,9 @@
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="5.45mm_magazine" itempos="1,-7" />
 			</SubContainer>
-			<SlotIcon slotindex="1" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="1" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="2" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="15,0" />
 			</SubContainer>
@@ -3609,9 +3609,9 @@
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="5.45mm_magazine" itempos="-1,-7" />
 			</SubContainer>
-			<SlotIcon slotindex="1" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="1" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="2" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="17,1" />
 			</SubContainer>
@@ -3704,7 +3704,7 @@
 			<Fixable identifier="structure" />
 		</RepairTool>
 		<ItemContainer capacity="1" maxstacksize="1" hideitems="false" showcontainedstateindicator="true" itempos="-25,-18" containedspritedepths="0.551">
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
 			<Containable items="5.45mm_magazine,5.45mm_magazine_sb" />
 			<SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
@@ -3864,9 +3864,9 @@
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="5.45mm_magazine" itempos="4,-9" />
 			</SubContainer>
-			<SlotIcon slotindex="1" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="1" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="2" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="20,0" />
 			</SubContainer>
@@ -3984,7 +3984,7 @@
 		</RangedWeapon>
 		<ItemContainer capacity="1" maxstacksize="1" iteminterval="0,30" hideitems="false" itempos="69,-9" containedspritedepths="0.551,0.552,0.552" showcontainedstateindicator="false">
 			<Containable items="grenade" />
-			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
 			<SlotIcon slotindex="0" texture="Content/UI/ContainerIndicators.png" sourcerect="1,30,120,29" origin="0.5,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
@@ -4093,7 +4093,7 @@
 		<SkillRequirementHint identifier="weapons" level="45" />
 		<ItemContainer capacity="1" maxstacksize="1" hideitems="false" showcontainedstateindicator="true" itempos="3,-27" containedspritedepths="0.551">
 			<Containable items="5.45mm_magazine,5.45mm_magazine_sb" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
 		</ItemContainer>
 		<aitarget sightrange="3000" soundrange="4000" fadeouttime="2" />
 		<Upgrade gameversion="0.10.0.0" Scale="0.45" />
@@ -4175,7 +4175,7 @@
 		</Rangedweapon>
 		<ItemContainer capacity="1" maxstacksize="1" hideitems="false" showcontainedstateindicator="true" itempos="-2,-6" containedspritedepths="0.551">
 			<Containable items="5.45mm_magazine,5.45mm_magazine_sb" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="15,2" />
@@ -4318,9 +4318,9 @@
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="5.45mm_magazine" itempos="4,-7" />
 			</SubContainer>
-			<SlotIcon slotindex="1" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="1" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="2" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="20,2" />
 			</SubContainer>
@@ -4464,9 +4464,9 @@
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="5.45mm_magazine" itempos="-5,-5" />
 			</SubContainer>
-			<SlotIcon slotindex="1" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="1" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="2" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="15,2" />
 			</SubContainer>
@@ -4725,9 +4725,9 @@
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="5.56_magazine" itempos="9,-8" />
 			</SubContainer>
-			<SlotIcon slotindex="1" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="1" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="2" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="20,0" />
 			</SubContainer>
@@ -4823,7 +4823,7 @@
 		</Rangedweapon>
 		<SkillRequirementHint identifier="weapons" level="70" />
 		<ItemContainer capacity="0" maxstacksize="0" hideitems="false" showcontainedstateindicator="false" containedspritedepths="0.551,0.552">
-			<SlotIcon slotindex="1" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="1" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="0" texture="Content/UI/ContainerIndicators.png" sourcerect="1,30,120,29" origin="0.5,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="grenade" itempos="31,1" />
@@ -5013,9 +5013,9 @@
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="5.56_magazine" itempos="-3.4,-6" />
 			</SubContainer>
-			<SlotIcon slotindex="1" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="1" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="2" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="17,3" />
 			</SubContainer>
@@ -5162,9 +5162,9 @@
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="5.56_magazine" itempos="4,-5" />
 			</SubContainer>
-			<SlotIcon slotindex="1" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="1" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="2" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="17,2" />
 			</SubContainer>
@@ -5250,7 +5250,7 @@
 		<Rangedweapon launchimpulse="20" reload="0.215" barrelpos="68,5" spread="4" weapondamagemodifier="1.05" unskilledspread="12" combatPriority="88" drawhudwhenequipped="true" crosshairscale="0.2">
 			<Crosshair texture="Content/Items/weapons/Crosshairs.png" sourcerect="0,256,256,256" />
 			<CrosshairPointer texture="Content/Items/weapons/Crosshairs.png" sourcerect="256,256,256,256" />
-			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
 				<Sound file="%ModDir%/Sounds/ar_556_alt.ogg" type="OnUse" range="3000" selectionmode="Random" />
 				<Sound file="%ModDir%/Sounds/ar_556_alt1.ogg" type="OnUse" range="3000" />
@@ -5309,9 +5309,9 @@
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="5.56_magazine" itempos="-13,-6" />
 			</SubContainer>
-			<SlotIcon slotindex="1" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="1" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="2" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="20,-3" />
 			</SubContainer>
@@ -5462,9 +5462,9 @@
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="5.56_magazine" itempos="4,-5" />
 			</SubContainer>
-			<SlotIcon slotindex="1" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="1" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="2" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="20,3" />
 			</SubContainer>
@@ -5592,8 +5592,8 @@
 			</StatusEffect>
 		</Rangedweapon>
 		<ItemContainer capacity="0" maxstacksize="0" hideitems="false" showcontainedstateindicator="false" containedspritedepths="0.551">
-			<SlotIcon slotindex="1" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="1" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="5.56_magazine" itempos="3,-8" />
 			</SubContainer>
@@ -5766,9 +5766,9 @@
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="5.56_magazine" itempos="4,-4" />
 			</SubContainer>
-			<SlotIcon slotindex="1" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="1" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="2" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="22,-1" />
 			</SubContainer>
@@ -5847,7 +5847,7 @@
 		</RangedWeapon>
 		<SkillRequirementHint identifier="weapons" level="45" />
 		<ItemContainer capacity="0" maxstacksize="0" hideitems="false" itempos="-58,-25" containedstateindicatorslot="0" containedspritedepths="0.551,0.552" showcontainedstateindicator="false">
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="384,448,64,64" origin="0.5,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="5.56_magazine" />
@@ -5958,7 +5958,7 @@
 		<ItemContainer capacity="1" maxstacksize="1" hideitems="false" showcontainedstateindicator="true" itempos="-26,-4" containedspritedepths="0.551">
 			<Containable items="hmgammo" />
 			<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="17,-1" />
 			</SubContainer>
@@ -6113,8 +6113,8 @@
 		<ItemContainer capacity="1" maxstacksize="1" hideitems="false" showcontainedstateindicator="true" itempos="22,-4" containedspritedepths="0.551">
 			<Containable items="hmgammo" />
 			<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
-			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="20,1" />
 			</SubContainer>
@@ -6249,8 +6249,8 @@
 		<ItemContainer capacity="1" maxstacksize="1" hideitems="false" showcontainedstateindicator="true" itempos="-40,-5" containedspritedepths="0.551">
 			<Containable items="hmgammo" />
 			<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
-			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="21,-5" />
 			</SubContainer>
@@ -6364,7 +6364,7 @@
 			<Containable items="7.62mm_round" />
 			<SlotIcon texture="Content/UI/ContainerIndicators.png" sourcerect="1,62,120,29" origin="0.5,0.5" />
 			<SlotIcon slotindex="4" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="5" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="5" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="10,-5">
 					<StatusEffect type="OnContaining" targettype="This" Voltage="1.0" setvalue="true" comparison="AND">
@@ -6564,9 +6564,9 @@
 		</Wearable>
 		<ItemContainer capacity="1" maxstacksize="1" hideitems="false" showcontainedstateindicator="true" itempos="-26,-4" containedspritedepths="0.551">
 			<Containable items="7.62_magazine" />
-			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="10,1" />
 			</SubContainer>
@@ -6680,7 +6680,7 @@
 			<Containable items="7.62mm_round" />
 			<SlotIcon texture="Content/UI/ContainerIndicators.png" sourcerect="1,62,120,29" origin="0.5,0.5" />
 			<SlotIcon slotindex="4" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="5" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="5" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="10,0" />
 			</SubContainer>
@@ -6803,7 +6803,7 @@
 			<Containable items="7.62mm_round" />
 			<SlotIcon texture="Content/UI/ContainerIndicators.png" sourcerect="1,62,120,29" origin="0.5,0.5" />
 			<SlotIcon slotindex="5" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="6" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="6" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="15,-4" />
 			</SubContainer>
@@ -7040,8 +7040,8 @@
 		<ItemContainer capacity="1" maxstacksize="1" hideitems="false" showcontainedstateindicator="true" itempos="-64,-34" containedspritedepths="0.551">
 			<Containable items="7.62_magazine" />
 			<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
-			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="10,-8" />
 			</SubContainer>
@@ -7113,7 +7113,7 @@
 		</Rangedweapon>
 		<ItemContainer capacity="1" maxstacksize="1" hideitems="true" showcontainedstateindicator="false" autofill="true" itempos="-15,-3" containedspritedepths="0.551">
 			<Containable items="pistol9mm_magazine,pistol9mm_magazine_ap" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="20,27,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="1,523,240,240" origin="0.45,0.5" />
 		</ItemContainer>
 		<aitarget sightrange="3000" soundrange="4000" fadeouttime="2" />
 	</Item>
@@ -7251,9 +7251,9 @@
 		</Wearable>
 		<ItemContainer capacity="1" maxstacksize="1" hideitems="false" showcontainedstateindicator="true" itempos="41,-20" containedspritedepths="0.551">
 			<Containable items="smg9mm_magazine" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="25,-1" />
 			</SubContainer>
@@ -7320,7 +7320,7 @@
 		</Rangedweapon>
 		<SkillRequirementHint identifier="weapons" level="75" />
 		<ItemContainer capacity="1" maxstacksize="1" hideitems="false" showcontainedstateindicator="true" itempos="3,-25" containedspritedepths="0.551" containedspritescale="0.45">
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
 			<Containable items="smg9mm_magazine,smg9mm_magazine_ap" />
 			<SlotIcon slotindex="2" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
@@ -7473,9 +7473,9 @@
 		</Rangedweapon>
 		<ItemContainer capacity="1" maxstacksize="1" hideitems="false" showcontainedstateindicator="true" itempos="27,-10" containedspritedepths="0.551" containedscale="0.2">
 			<Containable items="smg9mm_magazine" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="20,2" />
 			</SubContainer>
@@ -7623,9 +7623,9 @@
 		</Rangedweapon>
 		<ItemContainer capacity="1" maxstacksize="1" hideitems="false" showcontainedstateindicator="true" itempos="3,-20" containedspritedepths="0.551" containedscale="0.2">
 			<Containable items="smg9mm_magazine" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="15,1" />
 			</SubContainer>
@@ -7780,9 +7780,9 @@
 		</Rangedweapon>
 		<ItemContainer capacity="1" maxstacksize="1" hideitems="false" showcontainedstateindicator="true" autofill="true" itempos="-13,-3" containedspritedepths="0.551">
 			<Containable items="pistol9mm_magazine,pistol9mm_magazine_ap" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="20,27,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="1,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="11,2" hide="false" />
 			</SubContainer>
@@ -7934,9 +7934,9 @@
 		</Rangedweapon>
 		<ItemContainer capacity="1" maxstacksize="1" hideitems="false" showcontainedstateindicator="true" autofill="true" itempos="-15,-3" containedspritedepths="0.551">
 			<Containable items="pistol9mm_magazine,pistol9mm_magazine_ap" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="20,27,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="1,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="11,3" hide="false" />
 			</SubContainer>
@@ -8039,7 +8039,7 @@
 		</Rangedweapon>
 		<SkillRequirementHint identifier="weapons" level="40" />
 		<ItemContainer capacity="1" maxstacksize="1" hideitems="false" showcontainedstateindicator="true" itempos="9,-20" containedspritedepths="0.551">
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
 			<Containable items="smg9mm_magazine" />
 		</ItemContainer>
 		<aitarget sightrange="3000" soundrange="4000" fadeouttime="2" />
@@ -8191,9 +8191,9 @@
 		</Rangedweapon>
 		<ItemContainer capacity="1" maxstacksize="1" hideitems="false" showcontainedstateindicator="true" autofill="true" itempos="-13,-3" containedspritedepths="0.551">
 			<Containable items="pistol9mm_magazine,pistol9mm_magazine_ap" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="20,27,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="1,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="11,2" hide="false" />
 			</SubContainer>
@@ -8329,9 +8329,9 @@
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="assaultriflemagazine" itempos="-1,-4" />
 			</SubContainer>
-			<SlotIcon slotindex="1" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="1" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="2" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="attachment_suppressor_939,attachment_gl" itempos="68.6,6" />
 			</SubContainer>
@@ -8426,7 +8426,7 @@
 		</Rangedweapon>
 		<ItemContainer capacity="1" maxstacksize="1" hideitems="false" showcontainedstateindicator="true" itempos="-15,-3" containedspritedepths="0.551,0.551">
 			<Containable items="assaultriflemagazine" />
-			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="13,3" />
@@ -8526,7 +8526,7 @@
 		</RangedWeapon>
 		<ItemContainer capacity="1" maxstacksize="1" hideitems="false" showcontainedstateindicator="true" itempos="69,-9" containedspritedepths="0.551,0.552,0.552">
 			<Containable items="grenade" />
-			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="315,19,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
 			<SlotIcon slotindex="0" texture="Content/UI/ContainerIndicators.png" sourcerect="1,30,120,29" origin="0.5,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
@@ -8622,7 +8622,7 @@
 		</Rangedweapon>
 		<ItemContainer capacity="2" maxstacksize="1" itempos="27,10" iteminterval="0,-4" hideitems="true" showcontainedstateindicator="false">
 			<Containable items="shotgunammo" />
-			<SlotIcon texture="%ModDir%/Img/magazineicons.png" sourcerect="620,51,240,240" origin="0.45,0.5" />
+			<SlotIcon texture="%ModDir%/Img/magazineicons.png" sourcerect="483,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="2" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="11,2" hide="false" />
@@ -8730,9 +8730,9 @@
 		</Rangedweapon>
 		<ItemContainer capacity="4" maxstacksize="1" itempos="27,10" iteminterval="0,-4" hideitems="false" showcontainedstateindicator="false">
 			<Containable items="shotgunammo" hide="true" />
-			<SlotIcon texture="%ModDir%/Img/magazineicons.png" sourcerect="620,51,240,240" origin="0.45,0.5" />
+			<SlotIcon texture="%ModDir%/Img/magazineicons.png" sourcerect="483,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="4" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="5" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="5" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="11,2" hide="true" />
 			</SubContainer>
@@ -8822,7 +8822,7 @@
 			<RequiredSkill identifier="weapons" level="20" />
 		</Rangedweapon>
 		<ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="bullet">
-			<SlotIcon texture="%ModDir%/Img/magazineicons.png" sourcerect="620,51,240,240" origin="0.45,0.5" />
+			<SlotIcon texture="%ModDir%/Img/magazineicons.png" sourcerect="483,523,240,240" origin="0.45,0.5" />
 			<Containable items="shotgunammo" />
 		</ItemContainer>
 		<SkillRequirementHint identifier="weapons" level="20" />
@@ -8918,9 +8918,9 @@
 		<SkillRequirementHint identifier="weapons" level="85" />
 		<ItemContainer capacity="8" maxstacksize="1" slotsperrow="2" itempos="27,10" iteminterval="0,-4" hideitems="false" showcontainedstateindicator="false">
 			<Containable items="shotgunammo" hide="true" />
-			<SlotIcon texture="%ModDir%/Img/magazineicons.png" sourcerect="620,51,240,240" origin="0.45,0.5" />
+			<SlotIcon texture="%ModDir%/Img/magazineicons.png" sourcerect="483,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="8" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="9" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="9" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="11,2" hide="true" />
 			</SubContainer>
@@ -9038,9 +9038,9 @@
 		</Rangedweapon>
 		<ItemContainer capacity="6" maxstacksize="1" itempos="27,10" iteminterval="0,-4" hideitems="false" showcontainedstateindicator="false">
 			<Containable items="shotgunammo" hide="true" />
-			<SlotIcon texture="%ModDir%/Img/magazineicons.png" sourcerect="620,51,240,240" origin="0.45,0.5" />
+			<SlotIcon texture="%ModDir%/Img/magazineicons.png" sourcerect="483,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="6" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="7" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="7" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="11,2" hide="true" />
 			</SubContainer>
@@ -9158,9 +9158,9 @@
 		</Rangedweapon>
 		<ItemContainer capacity="5" maxstacksize="1" itempos="27,10" iteminterval="0,-4" hideitems="false" showcontainedstateindicator="false">
 			<Containable items="shotgunammo" hide="true" />
-			<SlotIcon texture="%ModDir%/Img/magazineicons.png" sourcerect="620,51,240,240" origin="0.45,0.5" />
+			<SlotIcon texture="%ModDir%/Img/magazineicons.png" sourcerect="483,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="5" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="6" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="6" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="11,2" hide="true" />
 			</SubContainer>
@@ -9267,7 +9267,7 @@
 		<SkillRequirementHint identifier="weapons" level="90" />
 		<ItemContainer capacity="5" maxstacksize="2" itempos="27,10" iteminterval="0,-4" hideitems="true" showcontainedstateindicator="false">
 			<Containable items="shotgunammo" />
-			<SlotIcon texture="%ModDir%/Img/magazineicons.png" sourcerect="620,51,240,240" origin="0.45,0.5" />
+			<SlotIcon texture="%ModDir%/Img/magazineicons.png" sourcerect="483,523,240,240" origin="0.45,0.5" />
 			<SlotIcon slotindex="5" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="11,2" hide="false" />
@@ -9348,7 +9348,7 @@
 		<ItemContainer capacity="6" maxstacksize="1" itempos="27,10" iteminterval="0,-4" hideitems="true" showcontainedstateindicator="false">
 			<Containable items="grenade" />
 			<SlotIcon slotindex="6" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="7" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="7" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="18,10" hide="true"></Containable>
 			</SubContainer>
@@ -9446,7 +9446,7 @@
 		<ItemContainer capacity="3" maxstacksize="1" itempos="27,10" iteminterval="0,-4" hideitems="true" showcontainedstateindicator="false">
 			<Containable items="grenade" />
 			<SlotIcon slotindex="3" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-			<SlotIcon slotindex="4" texture="%ModDir%/Img/magazineicons.png" sourcerect="872,55,240,240" origin="0.45,0.5" />
+			<SlotIcon slotindex="4" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="18,10" hide="true"></Containable>
 			</SubContainer>
@@ -9553,7 +9553,7 @@
 			</StatusEffect>
 		</RangedWeapon>
 		<ItemContainer capacity="1" maxstacksize="1" hideitems="true" showcontainedstateindicator="false">
-			<SlotIcon texture="%ModDir%/Img/magazineicons.png" sourcerect="20,27,240,240" origin="0.45,0.5" />
+			<SlotIcon texture="%ModDir%/Img/magazineicons.png" sourcerect="1,523,240,240" origin="0.45,0.5" />
 			<Containable items="bullet" />
 		</ItemContainer>
 		<aitarget soundrange="1000" fadeouttime="5" />

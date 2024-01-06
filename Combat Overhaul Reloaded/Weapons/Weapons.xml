@@ -1666,7 +1666,7 @@
 	<Item Name="" description="" identifier="co_c4charge" category="Weapon" Tags="smallitem,explosive,demolitionsexpert,explosivecharge,bullet" maxstacksize="1" Scale="0.25" cargocontaineridentifier="explosivecrate" impactsoundtag="impact_soft">
 		<Upgrade gameversion="0.9.3.0" scale="0.5" />
 		<PreferredContainer secondary="armcab" />
-		<Price baseprice="68" buyingpricemultiplier="4">
+		<Price baseprice="220" buyingpricemultiplier="4">
 			<Price storeidentifier="merchantoutpost" sold="false" multiplier="1.4" minavailable="1" />
 			<Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" sold="false" />
 			<Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
@@ -1757,6 +1757,52 @@
 			<QualityStat stattype="ExplosionRadius" value="0.1" />
 			<QualityStat stattype="ExplosionDamage" value="0.1" />
 		</Quality>
+	</Item>
+	<Item Name="" descriptionidentifier="co_c4charge" identifier="co_ic4charge" variantof="co_c4charge" category="Weapon" Tags="smallitem,explosive,demolitionsexpert,explosivecharge,bullet" maxstacksize="1" Scale="0.25" cargocontaineridentifier="explosivecrate" impactsoundtag="impact_soft">
+		<Price baseprice="500" buyingpricemultiplier="4">
+			<Price storeidentifier="merchantoutpost" sold="false" multiplier="1.4" minavailable="1" />
+			<Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" sold="false" />
+			<Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+			<Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="2" />
+			<Price storeidentifier="merchantmine" sold="false" />
+			<Price storeidentifier="merchantarmory" multiplier="0.95" minavailable="1" />
+		</Price>
+		<Fabricate suitablefabricators="milfabricator" requiredtime="10">
+			<RequiredSkill identifier="weapons" level="30" />
+			<RequiredSkill identifier="electrical" level="40" />
+			<RequiredItem identifier="ic4block" />
+			<RequiredItem identifier="aluminium" />
+			<RequiredItem identifier="fpgacircuit" />
+		</Fabricate>
+		<Deconstruct time="10">
+			<Item identifier="copper" />
+			<Item identifier="ic4block" />
+			<Item identifier="aluminium" />
+		</Deconstruct>
+		<Sprite texture="%ModDir%/Img/CO_spritelist_pistols.png" depth="0.55" sourcerect="873,563,104,70" origin="0.5,0.5" />
+		<ItemComponent characterusable="false">
+			<sound file="Content/Items/Weapons/ExplosionMedium1.ogg" type="OnBroken" range="10000" selectionmode="All" />
+			<sound file="Content/Items/Weapons/ExplosionDebris1.ogg" type="OnBroken" range="10000" />
+			<StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="True" />
+			<StatusEffect type="OnBroken" target="This">
+				<Explosion range="750.0" ballastfloradamage="150" structuredamage="50" itemdamage="200" force="10.0" severlimbsprobability="0.25" debris="true" decal="explosion" decalsize="0.5">
+					<Affliction identifier="explosiondamage" strength="50" />
+					<Affliction identifier="burn" strength="100" />
+					<Affliction identifier="burn" strength="25" probability="0.2" dividebylimbcount="false"/>
+					<Affliction identifier="stun" strength="7" />
+				</Explosion>
+				<Fire size="500" />
+				<Remove />
+			</StatusEffect>
+			<StatusEffect type="OnNotContained" target="This" disabledeltatime="True" comparison="AND">
+				<Conditional HasStatusTag="armed" />
+				<Conditional HasStatusTag="detonate" />
+				<Conditional HasStatusTag="neq timed" />
+				<Conditional TimeFrame="lt 5" />
+				<Use />
+			</StatusEffect>
+			<StatusEffect type="OnNotContained" target="This" tags="armed" duration="0.06" stackable="false" disabledeltatime="True" />
+		</ItemComponent>
 	</Item>
 	<Item Name="" description="" identifier="guidedgrenade" category="Weapon" maxstacksize="4" cargocontaineridentifier="explosivecrate" tags="smallitem,weapon" Scale="0.5" impactsoundtag="impact_metal_light">
 		<PreferredContainer secondary="armcab" />
