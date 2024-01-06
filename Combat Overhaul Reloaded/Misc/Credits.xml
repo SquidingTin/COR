@@ -2,7 +2,7 @@
 <Credits scrollspeed="50.0" spacing="10">
 	<spacing relativesize="1.0,1.0"/>
 
-	<Image texture="Content/UI/titleText.png" sourcerect="0,520,1024,328" relativesize="1.0,0.1"/>
+	<Image texture="%ModDir%/Img/titleText.png" sourcerect="0,520,1024,328" relativesize="1.0,0.1"/>
 	
 	<spacing relativesize="1.0,0.1"/>
 	
@@ -16,9 +16,16 @@
 	<Text font="Font" anchor="TopCenter" relativesize="0.5,0.0" color="150,150,150,255" alignment="CenterLeft">Viktor Livingshield (Russian)</Text>
 	<Text font="Font" anchor="TopCenter" relativesize="0.5,0.0" color="150,150,150,255" alignment="CenterLeft">Rxstar (Chinese)</Text>
 	
+	<Text font="VideoTitleFont" anchor="TopCenter" relativesize="0.5,0.0" color="255,255,255,255" alignment="CenterLeft">Artists</Text>
+	<Text font="Font" anchor="TopCenter" relativesize="0.5,0.0" color="150,150,150,255" alignment="CenterLeft">Battle Engineer</Text>
+	<Text font="Font" anchor="TopCenter" relativesize="0.5,0.0" color="150,150,150,255" alignment="CenterLeft">M12</Text>
+	<Text font="Font" anchor="TopCenter" relativesize="0.5,0.0" color="150,150,150,255" alignment="CenterLeft">Lobotomite</Text>
+	
 	<Text font="VideoTitleFont" anchor="TopCenter" relativesize="0.5,0.0" color="255,255,255,255" alignment="CenterLeft">Programming</Text>
 	<Text font="Font" anchor="TopCenter" relativesize="0.5,0.0" color="150,150,150,255" alignment="CenterLeft">Battle Engineer</Text>
 	<Text font="Font" anchor="TopCenter" relativesize="0.5,0.0" color="150,150,150,255" alignment="CenterLeft">M12</Text>
+	<Text font="Font" anchor="TopCenter" relativesize="0.5,0.0" color="150,150,150,255" alignment="CenterLeft">WorkingJoe</Text>
+	<Text font="Font" anchor="TopCenter" relativesize="0.5,0.0" color="150,150,150,255" alignment="CenterLeft">Panman</Text>
 
 	<spacing relativesize="1.0,0.2"/>
 	
