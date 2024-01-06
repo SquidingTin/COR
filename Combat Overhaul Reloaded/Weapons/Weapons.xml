@@ -3085,15 +3085,21 @@
 			</StatusEffect>
 		</Wearable>
 		<ItemContainer capacity="0">
-			<SlotIcon slotindex="0" texture="Content/UI/ContainerIndicators.png" sourcerect="1,62,120,29" origin="0.5,0.5" />
-			<SubContainer capacity="1" maxstacksize="1">
+			<SlotIcon slotindex="0" texture="Content/Items/InventoryIconAtlas.png" sourcerect="769,385,64,64" origin="0.5,0.5" />
+			<SlotIcon slotindex="1" texture="Content/Items/InventoryIconAtlas.png" sourcerect="641,960,64,64" origin="0.5,0.5" />
+			<SlotIcon slotindex="2" texture="Content/Items/Jobgear/headgears.png" sourcerect="414,318,89,71" origin="0.5,0.5" />
+			<SlotIcon slotindex="3" texture="Content/UI/ContainerIndicators.png" sourcerect="1,62,120,29" origin="0.5,0.5" />
+			<SubContainer capacity="1" maxstacksize="1" >
 				<Containable items="hornitem" />
 			</SubContainer>
-			<SubContainer capacity="1" maxstacksize="1">
+			<SubContainer capacity="1" maxstacksize="1" >
 				<Containable items="toyhammer" />
 			</SubContainer>
-			<SubContainer capacity="1" maxstacksize="1">
+			<SubContainer capacity="1" maxstacksize="1" >
 				<Containable items="clownmaskunique,clownmask" />
+			</SubContainer>
+			<SubContainer capacity="1" maxstacksize="1">
+				<Containable items="bullet" />
 			</SubContainer>
 		</ItemContainer>
 	</Item>
@@ -3383,8 +3389,25 @@
 	<Item nameidentifier="handheldterminal" descriptionidentifier="handheldterminal" identifier="govno" aliases="weeaboo,devilmask,devilcostume,athame,bunnyears,bunnysuit,bdsmsuit,ccape1,ccape2,ccape3,captainscap4,medicalbandolier,aks74ucostume,hk416ucostume,m200ucostume,mp7costume,ro635ucostume,ump9ucostume,vsk94ucostume,m45ucostume" category="Misc" Tags="smallitem" variantof="handheldterminal" hideinmenus="True">
 		<Terminal welcomemessage="govno" />
 	</Item>
+	<Item nameidentifier="cymbals" identifier="cymbals_rare" category="Misc" tags="smallitem,clowns" scale="0.5" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light">
+		<InventoryIcon texture="Content/Map/Outposts/Art/FactionItems.png" sourcerect="334,106,57,55" depth="0.55" origin="0.5,0.5" />
+		<sprite texture="Content/Map/Outposts/Art/FactionItems.png" sourcerect="2,232,89,89" depth="0.55" origin="0.5,0.5" />
+		<Body radius="40" density="15" />
+		<Holdable slots="Any,RightHand+LeftHand" holdpos="80,-20" aimpos="100,0" handle1="0,0" controlpose="true" aimable="false" msg="ItemMsgPickUpSelect" />
+		<RangedWeapon reload="60">
+			<sound type="OnUse" file="Content/Items/Jobgear/Clown/ITEM_cymbalMono.ogg" range="3000" volume="10" SoundSelectionMode="All" />
+			<sound type="OnUse" file="Content/Items/Jobgear/Clown/ITEM_cymbalStereo.ogg" range="1500" volume="1" />
+			<StatusEffect type="OnUse" target="This" disabledeltatime="true">
+				<Explosion range="500.0" force="5.0" shockwave="true" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="6.0" />
+			</StatusEffect>
+			<StatusEffect type="OnUse" duration="10" target="NearbyCharacters" range="500" camerashake="5" setvalue="true">
+				<Affliction identifier="hallucinatingshortduration" strength="100" />
+			</StatusEffect>
+		</RangedWeapon>
+	</Item>
+
 	<Item nameidentifier="clowncrate" descriptionidentifier="clowncrate" identifier="clowncrate_ruined" variantof="clowncrate" aliases="proxyfunny,proxyweak,proxyfire,proxygodmode,proxybuff,proxypoison,proxydrunk,honk_eternal" tags="crate,allowcleanup,clowns" scale="0.5" linkable="True" pickdistance="150" showcontentsintooltip="True" impactsoundtag="impact_metal_heavy" DisableItemUsageWhenSelected="True" waterproof="True" hideinmenus="True">
-		<ItemContainer capacity="6" slotsperrow="3" canbeselected="false" hideitems="True" SpawnWithId="oxygentank,clownsuitunique_ruined,madmanshorn" keepopenwhenequipped="True" movableframe="True">
+		<ItemContainer capacity="6" slotsperrow="3" canbeselected="false" hideitems="True" SpawnWithId="clownsuitunique_ruined,clowndivingmaskunique,cymbals_rare,madmanshorn,toyhammer" keepopenwhenequipped="True" movableframe="True">
 			<Containable items="smallitem" excludeditems="toolbox,cargoscooter" />
 		</ItemContainer>
 		<Controller UserPos="0,-20" direction="Right" canbeselected="True" AllowSelectingWhenSelectedByOther="false" selectkey="Use" drawuserbehind="True" msg="itemmsggoinside">

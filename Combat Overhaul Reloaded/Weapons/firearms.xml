@@ -9542,19 +9542,27 @@
 		<RangedWeapon reload="2.5" weapondamagemodifier="0.65" spread="2" launchimpulse="32">
 			<RequiredSkill identifier="weapons" level="10" />
 			<StatusEffect type="OnUse" target="Character">
-				<Conditional HasStatusTag="!eq clown" />
 				<Sound file="Content/Items/Weapons/honk.ogg" type="OnUse" range="1000" />
 			</StatusEffect>
 			<StatusEffect type="OnUse">
 				<Conditional HasStatusTag="clown" />
-				<Sound file="Content/Items/Weapons/honk.ogg" type="OnUse" range="1000" />
 				<Explosion range="150.0" force="0.85" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="15.0" />
 				<RequiredItem items="bullet" type="Contained" />
+			</StatusEffect>
+			<StatusEffect type="OnUse">
+				<Conditional HasStatusTag="clown" />
+				<Explosion range="100.0" force="0.85" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="15.0" />
+				<RequiredItem items="harpoonammo" type="Contained" />
+			</StatusEffect>
+			<StatusEffect type="OnUse">
+				<Conditional HasStatusTag="clown" />
+				<Explosion range="150.0" force="0.85" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="15.0" />
+				<RequiredItem items="deflectable" type="Contained" />
 			</StatusEffect>
 		</RangedWeapon>
 		<ItemContainer capacity="1" maxstacksize="1" hideitems="true" showcontainedstateindicator="false">
 			<SlotIcon texture="%ModDir%/Img/magazineicons.png" sourcerect="1,523,240,240" origin="0.45,0.5" />
-			<Containable items="bullet" />
+			<Containable items="bullet,harpoonammo,deflectable" />
 		</ItemContainer>
 		<aitarget soundrange="1000" fadeouttime="5" />
 		<Upgrade gameversion="0.10.0.0" scale="0.5" />
