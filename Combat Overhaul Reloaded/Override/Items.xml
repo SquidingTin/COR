@@ -3681,8 +3681,7 @@
 				<Conditional DisplayName="Battle Engineer" targetcontainer="true" />
 				<Conditional DisplayName="Honk Father" targetcontainer="true" />
 				<Conditional DisplayName="Stimpy The Clown" targetcontainer="true" />
-				<SpawnItem identifiers="clowndivingmaskunique" spawnposition="SameInventory" count="1" equip="true"/>
-				<SpawnItem identifiers="clownsuitunique_ruined" spawnposition="SameInventory" count="1" equip="true"/>
+				<SpawnItem identifiers="clowncrate_ruined" spawnposition="SameInventory" count="1" equip="true"/>
 			</StatusEffect>
 			
 			

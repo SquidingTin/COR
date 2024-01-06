@@ -7,7 +7,7 @@
 
 	<Affliction name="" description="" identifier="co_weakness" type="resistance" limbspecific="false" maxstrength="25" affectmachines="false">
 		<Effect minstrength="0" maxstrength="25" strengthchange="-0.8" resistancefor="damage" minresistance="-0.15" maxresistance="-0.25" minspeedmultiplier="1" maxspeedmultiplier="0.75" />
-		<icon texture="%ModDir%/Img/magazineicons.png" sourcerect="194,380,128,128" color="195,136,60,255" origin="0,0" />
+		<icon texture="%ModDir%/Img/magazineicons.png" sourcerect="130,765,128,128" color="195,136,60,255" origin="0,0" />
 	</Affliction>
 	
 	<Affliction identifier="mothersblessing" type="talentbuff" isbuff="true" limbspecific="false" hideiconafterdelay="true" maxstrength="1" duration="1" iconcolors="21,221,221">
@@ -61,19 +61,19 @@
 
 	<Affliction name="" description="" identifier="aimresist" type="immunity" isbuff="true" limbspecific="false" showiconthreshold="100" maxstrength="2">
 		<Effect minstrength="0" maxstrength="1" strengthchange="-1000" resistancefor="damage" minresistance="0.2" maxresistance="0.2" />
-		<icon texture="%ModDir%/Img/magazineicons.png" sourcerect="795,380,128,128" color="205,77,0,255" origin="0,0" />
+		<icon texture="%ModDir%/Img/magazineicons.png" sourcerect="646,765,128,128" color="205,77,0,255" origin="0,0" />
 	</Affliction>
 
 	<Affliction name="" description="" identifier="stab" type="immunity" isbuff="true" limbspecific="true" showiconthreshold="100" maxstrength="2">
 		<Effect minstrength="0" maxstrength="1" strengthchange="-1000">
 			<StatValue stattype="RangedSpreadReduction" minvalue="0.4" maxvalue="0.4" />
 		</Effect>
-		<icon texture="%ModDir%/Img/magazineicons.png" sourcerect="795,380,128,128" color="205,77,0,255" origin="0,0" />
+		<icon texture="%ModDir%/Img/magazineicons.png" sourcerect="646,765,128,128" color="205,77,0,255" origin="0,0" />
 	</Affliction>
 
 	<Affliction name="" description="" identifier="crit" type="immunity" isbuff="true" limbspecific="true" showiconthreshold="100" maxstrength="2">
 		<Effect minstrength="0" maxstrength="2" strengthchange="-1" />
-		<icon texture="%ModDir%/Img/magazineicons.png" sourcerect="795,380,128,128" color="205,77,0,255" origin="0,0" />
+		<icon texture="%ModDir%/Img/magazineicons.png" sourcerect="646,765,128,128" color="205,77,0,255" origin="0,0" />
 	</Affliction>
 
 	<Affliction name="" description="" identifier="co_dangerdead" indicatorlimb="Head" type="resistance" isbuff="false" limbspecific="false" maxstrength="400">
@@ -83,12 +83,12 @@
 				<Affliction identifier="psychosis" strength="1" />
 			</StatusEffect>
 		</Effect>
-		<icon texture="%ModDir%/Img/magazineicons.png" sourcerect="516,380,129,127" color="205,77,0,255" origin="0,0" />
+		<icon texture="%ModDir%/Img/magazineicons.png" sourcerect="388,765,129,127" color="205,77,0,255" origin="0,0" />
 	</Affliction>
 
 	<Affliction name="" description="" identifier="co_danger" indicatorlimb="Head" type="resistance" isbuff="true" limbspecific="false" maxstrength="1">
 		<Effect minstrength="0" maxstrength="1" strengthchange="-1" minskillmultiplier="0.9" maxskillmultiplier="0.9" />
-		<icon texture="%ModDir%/Img/magazineicons.png" sourcerect="649,380,128,128" color="205,77,0,255" origin="0,0" />
+		<icon texture="%ModDir%/Img/magazineicons.png" sourcerect="517,765,128,128" color="205,77,0,255" origin="0,0" />
 	</Affliction>
 
 	<Affliction name="" description="" identifier="co_nearbydanger" indicatorlimb="Head" type="resistance" isbuff="false" limbspecific="false" maxstrength="400">
@@ -99,14 +99,14 @@
 				<Affliction identifier="burn" strength="0.01" />
 			</StatusEffect>
 		</Effect>
-		<icon texture="%ModDir%/Img/magazineicons.png" sourcerect="795,380,128,128" color="205,77,0,255" origin="0,0" />
+		<icon texture="%ModDir%/Img/magazineicons.png" sourcerect="646,765,128,128" color="205,77,0,255" origin="0,0" />
 	</Affliction>
 
 	<Affliction name="" description="" identifier="co_accuraccybuff" type="resistance" isbuff="true" limbspecific="false" maxstrength="400">
 		<Effect minstrength="0" maxstrength="400" strengthchange="-1" resistancefor="damage" minresistance="0.0" maxresistance="-0.05">
 			<StatValue stattype="RangedSpreadReduction" minvalue="0.15" maxvalue="0.35" />
 		</Effect>
-		<icon texture="%ModDir%/Img/magazineicons.png" sourcerect="355,380,128,128" color="165,165,235,255" origin="0,0" />
+		<icon texture="%ModDir%/Img/magazineicons.png" sourcerect="259,765,128,128" color="165,165,235,255" origin="0,0" />
 	</Affliction>
 
 	<Affliction name="" description="" identifier="co_adrenalinerush" type="resistance" isbuff="true" limbspecific="false" maxstrength="600">
@@ -114,7 +114,7 @@
 			<StatValue stattype="MeleeAttackSpeed" minvalue="0.00" maxvalue="0.05" />
 			<StatValue stattype="RangedSpreadReduction" minvalue="0.00" maxvalue="0.1" />
 		</Effect>
-		<icon texture="%ModDir%/Img/magazineicons.png" sourcerect="16,380,128,128" color="165,165,235,255" origin="0,0" />
+		<icon texture="%ModDir%/Img/magazineicons.png" sourcerect="1,765,128,128" color="165,165,235,255" origin="0,0" />
 	</Affliction>
 
 		<!--Overlays-->
