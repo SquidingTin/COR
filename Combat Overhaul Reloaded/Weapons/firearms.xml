@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Items>
 	<!--38-->
 	<Item name="" description="" identifier="revolver_38_talent" category="weapon" cargocontaineridentifier="metalcrate" tags="mountableweapon,smallitem,weapon,gun,pistolitem,gunsmith,38_gun" Scale="0.44" impactsoundtag="smallwepimpact">
@@ -9539,7 +9539,7 @@
 		<Sprite texture="Content/Items/Misc/Misc.png" sourcerect="101,45,53,22" depth="0.55" />
 		<Body width="50" height="20" density="15" />
 		<Holdable slots="Any,RightHand,LeftHand" aimpos="100,0" handle1="-15,-3" msg="ItemMsgPickUpSelect" />
-		<RangedWeapon reload="2.5" weapondamagemodifier="0.65" spread="2">
+		<RangedWeapon reload="2.5" weapondamagemodifier="0.65" spread="2" launchimpulse="32">
 			<RequiredSkill identifier="weapons" level="10" />
 			<StatusEffect type="OnUse" target="Character">
 				<Conditional HasStatusTag="!eq clown" />
