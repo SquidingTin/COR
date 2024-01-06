@@ -3430,7 +3430,9 @@
 				<damagemodifier afflictiontypes="damage" armorsector="0.0,360.0" damageSound="LimbClown" />
 			</Wearable>
 			<ItemContainer capacity="0">
-				<SlotIcon slotindex="0" texture="Content/UI/ContainerIndicators.png" sourcerect="1,62,120,29" origin="0.5,0.5" />
+				<SlotIcon slotindex="0" texture="Content/Items/InventoryIconAtlas.png" sourcerect="769,385,64,64" origin="0.5,0.5" />
+				<SlotIcon slotindex="1" texture="Content/Items/InventoryIconAtlas.png" sourcerect="641,960,64,64" origin="0.5,0.5" />
+				<SlotIcon slotindex="2" texture="Content/Items/Jobgear/headgears.png" sourcerect="414,318,89,71" origin="0.5,0.5" />
 				<SubContainer capacity="1" maxstacksize="1">
 					<Containable items="bikehorn,bikehorn_919" />
 				</SubContainer>
@@ -3521,7 +3523,7 @@
 				<ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
 			</StatusEffect>
 			<StatusEffect type="OnImpact" target="this">
-				<Explosion range="15" force="0.0" camerashake="0" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" structuredamage="-10" />
+				<Explosion range="50" force="0.0" camerashake="0" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" structuredamage="-100" />
 				<Sound file="Content\Sounds\Impact\MetalImpactHeavy1.ogg" type="OnUse" range="1000" selectionmode="Random" />
 				<Sound file="Content\Sounds\Impact\MetalImpactHeavy2.ogg" type="OnUse" range="1000" />
 				<Sound file="Content\Sounds\Impact\MetalImpactHeavy3.ogg" type="OnUse" range="1000" />
@@ -3539,7 +3541,7 @@
 		</Deconstruct>
 	</dontfallstim>
 
-	<Item name="" description="" identifier="co_alienheadset" aliases="co_headset_govna,panofaman" scale="0.5" category="Equipment" tags="smallitem,mobileradio" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" hideinmenus="true">
+	<Item name="" description="" identifier="co_alienheadset" aliases="co_headset_govna,panofaman,alientranslator" scale="0.5" category="Equipment" tags="smallitem,mobileradio" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" hideinmenus="true">
 		<PreferredContainer primary="ruinstorage,ruinstoragesmall,ruinstoragelarge" amount="1" spawnprobability="0.01" />
 		<InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="192,960,64,64" origin="0.5,0.5" />
 		<Sprite name="Alien Headset" texture="Content/Items/Jobgear/AlienGear.png" depth="0.6" sourcerect="131,20,97,99" origin="0.5,0.5" />
@@ -3549,7 +3551,7 @@
 			<Item identifier="sulphuriteshard" commonness="0.5" />
 			<Item identifier="physicorium" commonness="0.5" />
 		</Deconstruct>
-		<WifiComponent range="50000.0" LinkToChat="true" MinChatMessageInterval="0.0">
+		<WifiComponent range="40000.0" LinkToChat="true" MinChatMessageInterval="0.0">
 			<StatusEffect type="OnActive" targettype="This">
 				<Conditional JamTimer="gt 0" targetitemcomponent="WifiComponent" />
 				<sound file="Content/Sounds/RadioStatic.ogg" range="500.0" frequencymultiplier="0.7" loop="true" volume="0.5" />
@@ -3587,7 +3589,7 @@
 		<!--COL content-->
 
 
-	<Item name="" identifier="easterwrench" scale="0.5" category="Equipment" tags="smallitem" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" hideinmenus="true">
+	<Item name="" identifier="easterwrench" scale="0.5" category="Equipment" Tags="smallitem,tool,simpletool,screwdriver,wrench,mountableweapon" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" hideinmenus="true">
 		<Price baseprice="1900" sold="false" />
 		<Sprite texture="Content/Items/Jobgear/TalentGear.png" sourcerect="157,492,114,20" depth="0.55" origin="0.5,0.5" />
 		<Body width="114" height="20" density="30" />
@@ -3613,6 +3615,14 @@
 	</Item>
 
 	<Item name="" description="" identifier="guidebook" variantof="guidebook1" allowstealingalways="true" category="Misc" Tags="smallitem" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft" hideinmenus="true">
+		<Price baseprice="10" sold="true">
+			<Price storeidentifier="merchantoutpost" multiplier="1.4" />
+			<Price storeidentifier="merchantcity" multiplier="1.25" />
+			<Price storeidentifier="merchantresearch" multiplier="1.25" />
+			<Price storeidentifier="merchantmilitary" sold="true" multiplier="0.9" minavailable="0" maxavailable="2" />
+			<Price storeidentifier="merchantmine" multiplier="1.25" />
+		</Price>
+		<PreferredContainer primary="crewcab" secondary="locker" />
 		<Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="-10,0" msg="ItemMsgPickUpSelect" >
 			<!-- Easter egg items for special nicknames -->
 			<StatusEffect type="OnBroken" target="this">
@@ -3705,7 +3715,6 @@
 	</Item>
 
 	<Item nameidentifier="guidebook" descriptionidentifier="guidebook" identifier="guidebook1" allowstealingalways="true" category="Misc" Tags="smallitem" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft">
-		<PreferredContainer primary="crewcab" secondary="locker" />
 		<InventoryIcon texture="Content/Map/Outposts/Art/FactionItems.png" sourcerect="218,195,37,55" origin="0.5,0.5" />
 		<Sprite texture="Content/Map/Outposts/Art/FactionItems.png" sourcerect="367,194,12,44"  origin="0.5,0.5" depth="0.8" />
 		<Body width="35" height="40" density="8" />
