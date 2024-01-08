@@ -2602,7 +2602,7 @@
 			</StatusEffect>
 		</Wearable>
 	</Item>
-	<Item Name="" description="" identifier="co_ammobox_disp" category="Equipment" tags="mediumitem,mobilecontainer,tool,despawncontainer,ammobox" cargocontaineridentifier="" showcontentsintooltip="True" Scale="0.5" fireproof="True" impactsoundtag="impact_metal_heavy" RequireAimToUse="True">
+	<Item Name="" description="" identifier="co_ammobox_disp" category="Equipment" tags="mediumitem,mobilecontainer,tool,ammobox" cargocontaineridentifier="" showcontentsintooltip="True" Scale="0.5" fireproof="True" impactsoundtag="impact_metal_heavy" RequireAimToUse="True">
 		<PreferredContainer secondary="armcab" />
 		<Price baseprice="1" />
 		<InventoryIcon texture="%ModDir%/Img/CO_spritelist_mod.png" sourcerect="474,277,91,81" origin="0.5,0.5" />
@@ -2615,6 +2615,11 @@
 				<Affliction identifier="stun" strength="0.1" />
 				<Sound file="Content/Items/Weapons/Smack2.ogg" range="800" />
 			</Attack>
+			<StatusEffect type="OnActive" targettype="This" Condition="-0.5" />
+			<StatusEffect type="OnBroken" target="This">
+				<DropContainedItems />
+				<Remove />
+			</StatusEffect>		
 		</MeleeWeapon>
 		<ItemContainer capacity="9" keepopenwhenequipped="True" movableframe="True">
 			<SlotIcon texture="Content/UI/ContainerIndicators.png" sourcerect="1,62,120,29" origin="0.5,0.5" />
@@ -3108,7 +3113,8 @@
 		<InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="576,956,64,64" origin="0.5,0.5" />
 		<Sprite texture="Content/Items/Misc/Misc.png" sourcerect="164,5,92,110" depth="0.55" origin="0.5,0.5" />
 		<Body width="92" height="110" density="12" />
-		<Holdable slots="RightHand+LeftHand" holdpos="50,-20" handle1="-20,0" handle2="-10,0" msg="ItemMsgPickUpSelect">
+		<Holdable slots="RightHand+LeftHand" holdpos="50,-20" handle1="-20,0" handle2="-10,0" msg="ItemMsgPickUpSelect"/>
+		<ItemComponent>
 			<StatusEffect type="Always" target="Character">
 				<Conditional HasStatusTag="clown" />
 				<sound file="%ModDir%/Sounds/AccordionClown.ogg" type="OnUse" range="600" loop="True" />
@@ -3118,7 +3124,7 @@
 				<SpawnItem identifiers="accordion" spawnposition="ThisInventory" />
 				<Remove />
 			</StatusEffect>
-		</Holdable>
+		</ItemComponent>
 	</Item>
 	<Item Name="" description="" identifier="infiniterifle" category="weapon" Tags="smallitem,weapon,mountableweapon,gun" cargocontaineridentifier="metalcrate" Scale="0.45" impactsoundtag="smallwepimpact" hideinmenus="True" allowasextracargo="True">
 		<PreferredContainer primary="armcab" />
