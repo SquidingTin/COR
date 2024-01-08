@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <infotexts language="English" nowhitespace="false" translatedname="English">
-	<!-- 12g.xml -->
+	
+		<!-- 12g.xml -->
+
 	<entityname.shotgun_db>M3 Double-Barrel</entityname.shotgun_db>
 	<entitydescription.shotgun_db>A simple double-barrel shotgun, manufactured by chinese colonies. The cheapest 12g gun out of all, isnt capable of shooting underwater.</entitydescription.shotgun_db>
 	<entityname.shotgun_assalt>M12 Assault Shotgun</entityname.shotgun_assalt>
@@ -21,16 +23,20 @@
 	<entitydescription.shotgun_toz>An unidentified double-barrel shotgun, illegally shipped to Europa by russian colonists, never was intended to be used underwater, but for some reason is capable of doing so. There's a inscription on the stock, saying: Djahnem?</entitydescription.shotgun_toz>
 	<entityname.shotgun_air>M600 police shotgun</entityname.shotgun_air>
 	<entitydescription.shotgun_air>Mossberg's most known weapon on Europa. Most commonly seen as a outpost police shotgun, this weapon can hardly be called a reliable tool for hunting, since it was not made for underwater usage.</entitydescription.shotgun_air>
-	<!-- 9x39.xml -->
+	
+		<!-- 9x39.xml -->
+
 	<entityname.939_ar_un>SR-22 Kaiman</entityname.939_ar_un>
 	<entitydescription.939_ar_un>Precise semi-automatic 9x39 rifle with relatively low recoil. Was developed as a reliable marksman weapon with a subsonic round for coalitions special task forces.</entitydescription.939_ar_un>
 	<entityname.939_ar>A219-E</entityname.939_ar>
 	<entitydescription.939_ar>Used mostly by special-task operators, this russian prototype rifle may be considered the peak of assault rifles for it's stopping power, accuracy and rate of fire. Uses standard 9x39 magazines.</entitydescription.939_ar>
 	<entityname.groza9>OTSE-GK(9x39)</entityname.groza9>
-	<entitydescription.groza9>An Unusual assault rifle that can be easily rechambered with a parts kit and a milfabricator. Performs perfectly both underwater and in air. The underslung grenade laucher allows the user to shoot 40mm frag grenades.</entitydescription.groza9>
+	<entitydescription.groza9>An Unusual assault rifle that can be easily rechambered with a parts kit and a milfabricator. Performs perfectly both underwater and in air. The underslung grenade laucher allows the user to shoot 40MM frag grenades.</entitydescription.groza9>
 	<entityname.939_ar_tallent>SR-14</entityname.939_ar_tallent>
 	<entitydescription.939_ar_tallent>A very uncommon weapon, chambered in 9x39. Few blueprints of SR-14 were brought to Europa by russian colonists, however this rifle was never fabricated since then.</entitydescription.939_ar_tallent>
-	<!-- 9x19.xml -->
+	
+		<!-- 9x19.xml -->
+
 	<entityname.9mm_pistol_un>Konjurin's Wrath</entityname.9mm_pistol_un>
 	<entitydescription.9mm_pistol_un>A weapon devastating by its very nature, wielding power of The Flame itself. A strong enough vessel, to withstand The Flame. A shard of The Flame, contained in metal walls.</entitydescription.9mm_pistol_un>
 	<entityname.smg9mm>MP-22K</entityname.smg9mm>
@@ -53,11 +59,13 @@
 	<entitydescription.9pipegun>Improvised open-bolt submachinegun, made of rusty pipes and scrap. As all makeshift weapons, this one has a chance to jam upon firing and is not capable of shooting underwater.</entitydescription.9pipegun>
 	<entityname.9mm_pistol>P-8 Pilot</entityname.9mm_pistol>
 	<entitydescription.9mm_pistol>Most common weapon on whole Europa. Cheap and effective, this 9x19 pistol became an essential part of every single submarine crew's arsenal. Can't shoot underwater.</entitydescription.9mm_pistol>
-	<!-- 7.62x55.xml -->
+	
+		<!-- 7.62x55.xml -->
+
 	<entityname.762_rifle_obrez>Remington Mod9-17(Obrez)</entityname.762_rifle_obrez>
 	<entitydescription.762_rifle_obrez>A tradition of making Obrez version of rifles has went through hundreds of years and even made its way to Europa. This is a shortened rifle with its barrel and stock cut down, allowing it to be carried as a sidearm.</entitydescription.762_rifle_obrez>
 	<entityname.rifle_co>Dokaira Type-57</entityname.rifle_co>
-	<entitydescription.rifle_co>An old-fashioned Japanese rifle with a grenade discharger, chambered in 40mm grenades. Effective at long ranges.</entitydescription.rifle_co>
+	<entitydescription.rifle_co>An old-fashioned Japanese rifle with a grenade discharger, chambered in 40MM grenades. Effective at long ranges.</entitydescription.rifle_co>
 	<entityname.762pipegun>Pipe rifle(7.62x55)</entityname.762pipegun>
 	<entitydescription.762pipegun>Simple weapon, made of pipes and broken tool parts. As all makeshift weapons, this one has a chance to jam upon firing and is not capable of shooting underwater.</entitydescription.762pipegun>
 	<entityname.762_rifle_unique>SVD-55ME</entityname.762_rifle_unique>
@@ -72,7 +80,9 @@
 	<entitydescription.762_rifle_sonar>Semi-automatic rifle, chambered in 7.62x55 with integrated magzine. The most unique feature of this weapon is, obviously, a sonar scope, hard-mounted on top, allowing user to engage targets with no need to see them directly.</entitydescription.762_rifle_sonar>
 	<entityname.762_rifle_2>SVU-39M</entityname.762_rifle_2>
 	<entitydescription.762_rifle_2>Heavy 7.62x55 rifle, develop as a replacement for SVD-55ME. Bullpup layout makes this gun relativly more agile and easier to handle in closed spaces but also increases the recoil effect and decreases stability. Uses 7.62x55 magazines.</entitydescription.762_rifle_2>
-	<!-- 7.62 Kurz.xml -->
+	
+		<!-- 7.62 Kurz.xml -->
+
 	<entityname.machinegun>MG3ME</entityname.machinegun>
 	<entitydescription.machinegun>A heavy machinegun, brought to Europa by italian colonists. It's size made it impossible to replicate with standard fabricators, meaning that MG3ME exists in a single copy. Cannot be modified.</entitydescription.machinegun>
 	<entityname.machinegun_air>M21 Light</entityname.machinegun_air>
@@ -81,7 +91,9 @@
 	<entitydescription.machinegun_alt>A boxy 7.62 Kurz machinegun, designed by Coalition as a powerfull suppression and fire support weapon for its assault groups. This must be the heaviest weapon you've operated so far.</entitydescription.machinegun_alt>
 	<entityname.machinegun_unique>A102 Light Machinegun</entityname.machinegun_unique>
 	<entitydescription.machinegun_unique>A compact light machinegun, designed as a part of joint weaponry program between Russia and NATO. Chambered in 7.62 Kurz, this gun provides massive firepower in closed quarters, does not fear water and pressure of Europas depths and serves reliably to anyone, capable of wielding its recoil.</entitydescription.machinegun_unique>
-	<!-- 5.56x45.xml -->
+	
+		<!-- 5.56x45.xml -->
+
 	<entityname.556_lever>MH-61 Breech-loading</entityname.556_lever>
 	<entitydescription.556_lever>Single-action 5.56x45 rifle with a lever to pull the breech block backwards, allowing user to load the round directlty into the barrel. At some point these rifles became so wide-spread that even their blueprints were intigrated into military fabricator standard recipe pool.</entitydescription.556_lever>
 	<entityname.556_carbine>M53 Assault carbine</entityname.556_carbine>
@@ -102,7 +114,9 @@
 	<entitydescription.556_ar_burst>Rapid-firing carbine, capable of firing 5.56x45 ammo in quick bursts of 3. A reliable weapon for close quarters combat.</entitydescription.556_ar_burst>
 	<entityname.carbine_medic>M7A5 Medical</entityname.carbine_medic>
 	<entitydescription.carbine_medic>Precise 5.56x45 carbine, developed for combat medics. Has a integrated healt scanner and underslung syringe launcher. Perfect for keeping your squad alive while still having an option to fight back against any threat, no matter the conditions. Cannot be suppressed or anyhow modified.</entitydescription.carbine_medic>
-	<!-- 5.45x39.xml -->
+	
+		<!-- 5.45x39.xml -->
+
 	<entityname.545_carbine>SKV-25 Carbine</entityname.545_carbine>
 	<entitydescription.545_carbine>Self-loading Volkov's Carbine, or SKV is a precise 5.45x39 rifle with its own fixed magazine, holding 8 bullets. Might not be the most fast-firing gun over there, but one of the most accurate for sure. Has a construction oversight with its muzzle brake, incapable of being equipped with Rifle Grenade Launcher.</entitydescription.545_carbine>
 	<entityname.545_ar>AK-27MSU Police rifle</entityname.545_ar>
@@ -114,7 +128,7 @@
 	<entityname.545_aru>AK-27ME Veles</entityname.545_aru>
 	<entitydescription.545_aru>Semi-automatic rifle, known as one of the most accurate magazine-feeded weapons and the deadliest long-range option among ak pattern. Uses standard 5.45x39 magazines.</entitydescription.545_aru>
 	<entityname.groza45>OTSE-GK(5.45x39)</entityname.groza45>
-	<entitydescription.groza45>Unusual assault rifle that can be rechambered with nothing, but a kit of parts and a fabricator. Performs perfectly both underwater and in air. Underslung grenade laucher allows to shoot 40mm frag grenades.</entitydescription.groza45>
+	<entitydescription.groza45>Unusual assault rifle that can be rechambered with nothing, but a kit of parts and a fabricator. Performs perfectly both underwater and in air. Underslung grenade laucher allows to shoot 40MM frag grenades.</entitydescription.groza45>
 	<entityname.545_pipe_ar>Improvised 5.45x39 assault rifle</entityname.545_pipe_ar>
 	<entitydescription.545_pipe_ar>Assault rifle, made of scrap, pipes and tool parts. As all makeshift weapon, this one has a chance to jam upon firing and is not capable of shooting underwater.</entitydescription.545_pipe_ar>
 	<entityname.545_ar_burst>AK-32MSU Perun</entityname.545_ar_burst>
@@ -123,7 +137,9 @@
 	<entitydescription.545_ar_alt>A precise rifle, offering a in-between variant among 5.45x39 weapons. Not as fast firing as AEK-22, not as accurate as AK-27 Veles, but reliable and trustworthy.</entitydescription.545_ar_alt>
 	<entityname.545_ar_bandit>A-905 Schkval</entityname.545_ar_bandit>
 	<entitydescription.545_ar_bandit>Rapid-firing 5.45x39 assault rifle, developed for CQC. Quickly loses its effectiveness with range due to its high recoil and generally bad accuracy.</entitydescription.545_ar_bandit>
-	<!-- 5.7x28.xml -->
+	
+		<!-- 5.7x28.xml -->
+
 	<entityname.57_pistol>FNE Compact</entityname.57_pistol>
 	<entitydescription.57_pistol>Light pistol, chambered in standard 5.7x28. Incredible penetration power of this round and an ability to shoot underwater made this pistol a reliable choice for self defence.</entitydescription.57_pistol>
 	<entityname.57_pistol_tallent>M50 Experimental Pistol</entityname.57_pistol_tallent>
@@ -132,7 +148,9 @@
 	<entitydescription.57_smg>A rapid firing micro-smg, chambered in 5.7x28. Deadly almost for anyone on point-blank, this weapon suffers from low accuracy and round's lethality. Jams underwater.</entitydescription.57_smg>
 	<entityname.57_pistol_tact>FNE-SO X8</entityname.57_pistol_tact>
 	<entitydescription.57_pistol_tact>Advanced 5.7x28 pistol, designed for scouting squads on Earth. Made its way to Europa with their former operators, became famous for its reliability and convenience when shooting.</entitydescription.57_pistol_tact>
-	<!-- .45.xml -->
+	
+		<!-- .45.xml -->
+
 	<entityname.45_smg_micro>MS-45 Special</entityname.45_smg_micro>
 	<entitydescription.45_smg_micro>A compact .45 submachinegun, developed for special-task forces. Being one of the lightest guns of such caliber, it can be easily manipulated with only one hand, but with this comes high recoil and low accuracy.</entitydescription.45_smg_micro>
 	<entityname.45_pistol_uw>M24 Colt Broadsword</entityname.45_pistol_uw>
@@ -151,7 +169,9 @@
 	<entitydescription.45_pistol>Common .45 pistol, famous for it's firepower and accuracy. Jams underwater.</entitydescription.45_pistol>
 	<entityname.45_smg>HKE-95 Police</entityname.45_smg>
 	<entitydescription.45_smg>Heavy .45 submachinegun, based on HK-90 assault rifle. Reliable weapon for close-quarter fights inside submarines and outposts, but it is not capable of shooting underwater.</entitydescription.45_smg>
-	<!-- .44.xml -->
+	
+		<!-- .44.xml -->
+
 	<entityname.revolver_44_com>RKX-5 Commando</entityname.revolver_44_com>
 	<entitydescription.revolver_44_com>A modified version of standard RKX-5 revolver. Comes with a suppressor, red dot sight and a laser pointer. Inner parts are replaced with their analogs made from alien materials.</entitydescription.revolver_44_com>
 	<entityname.revolver_44>RKX-5 Revolver</entityname.revolver_44>
@@ -162,7 +182,9 @@
 	<entitydescription.revolver_44_auto>Powerful revolver, chambered in standard .44. Has a relatively faster firing speed, making its the deadliest revolver in close combat, however, this model lacks accuracy.</entitydescription.revolver_44_auto>
 	<entityname.44_rifle_lever>M-144 Lever Action</entityname.44_rifle_lever>
 	<entitydescription.44_rifle_lever>Simple, yet effective lever-action .44 rifle, designed for underwater hunting, but can be used as a rapid-firing combat rifle with great accuracy and relativly cheap ammo.</entitydescription.44_rifle_lever>
-	<!-- .38.xml -->
+	
+		<!-- .38.xml -->
+
 	<entityname.revolver_38_talent>RKX-16 Revolver</entityname.revolver_38_talent>
 	<entitydescription.revolver_38_talent>A simple to construct .38 revolver with a drum for 4 rounds. Poor weight balance and makeshift nature make it feel rather unwieldy, compared to factory-produced alternatives.</entitydescription.revolver_38_talent>
 	<entityname.revolver_38>R-23 Revolver</entityname.revolver_38>
@@ -175,7 +197,9 @@
 	<entitydescription.revolver_38_uw>Fast-firing .38 revolver, capable of underwater shooting. Holds 7 rounds.</entitydescription.revolver_38_uw>
 	<entityname.38_carbine_2>K-12 Gemini</entityname.38_carbine_2>
 	<entitydescription.38_carbine_2>A unique twin-barrel .38 rifle with integrated magazine holding up to 10 rounds. Both barrels fire at the same time forming a precise and dealy burst of two bullets.</entitydescription.38_carbine_2>
-	<!--Ammo-->
+	
+		<!--Ammo-->
+	
 	<entityname.sturmfaustrocket>Sturmfaust rocket</entityname.sturmfaustrocket>
 	<entitydescription.sturmfaustrocket>Standard ammunition for SFZ-12 Rocket Launcher. Explodes on impact, dealing massive damage to hulls and creatures alike.</entitydescription.sturmfaustrocket>
 	<entityname.nucleargun_magazine>ARG Magazine</entityname.nucleargun_magazine>
@@ -184,7 +208,9 @@
 	<entitydescription.co_shotgunslug>A solid 12g projectile. Usefull at medium to long ranges, has incredible piercing power.</entitydescription.co_shotgunslug>
 	<entityname.shotgundart>Shotgun Dart shell</entityname.shotgundart>
 	<entitydescription.shotgundart>A shotgun round, carrying deadly darts, capable of piercing armor and tearing whats below. Effective against any targets, the only drawback is the number of pellets - 6 instead of 16 for normal buck.</entitydescription.shotgundart>
-	<!-- Secret items -->
+	
+		<!-- Secret items -->
+
 	<entityname.easterwrench>Wrench O'Ptimization</entityname.easterwrench>
 	<entitydescription.easterwrench>A wrench that only the most valiant and strong engineers of Europa may wield. May cause lag :)</entitydescription.easterwrench>
 	<entityname.clownsuitunique_ruined>The Honk Father's Ensembles</entityname.clownsuitunique_ruined>
@@ -214,13 +240,17 @@
 	<entitydescription.depthchargelauncher>A home made weapon crafted from what looks like a steam cannon and a depth charge tube, seems like this is a last resort weapon judging by how it was found.</entitydescription.depthchargelauncher>
 	<entityname.co_alienheadset>Alien Helmet</entityname.co_alienheadset>
 	<entitydescription.co_alienheadset>This strange helmet allows you to read the strange alien text found across Europa.</entitydescription.co_alienheadset>
-	<!-- Override item names -->
+	
+		<!-- Override item names -->
+
 	<entityname.shotgun>M600 European</entityname.shotgun>
 	<entitydescription.modded_smgmagazinedepletedfuel>Old-gen 9x19 smg magazine with a depleted fuel heading. Effective against armor, tends to pierce multiple layers of it.</entitydescription.modded_smgmagazinedepletedfuel>
 	<entitydescription.modded_riflebullet>Standard .30 caliber round. Used by standard infantry.</entitydescription.modded_riflebullet>
 	<entitydescription.modded_smgmagazine>Old-gen 9x19 smg magazine. Holds 25 rounds.</entitydescription.modded_smgmagazine>
 	<entityname.modded_smgrounddepletedfuel>9x19 Round with a depleted fuel heading.</entityname.modded_smgrounddepletedfuel>
-	<!-- Common Use -->
+	
+		<!-- Common Use -->
+
 	<entityname.DES>DES-series exosuits</entityname.DES>
 	<entitydescription.suppressor>A simple, yet effective suppression device for firearms. After installation it lowers noticeability of a gunshot for hostile creatures.</entitydescription.suppressor>
 	<entitydescription.extender>Reduce initial spread.</entitydescription.extender>
@@ -266,7 +296,9 @@
 	<entitydescription.blueprint_omni>Unlocks all COR crafts</entitydescription.blueprint_omni>
 	<entityname.blueprint_cps>Blueprint (Chamber Pressure Stabiliser)</entityname.blueprint_cps>
 	<entitydescription.blueprint_cps>A blueprint for military fabricators. Contains attachment recipe.</entitydescription.blueprint_cps>
-	<!-- Turret Ammunition -->
+	
+		<!-- Turret Ammunition -->
+
 	<entityname.flakcannonammoboxstun>Flak stun shells box</entityname.flakcannonammoboxstun>
 	<entitydescription.flakcannonammoboxstun>A box of heavy rounds, each carrying a fulgurium warhead, creating stunning fields upon detonation.</entitydescription.flakcannonammoboxstun>
 	<entityname.flakcannonammoboxchemical>Chemical flak shells box</entityname.flakcannonammoboxchemical>
@@ -282,7 +314,7 @@
 	<entityname.piercinglaserbox>Piercing laser fuel box</entityname.piercinglaserbox>
 	<entitydescription.piercinglaserbox>Improved lence in conjunction with a more reactive mixture form a focused ray, capable of piercing hulls and thick shells while retaining good striking power.</entitydescription.piercinglaserbox>
 	<entityname.chaingunammobox_depletedfuel>Depleted fuel chaingun ammo box</entityname.chaingunammobox_depletedfuel>
-	<entitydescription.chaingunammobox_depletedfuel>A box of 20mm sub-caliber rounds with depleted uranium core. Probably the most effective chaingun ammo in terms of armor piercing.</entitydescription.chaingunammobox_depletedfuel>
+	<entitydescription.chaingunammobox_depletedfuel>A box of 20MM sub-caliber rounds with depleted uranium core. Probably the most effective chaingun ammo in terms of armor piercing.</entitydescription.chaingunammobox_depletedfuel>
 	<entityname.incendiaryammobox>Coilgun incendiary ammo box</entityname.incendiaryammobox>
 	<entitydescription.incendiaryammobox>A box of heavy coilgun rounds, inflicting severe burns upon detonation. Can cause fires if used inside hulls.</entitydescription.incendiaryammobox>
 	<entityname.sulprailgunshell>Chemical railgun shell</entityname.sulprailgunshell>
@@ -294,7 +326,7 @@
 	<entityname.unstablelaserbox>Unstable laser fuel box</entityname.unstablelaserbox>
 	<entitydescription.unstablelaserbox>The component's reaction in this fuel mixture is unpredictable. It will usually create an impulse slightly weaker than a normal laser, but with a chance of around 20% for a powerful energy blast, forming a ray with 20% more damage. R&amp;D also claims there's a rare chance that this reaction can lead to a massive energy discharge, overdriving laser systems and dealing triple damage.</entitydescription.unstablelaserbox>
 	<entityname.chaingunammoboxdementonite>Dementonite chaingun ammo box</entityname.chaingunammoboxdementonite>
-	<entitydescription.chaingunammoboxdementonite>A box of 20mm chaingun rounds with caps of solid neurotoxin, disorienting any enemy on hit. However, they have diminished armour piercing capabilities compared to standard rounds.</entitydescription.chaingunammoboxdementonite>
+	<entitydescription.chaingunammoboxdementonite>A box of 20MM chaingun rounds with caps of solid neurotoxin, disorienting any enemy on hit. However, they have diminished armour piercing capabilities compared to standard rounds.</entitydescription.chaingunammoboxdementonite>
 	<entityname.railgun_cartridge_shell>Cartridge railgun shell</entityname.railgun_cartridge_shell>
 	<entitydescription.railgun_cartridge_shell>This railgun shell uses a cartridge filled with explosives to boost its velocity. Incredible speed and armour piercing but cartridges must be refilled after every shot.</entitydescription.railgun_cartridge_shell>
 	<entityname.apherailgunshell>APHE railgun shell</entityname.apherailgunshell>
@@ -319,10 +351,14 @@
 	<entitydescription.chaingunammoboxexplosive>Box of chaingun ammunition with a plastic explosive warhead. Effective at both tearing fleshy targets apart and blasting through submarine's hull.</entitydescription.chaingunammoboxexplosive>
 	<entityname.chaingunammoboxscatter>Chaingun scattering ammo box</entityname.chaingunammoboxscatter>
 	<entitydescription.chaingunammoboxscatter>Shells splinter after being fired. Effective against swarms of enemies or large unarmoured creatures.</entitydescription.chaingunammoboxscatter>
-	<!-- Death -->
+	
+		<!-- Death -->
+
 	<causeofdeathdescription.dmind>Died from dementonite poisoning.</causeofdeathdescription.dmind>
 	<self_causeofdeathdescription.dmind>You have died from dementonite poisoning.</self_causeofdeathdescription.dmind>
-	<!-- Weapons mods -->
+	
+		<!-- Weapons mods -->
+
 	<entityname.laser_t>Tactical laser pointer</entityname.laser_t>
 	<entitydescription.laser_t>A red laser pointer that can be attached to a firearm instead of the tactical flashlight. While active negates the slowdown while aiming effect.</entitydescription.laser_t>
 	<entityname.co_riflecoil>Booster coil</entityname.co_riflecoil>
@@ -332,7 +368,7 @@
 	<entityname.co_trigger>Double-Action trigger</entityname.co_trigger>
 	<entitydescription.co_trigger>Can be installed on non-automatic revolver to greatly increase firerate.</entitydescription.co_trigger>
 	<entityname.co_boostercoil>GL barrel accelerator</entityname.co_boostercoil>
-	<entitydescription.co_boostercoil>Attachment for 40mm grenade launchers. Improves muzzle velocity and direct damage.</entitydescription.co_boostercoil>
+	<entitydescription.co_boostercoil>Attachment for 40MM grenade launchers. Improves muzzle velocity and direct damage.</entitydescription.co_boostercoil>
 	<entityname.co_choke>Shotgun choke</entityname.co_choke>
 	<entitydescription.co_choke>Attachment for 12g shotguns. Improves buckshot pellets alignment and degreses their spread. Does not work for solid projectiles.</entitydescription.co_choke>
 	<entityname.co_shootunderwater>Chamber pressure stabiliser</entityname.co_shootunderwater>
@@ -340,12 +376,14 @@
 	<entityname.medscanner_t>Tactical health scanner</entityname.medscanner_t>
 	<entitydescription.medscanner_t>A medical scanner that can be attached to a weapon, like a tactical flashlight.</entitydescription.medscanner_t>
 	<entityname.co_riflegrenade>Rifle Grenade Discharger</entityname.co_riflegrenade>
-	<entitydescription.co_riflegrenade>A 40mm launching device, that may be attached to the barrel of 5.45x39, 5.56x45 and 9x39 assault rifles. Has a simple trigger linkage system, shoots before the gun itself starts firing.</entitydescription.co_riflegrenade>
+	<entitydescription.co_riflegrenade>A 40MM launching device, that may be attached to the barrel of 5.45x39, 5.56x45 and 9x39 assault rifles. Has a simple trigger linkage system, shoots before the gun itself starts firing.</entitydescription.co_riflegrenade>
 	<entityname.thermalsight>Thermal Sight</entityname.thermalsight>
 	<entitydescription.thermalsight>Grants thermal goggles effect if the weapon is active. Can be attached to 7.62x55 rifles.</entitydescription.thermalsight>
 	<entityname.flashlight_t>Tactical flashlight</entityname.flashlight_t>
 	<entitydescription.flashlight_t>A flashlight with reinforced body and a rail, allowing it to be attached to weapons.</entitydescription.flashlight_t>
-	<!--Attachable barrel module-->
+	
+		<!-- Attachable barrel module -->
+
 	<entityname.resistattachment>Attachable barrel module(Passive protection)</entityname.resistattachment>
 	<entitydescription.resistattachment>A Module that can be attached to the beginning of weapons barrel. Decreases incoming physical damage by 20% while you are aiming. Can be attached to 7.62x55 firearms.</entitydescription.resistattachment>
 	<entityname.accuraccyattachment>Attachable barrel module(Stabiliser)</entityname.accuraccyattachment>
@@ -360,7 +398,9 @@
 	<entitydescription.shockattachment>A Module that can be attached to the beginning of weapons barrel. Adds much longer stun and EMP effect to your shots, can be attached to 9x19, .45, 7.62 Kurz and 5.7x28 firearms. Special ammunition, like Explosive, Depleted Fuel and Ripper rounds dont get bonuses from this module.</entitydescription.shockattachment>
 	<entityname.radiationattachment>Attachable barrel module(Gamma radiator)</entityname.radiationattachment>
 	<entitydescription.radiationattachment>A Module that can be attached to the beginning of weapons barrel. Bullets under its effect create small slowing and radiating explosions on impact. Can be attached to any weapon, only works with standard, Incendiary, Hollow-point, Smart, Subsonic, Increased powder charge, Armor-piercing and Lightweight ammunition.</entitydescription.radiationattachment>
-	<!--Barrel extension-->
+	
+		<!-- Barrel extension -->
+
 	<entityname.kurz_extender>Barrel extension(7,62 Kurz)</entityname.kurz_extender>
 	<entityname.57_extender>Barrel extension(5.7)</entityname.57_extender>
 	<entityname.38_extender>Barrel extension(.38)</entityname.38_extender>
@@ -370,7 +410,9 @@
 	<entityname.919_extender>Barrel extension(9x19)</entityname.919_extender>
 	<entityname.545_extender>Barrel extension(5.45)</entityname.545_extender>
 	<entityname.556_extender>Barrel extension(5.56)</entityname.556_extender>
-	<!--Compensator-->
+	
+		<!-- Compensator -->
+
 	<entityname.939_compensator>Compensator(9x39)</entityname.939_compensator>
 	<entityname.kurz_compensator>Compensator(7.62 Kurz)</entityname.kurz_compensator>
 	<entityname.57_compensator>Compensator(5.7)</entityname.57_compensator>
@@ -380,7 +422,9 @@
 	<entityname.9x19_compensator>Compensator(9x19)</entityname.9x19_compensator>
 	<entityname.545_compensator>Compensator(5.45)</entityname.545_compensator>
 	<entityname.556_compensator>Compensator(5.56)</entityname.556_compensator>
-	<!--Suppressor-->
+	
+		<!-- Suppressor -->
+
 	<entityname.939_suppressor>Suppressor(9x39)</entityname.939_suppressor>
 	<entityname.12_suppressor>Suppressor(12g)</entityname.12_suppressor>
 	<entityname.57_suppressor>Suppressor(5.7)</entityname.57_suppressor>
@@ -390,21 +434,29 @@
 	<entityname.556_suppressor>Suppressor(5.56)</entityname.556_suppressor>
 	<entityname.9x19_suppressor>Suppressor(9x19)</entityname.9x19_suppressor>
 	<entityname.545_suppressor>Suppressor(5.45)</entityname.545_suppressor>
-	<!--Misc-->
+	
+		<!-- Misc -->
+
 	<entityname.gunpowder>Gunpowder</entityname.gunpowder>
 	<entitydescription.gunpowder>A volatile explosive mixture, commonly used to fabricate ammunition.</entitydescription.gunpowder>
 	<entityname.skillbookscst>Armor Piercing-Incendiary Tome</entityname.skillbookscst>
 	<entitydescription.skillbookscst>And then he cried: Europe, not Europa! And then they proceed to fulfill their mission... Alone...</entitydescription.skillbookscst>
 	<M12>M12: "When are we doing the bucket war again?"\n\n Message failed to send</M12>
 	<govno>Battle Engineer: "What the fuck did you add to your submarine?"\n\n Why is there anime on this sub?</govno>
-	<!-- Mission infomation -->
+	
+		<!--  Mission infomation  -->
+
 	<missionname.escorthonkfather>Escort the Honk-Father</missionname.escorthonkfather>
 	<missiondescription.escorthonkfather>A mysterious clown claiming to be the "Honk-Father" is requesting an esort and is willing to part with one on his outfits and some money.</missiondescription.escorthonkfather>
-	<!--
+	
+		<!-- 
 			<textidentifier="test">
 			<message header="missionheader0.test" text="missionmessage0.test"/>
-		-->
-	<!-- Mission dialog -->
+		 -->
+
+	
+		<!--  Mission dialog  -->
+
 	<eventtext.honkfather1.low>A clown is running his finger along halls while walking around, when they see you, they ask you. "Do you know what the Honkmother is?"</eventtext.honkfather1.low>
 	<eventtext.honkfather1.low.o1>"She is nameless."</eventtext.honkfather1.low.o1>
 	<eventtext.honkfather1.low.o1.c1>"You have seen our Pillars of Fun. I trust you enough to tell you what happened to my "</eventtext.honkfather1.low.o1.c1>
@@ -423,7 +475,9 @@
 	<eventtext.honkfather2.o1>You take a step back in surprise</eventtext.honkfather2.o1>
 	<eventtext.honkfather2.o1.c1>"What the hell?!" You say. "Don't worry brother, he may be a bit strange but he is actually fairly peaceful to be around." The clown says while slightly tilting his head.</eventtext.honkfather2.o1.c1>
 	<eventtext.honkfather2.music>The Honk Father keeps playing music but refuses to speak.</eventtext.honkfather2.music>
-	<!--Outfits-->
+	
+		<!-- Outfits -->
+	
 	<entityname.co_headset_protective>Tactical Headset</entityname.co_headset_protective>
 	<entitydescription.co_headset_protective>A lightly modified version of the standard headset with rails for attachments such as a light.</entitydescription.co_headset_protective>
 	<entityname.militaryclothes_separatist>Renegade combatant outfit</entityname.militaryclothes_separatist>
@@ -472,7 +526,9 @@
 	<entitydescription.bodyarmor_m>A heavier variant of bulletproof vest, designed for military purposes. Has some tactical pockets and a layered chestplate.</entitydescription.bodyarmor_m>
 	<entityname.nvg>Night vision goggles</entityname.nvg>
 	<entitydescription.nvg>Simple, improvised night vision device. Dont expect anything special, but it will somewhat improve your vision in darkness.</entitydescription.nvg>
-	<!--exoskeleton-->
+	
+		<!-- exoskeleton -->
+	
 	<entityname.exoskeleton_unarmored>DES-5 Exoskeleton frame</entityname.exoskeleton_unarmored>
 	<entitydescription.exoskeleton_unarmored>A lightweight battery-powered exoskeleton frame designed for civilian usage. Greatly enhances operators physical strength and flow resistance.</entitydescription.exoskeleton_unarmored>
 	<entityname.exoskeleton>DES-8 Military exoskeleton</entityname.exoskeleton>
@@ -483,7 +539,9 @@
 	<entitydescription.exoskeleton3>A deep modification of standard DES-12 exoskeleton, adapted to operating firearms, while retaining high combat mobility. Though overall protection against physical damage has lowered, this suit provides massive advantages, when it comes to firefights both in water and on land. Has a slot to put any weapon inside.</entitydescription.exoskeleton3>
 	<entityname.exoskeleton4>DES-10 Scout exoskeleton</entityname.exoskeleton4>
 	<entitydescription.exoskeleton4>A lighter version of diving exoskeletons, this one focuses more on exploration and scouting operations, providing wearer with greater mobility. Has an onboard sonar and scanning complex.</entitydescription.exoskeleton4>
-	<!-- Craftables -->
+	
+		<!--  Craftables  -->
+	
 	<talentname.kurz_craft>You can now craft: 7.62 Kurz ammunition!</talentname.kurz_craft>
 	<talentname.57_craft>You can now craft: 5.7x28 ammunition!</talentname.57_craft>
 	<talentname.939_craft>You can now craft: 9x39 ammunition!</talentname.939_craft>
@@ -508,29 +566,34 @@
 	<talentname.melee_craft>You can now craft: Advanced melee weapons!</talentname.melee_craft>
 	<talentname.cps_craft>You can now craft: Chamber pressure stabiliser!</talentname.cps_craft>
 	<talentname.omni_craft>The radio operator was eaten by a worm.</talentname.omni_craft>
-	<!-- Weapons -->
+	
+		<!--  Weapons  -->
+	
 	<entityname.co_fraggrenade>Improved frag grenade</entityname.co_fraggrenade>
 	<entitydescription.co_fraggrenade>Improved version of standard frag grenade with shortened fuze delay. The payload stays the same, but a new polimer stick is added, increasing throw force and giving the grenade neutral buoyancy.</entitydescription.co_fraggrenade>
 	<entityname.co_aps>'Ricochet' Active protection system</entityname.co_aps>
-	<entitydescription.co_aps>A compact APS set, designed to provide full 360 degree protection to its wearer. Has a high-frequency infra-red laser to shoot down incoming threats and a passive radar complex to identify them. Can intercept harpoons, coilgun bolts, spineling spikes, 40mms and throwable grenades with ease, but struggles with bigger and more fast moving targets(like railgun shells, homing rounds, improved frag grenades, chaingun or piercing coilgun bolts). For obvious reasons cant work at point-blank ranges, but doesnt restrict wearer from using deflectable munitions.</entitydescription.co_aps>
-	<entityname.40mmgrenadeguided>40mm Homing grenade</entityname.40mmgrenadeguided>
-	<entitydescription.40mmgrenadeguided>A 40mm grenade with heat seeking head and a little torpedo engine. When shot underwater homes onto the closest non-human enemy.</entitydescription.40mmgrenadeguided>
+	<entitydescription.co_aps>A compact APS set, designed to provide full 360 degree protection to its wearer. Has a high-frequency infra-red laser to shoot down incoming threats and a passive radar complex to identify them. Can intercept harpoons, coilgun bolts, spineling spikes, 40MMs and throwable grenades with ease, but struggles with bigger and more fast moving targets(like railgun shells, homing rounds, improved frag grenades, chaingun or piercing coilgun bolts). For obvious reasons cant work at point-blank ranges, but doesnt restrict wearer from using deflectable munitions.</entitydescription.co_aps>
+	<entityname.40mmgrenadeguided>40MM Homing grenade</entityname.40mmgrenadeguided>
+	<entitydescription.40mmgrenadeguided>A 40MM grenade with heat seeking head and a little torpedo engine. When shot underwater homes onto the closest non-human enemy.</entitydescription.40mmgrenadeguided>
 	<entityname.co_remotedet>Remote Detonator</entityname.co_remotedet>
 	<entitydescription.co_remotedet>A remote detonator for Combat Explosive Charges. Has a range of 8000 units. Detonates all armed charges at once.</entitydescription.co_remotedet>
 	<entityname.co_c4charge>C-4 Combat Explosive Charge</entityname.co_c4charge>
 	<entitydescription.co_c4charge>A multi-purpose military explosive charge, designed for sabotage operations. Can be attached to a wall, or just put anywhere you want. If attached, can be wired as a standard detonator and will go off upon recieving any signal. If safety or timed mode are off(by default) can be triggered remotely by Remote Detonator. Press Reset button to turn off both safety and timed mode. Cannot be triggered while contained in inventory or any other kind of container. If Safety is active, remote detonator wont have any effect on the charge, but signal recieved from direct wire connection will still trigger it.</entitydescription.co_c4charge>
+	<entityname.co_ic4charge>IC-4 Combat Explosive Charge</entityname.co_ic4charge>
 	<entityname.aimaasist>AAS Tactical Visor</entityname.aimaasist>
 	<entitydescription.aimaasist>A complex tactical visor system, developed to assist operator in firefights by calculating bullet trajectory and highlighting important targets. Greatly increases wearers combat performance.</entitydescription.aimaasist>
 	<entityname.guidedgrenade>RRG-85 Guided Grenade</entityname.guidedgrenade>
 	<entitydescription.guidedgrenade>Rather a torpedo than a grenade, seeking enemies by their heat trail in water. Takes half a second to arm, then travels to closer non-human target, exploding on proximity. Can be used inside hulls as an impact grenade.</entitydescription.guidedgrenade>
-	<entityname.proximitymine_50_monster>50mm Proximity mine(Monster)</entityname.proximitymine_50_monster>
+	<entityname.proximitymine_50_monster>50MM Proximity mine(Monster)</entityname.proximitymine_50_monster>
 	<entitydescription.proximitymine_50_monster>Upon being fired sticks to any surface or even creature, arming after a small delay and working as a proximity mine, detonating itself if anything passes closely. Disarms itself after a minute of being attached. Triggers on any non-human hostile creatures.</entitydescription.proximitymine_50_monster>
-	<entityname.proximitymine_50>50mm Proximity mine(Omni-purpose)</entityname.proximitymine_50>
+	<entityname.proximitymine_50>50MM Proximity mine(Omni-purpose)</entityname.proximitymine_50>
 	<entitydescription.proximitymine_50>Upon being fired sticks to any surface or even creature, arming after a small delay and working as a proximity mine, detonating itself if anything passes closely. Disarms itself after a minute of being attached. Triggers on any bypassing creature.</entitydescription.proximitymine_50>
 	<entityname.infiniterifle>CKL-X Fracture Carbine</entityname.infiniterifle>
 	<entitydescription.infiniterifle>A plasma carbine that seems to be powered by a misterious energy crystal. A sign on its stock claims that it has been produce on Hellgrat Arms factory, tho you doubt that such places even exists on Europa.</entitydescription.infiniterifle>
-	<entityname.40mmgrenadeincendiary_co>40mm Incendium grenade</entityname.40mmgrenadeincendiary_co>
-	<entitydescription.40mmgrenadeincendiary_co>A powerful 40mm grenade, filled with volatile explosive compound. Creates a massive blast as well as inflames everything around upon detonation.</entitydescription.40mmgrenadeincendiary_co>
+	<entityname.40mmgrenadeincendiary_co>40MM Incendium grenade</entityname.40mmgrenadeincendiary_co>
+	<entitydescription.40mmgrenadeincendiary_co>A powerful 40MM grenade, filled with volatile explosive compound. Creates a massive blast as well as inflames everything around upon detonation.</entitydescription.40mmgrenadeincendiary_co>
+	<entityname.40mmgrenadefixafoam_co>40mm fixafoam grenade</entityname.40mmgrenadefixafoam_co>
+	<entitydescription.40mmgrenadefixafoam_co>A non-lethal 40MM grenade, filled with "Fix-a Foam" compound. Creates a blast that repairs any hull damage nearby it.</entitydescription.40mmgrenadefixafoam_co>
 	<entityname.co_ammobox_disp>Disposable ammunition container</entityname.co_ammobox_disp>
 	<entitydescription.co_ammobox_disp>A special container for delivering ammunition. Constructed from fragile polimers and can be easely broken down.</entitydescription.co_ammobox_disp>
 	<entityname.powersword>E832 Power Sword</entityname.powersword>
@@ -558,7 +621,7 @@
 	<entityname.nucleargun_alt>ARG-21</entityname.nucleargun_alt>
 	<entitydescription.nucleargun_alt>Prototype weapon that utilises the power of magnetic fields to accelerate steel and fulgurium 8x45mm needles. Uses it's own magazines, performs perfectly in water and in air.</entitydescription.nucleargun_alt>
 	<entityname.proximityminelauncher>Proximity mine launcher</entityname.proximityminelauncher>
-	<entitydescription.proximityminelauncher>A 50mm launching device for sticky proximity mines. Ha s a button to remotely detonate all armed mines in a wide radius. Useful for ambushes and defensive operations.</entitydescription.proximityminelauncher>
+	<entitydescription.proximityminelauncher>A 50MM launching device for sticky proximity mines. Ha s a button to remotely detonate all armed mines in a wide radius. Useful for ambushes and defensive operations.</entitydescription.proximityminelauncher>
 	<entityname.pyrogenrifle>X-129 Pyrogen Rifle</entityname.pyrogenrifle>
 	<entitydescription.pyrogenrifle>Technically, not even a rifle, but a magnetic rail that propells hot plasma forwards. Uses highly-volatile Pyrogen tanks, ionizing gas inside and launching it at high speed. Weapon tends to rapidly overheat while fired constantly, which may result in severe burns or even explosion of the weapon itself.</entitydescription.pyrogenrifle>
 	<entityname.pyrogentank>Pyrogen tank</entityname.pyrogentank>
@@ -570,9 +633,9 @@
 	<entityname.co_magazinepouch_large>Extended magazine pouch</entityname.co_magazinepouch_large>
 	<entitydescription.co_magazinepouch_large>Allows you to more conveniantly access magazines.</entitydescription.co_magazinepouch_large>
 	<entityname.sturmfaust>SfZ-12 Sturmfaust</entityname.sturmfaust>
-	<entitydescription.sturmfaust>Disposable launching device for 90mm HE rockets. Effective against doors, heavy armor, barricades and submarine hulls. Beware of the backblast.</entitydescription.sturmfaust>
+	<entitydescription.sturmfaust>Disposable launching device for 90MM HE rockets. Effective against doors, heavy armor, barricades and submarine hulls. Beware of the backblast.</entitydescription.sturmfaust>
 	<entityname.co_bulletpouch>Ammunition pouch</entityname.co_bulletpouch>
-	<entitydescription.co_bulletpouch>Allows you to more conveniantly store and access rounds, shells, bolts and 40mm grenades.</entitydescription.co_bulletpouch>
+	<entitydescription.co_bulletpouch>Allows you to more conveniantly store and access rounds, shells, bolts and 40MM grenades.</entitydescription.co_bulletpouch>
 	<entityname.co_magazinepouch>Magazine pouch</entityname.co_magazinepouch>
 	<entitydescription.co_magazinepouch>Allows you to more conveniantly store and access magazines.</entitydescription.co_magazinepouch>
 	<entityname.co_militaryfabricator>Military Fabricator</entityname.co_militaryfabricator>
@@ -598,12 +661,14 @@
 	<entityname.balaklava>Balaklava</entityname.balaklava>
 	<entitydescription.balaklava>A facemask, made of durable organic fiber. Mostly associated with illegals, but may come in handy if you prefer staying incognito or just got cold.</entitydescription.balaklava>
 	<entityname.grenadelauncher_m99>M99 Anti-Infantry grenade launcher</entityname.grenadelauncher_m99>
-	<entitydescription.grenadelauncher_m99>Destructive weapon, capable of shooting six 40mm grenades without reloading. Used with non-lethal ammunition as a police weapon against rioters, but can dish out devastating amounts of descruction and raw firepower, if loaded with military-purposed grenades.</entitydescription.grenadelauncher_m99>
+	<entitydescription.grenadelauncher_m99>Destructive weapon, capable of shooting six 40MM grenades without reloading. Used with non-lethal ammunition as a police weapon against rioters, but can dish out devastating amounts of descruction and raw firepower, if loaded with military-purposed grenades.</entitydescription.grenadelauncher_m99>
 	<entityname.grenadelauncher-gp>RGM-64 Amur</entityname.grenadelauncher-gp>
-	<entitydescription.grenadelauncher-gp>Compact pump-action grenade launcher, capable of holding 3 40mm grenades. Was a basic piece of Rosguard equipment, found its purpose on Europa as a riot-control weapon with underwater shooting ability.</entitydescription.grenadelauncher-gp>
+	<entitydescription.grenadelauncher-gp>Compact pump-action grenade launcher, capable of holding 3 40MM grenades. Was a basic piece of Rosguard equipment, found its purpose on Europa as a riot-control weapon with underwater shooting ability.</entitydescription.grenadelauncher-gp>
 	<entityname.grenadelauncher_m500>M500 grenade launcher</entityname.grenadelauncher_m500>
-	<entitydescription.grenadelauncher_m500>40mm Grenade launcher, used by Earth's military. Found it's purpose on Europa as a heavy weapon of choice against large monsters or heavily-armored humans.</entitydescription.grenadelauncher_m500>
-	<!--Afflictions -->
+	<entitydescription.grenadelauncher_m500>40MM Grenade launcher, used by Earth's military. Found it's purpose on Europa as a heavy weapon of choice against large monsters or heavily-armored humans.</entitydescription.grenadelauncher_m500>
+	
+		<!-- Afflictions  -->
+	
 	<afflictionname.mothersblessing>The Honkmother has blessed you</afflictionname.mothersblessing>
 	<afflictiondescription.mothersblessing>The Honkmother has noticed your love and has given you a warm embrace strong enough to withstand the pressures of Europa.</afflictiondescription.mothersblessing>
 	<afflictionname.dmind>Dementonite poisoning</afflictionname.dmind>
@@ -637,9 +702,10 @@
 	<afflictionname.co_accuraccybuff>Hawkeye</afflictionname.co_accuraccybuff>
 	<afflictiondescription.co_accuraccybuff>Ranged combat abilities greatly increased.</afflictiondescription.co_accuraccybuff>
 	<afflictionname.co_adrenalinerush>Adrenaline rush</afflictionname.co_adrenalinerush>
-	<afflictiondescription.co_adrenalinerush>Slight increase in combat perks</afflictiondescription.co_adrenalinerush>
+	<afflictiondescription.co_adrenalinerush>Slight increase in combat perks.</afflictiondescription.co_adrenalinerush>
 	
-		<!-- Basics tutorial -->
+		<!--  Gun Range tutorial  -->
+		
 	<tutorial.gunrange>The Gun Range</tutorial.gunrange>
 	<tutorial.gunrange.description>This tutorial teaches you how to protect yourself against any who you see as a threat.</tutorial.gunrange.description>
 
