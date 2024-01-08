@@ -3479,7 +3479,7 @@
 		<SkillRequirementHint identifier="weapons" level="60" />
 	</Item>
 
-	<Item name="Rivet Gun" identifier="rivetgun" category="Weapon" subcategory="Secret" aliases="shotgunslugfixfoam,co_airgun" interactthroughwalls="true" cargocontaineridentifier="metalcrate" hideinmenus="true" tags="smallitem,weapon,gunsmith,mountableweapon" Scale="0.25" impactSoundtag="impact_metal_light">
+	<Item name="Rivet Gun" identifier="rivetgun" category="Weapon" subcategory="Secret" aliases="co_airgun" interactthroughwalls="true" cargocontaineridentifier="metalcrate" hideinmenus="true" tags="smallitem,weapon,gunsmith,mountableweapon" Scale="0.25" impactSoundtag="impact_metal_light">
 		<Sprite texture="%ModDir%/Img/CO_spritelist_animation.png" sourcerect="863,0,161,130" depth="0.55" origin="0.5,0.5" />
 		<Body width="38" height="15" density="30" />
 		<Holdable slots="RightHand,LeftHand,Any" controlpose="true" aimpos="70,5" handle1="-85,-20">
@@ -3560,7 +3560,8 @@
 		<Wearable limbtype="Head" slots="Any,Headset" msg="ItemMsgPickUpSelect" displaycontainedstatus="true">
 			<sprite name="Headset Wearable" texture="Content/Items/Jobgear/AlienGear.png" sourcerect="131,20,97,99" limb="Head" depth="0.1" hidelimb="true" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.7" hideotherwearables="true" origin="0.5,0.6" />
 			<StatusEffect type="OnWearing" target="Character" HideFace="true" ObstructVision="true" setvalue="true" disabledeltatime="true" />
-			<StatusEffect type="OnWearing" target="Character" OxygenAvailable="1000.0" LowPassMultiplier="1.5" setvalue="true" disabledeltatime="true" >
+			<StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="1000.0" Condition="-0.01" LowPassMultiplier="1.5" comparison="Or">
+				<Conditional IsDead="false" />
 				<RequiredItem items="alienpowercell" type="Contained" />
 			</StatusEffect>
 		</Wearable>
@@ -3678,7 +3679,6 @@
 			
 			
 			<StatusEffect type="OnBroken" target="this">
-				<Conditional DisplayName="Battle Engineer" targetcontainer="true" />
 				<Conditional DisplayName="Honk Father" targetcontainer="true" />
 				<Conditional DisplayName="Stimpy The Clown" targetcontainer="true" />
 				<SpawnItem identifiers="clowncrate_ruined" spawnposition="SameInventory" count="1" equip="true"/>
