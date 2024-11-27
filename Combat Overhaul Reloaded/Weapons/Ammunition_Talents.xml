@@ -22,7 +22,7 @@
 		<AddedRecipe itemidentifier="556_ar_burst" />
 		<AddedRecipe itemidentifier="5.45mm_round" />
 		<AddedRecipe itemidentifier="5.45mm_round_sb" />
-		<AddedRecipe itemidentifier="9mm_round" />
+		<AddedRecipe itemidentifier="smground" />
 		<AddedRecipe itemidentifier="7.62mm_round" />
 		<AddedRecipe itemidentifier="7.62mm_round_light" />
 		<AddedRecipe itemidentifier="5.56mm_round" />
@@ -33,8 +33,7 @@
 		<AddedRecipe itemidentifier="762_rifle_s" />
 		<AddedRecipe itemidentifier="545_ar_burst" />
 		<AddedRecipe itemidentifier="lasergun_co" />
-		<AddedRecipe itemidentifier="machinegun_alt" />
-		<AddedRecipe itemidentifier="exoskeleton" />
+		<AddedRecipe itemidentifier="HMG" />
 		<AddedRecipe itemidentifier="762_rifle_s" />
 		<AddedRecipe itemidentifier="45_pistol_uw2" />
 		<AddedRecipe itemidentifier="powersword" />
@@ -122,6 +121,12 @@
 		<AddedRecipe itemidentifier="5.45mm_magazine_extended" />
 		<AddedRecipe itemidentifier="5.56_magazine_extended" />
 		<AddedRecipe itemidentifier="45_round_rifle" />
+	</Talent>
+	<Talent identifier="scst_craft">
+		<Icon texture="Content/UI/TalentsIcons2.png" sheetindex="6,1" sheetelementsize="128,128" />
+		<Description tag="talentdescription.scst_craft"/>
+		<AddedRecipe itemidentifier="pyrogenrifle" />
+		<AddedRecipe itemidentifier="pyrogentank" />
 	</Talent>
 	<Talent identifier="melee_craft">
 		<Icon texture="Content/UI/TalentsIcons2.png" sheetindex="6,1" sheetelementsize="128,128" />
@@ -213,7 +218,7 @@
 		<Description tag="talentdescription.unlockrecipe">
 			<Replace tag="[itemname]" value="entityname.9mm_round" color="gui.orange" />
 		</Description>
-		<AddedRecipe itemidentifier="9mm_round" />
+		<AddedRecipe itemidentifier="smground" />
 	</Talent>
 	<Talent identifier="556_craft">
 		<Icon texture="Content/UI/TalentsIcons2.png" sheetindex="6,1" sheetelementsize="128,128" />
@@ -276,9 +281,9 @@
 	<Talent identifier="mg_craft">
 		<Icon texture="Content/UI/TalentsIcons2.png" sheetindex="6,1" sheetelementsize="128,128" />
 		<Description tag="talentdescription.unlockrecipe">
-			<Replace tag="[itemname]" value="entityname.machinegun_alt" color="gui.orange" />
+			<Replace tag="[itemname]" value="entityname.HMG" color="gui.orange" />
 		</Description>
-		<AddedRecipe itemidentifier="machinegun_alt" />
+		<AddedRecipe itemidentifier="HMG" />
 	</Talent>
 	<Talent identifier="laser_craft">
 		<Icon texture="Content/UI/TalentsIcons2.png" sheetindex="6,1" sheetelementsize="128,128" />

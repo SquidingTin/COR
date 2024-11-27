@@ -15,11 +15,11 @@
 			</StatusEffect>
 		</Holdable>
 	</Item>
-	<Item name="" description="" identifier="blueprint_omni" category="weapon" inventoryiconcolor="255,30,30,255" spritecolor="255,30,30" subcategory="Blueprints" cargocontaineridentifier="metalcrate" Tags="smallitem,skillbook" maxstacksize="8" Scale="0.45" impactsoundtag="impact_soft">
+	<Item name="" description="" identifier="blueprint_omni" category="weapon" subcategory="Blueprints" cargocontaineridentifier="metalcrate" Tags="smallitem,skillbook" maxstacksize="8" Scale="0.45" impactsoundtag="impact_soft">
 		<Deconstruct time="20">
 			<Item identifier="carbon" />
 		</Deconstruct>
-		<InventoryIcon texture="%ModDir%/Img/CO_spritelist.png" sourcerect="851,764,68,71" origin="0.5,0.5" />
+		<InventoryIcon texture="%ModDir%/Img/CO_spritelist.png" sourcerect="975,639,34,95" origin="0.5,0.5" />
 		<Sprite texture="%ModDir%/Img/CO_spritelist.png" sourcerect="975,639,34,95" depth="0.6" origin="0.5,0.5" />
 		<Body width="28" height="36" density="20" />
 		<Holdable slots="Any,RightHand+LeftHand" aimable="false" aimpos="40,-20" handle1="-4,0" holdangle="80" msg="ItemMsgPickUpSelect">
@@ -43,56 +43,23 @@
 		<Body width="28" height="36" density="20" />
 		<Holdable slots="Any,RightHand+LeftHand" aimable="false" aimpos="40,-20" handle1="5,0" holdangle="260" msg="ItemMsgPickUpSelect">
 			<StatusEffect type="OnSecondaryUse" target="This" Condition="-5.0" />
-			<StatusEffect type="OnBroken" target="This,Character" disabledeltatime="true">
-				<GiveTalentInfo talentidentifiers="scst_craft" />
-				<Affliction identifier="acidburn" strength="5" />
-				<Affliction identifier="Stun" strength="4" />
-				<Affliction identifier="Psychosis" strength="200" />
-				<Explosion range="300" ballastfloradamage="100" itemdamage="2" force="0.1" smoke="true" />
+			<StatusEffect type="OnBroken" target="This" disabledeltatime="true" delay="0.1">
+				<Explosion range="300" ballastfloradamage="100" itemdamage="2" force="0.1" smoke="true" >
+					<Affliction identifier="acidburn" strength="5" />
+					<Affliction identifier="Stun" strength="4" />
+					<Affliction identifier="Psychosis" strength="200" />	
+				</Explosion>
 				<Fire size="1.0" />
+				<Remove />
 			</StatusEffect>
-			<StatusEffect type="OnBroken" target="This" stackable="false" delay="120" Condition="100" disabledeltatime="true"/>
-			<!-- Easter egg items for special nicknames -->
-			<StatusEffect type="OnBroken" target="this" interval="3" conditional="OR">
-				<Conditional DisplayName="M12" />
-				<Conditional DisplayName="Battle Engineer" />
-				<Conditional DisplayName="Kapral Efimenko" />
-				<Conditional DisplayName="Капрал Ефименко" />
-				<Conditional DisplayName="Corporal Efimenko" />
-				<Conditional DisplayName="Jetstream Sam" />
-				<Conditional DisplayName="JetstreamSam" />
-				<Conditional DisplayName="Sam Jetstream" />
-				<Conditional DisplayName="Christian Calsow" />
-				<Conditional DisplayName="Chris Calsow" />
-				<Conditional DisplayName="Кристиан Кальсов" />
-				<Conditional DisplayName="Knarrenbluntz" />
-				<Conditional DisplayName="Бэб" />
-				<Conditional DisplayName="Быб" />
-				<Conditional DisplayName="Джон Максвелл" />
-				<Conditional DisplayName="Микола Бахмут" />
-				<Conditional DisplayName="Мыкола Бахмут" />
-				<Conditional DisplayName="Рыр" />
-				<Conditional DisplayName="Дмитрий Шевченко" />
-				<Conditional DisplayName="Panman" />
-				<Conditional DisplayName="Laserman" />
-				<SpawnItem identifiers="rivetgun" spawnposition="SameInventory" count="2" />
-			</StatusEffect>
-			<StatusEffect type="OnBroken" target="this" interval="3" conditional="OR">
-				<Conditional DisplayName="M12" />
-				<Conditional DisplayName="Battle Engineer" />
-				<Conditional DisplayName="Honk Father" />
-				<SpawnItem identifiers="depthchargelauncher" spawnposition="SameInventory" count="1" />
-			</StatusEffect>
-			<StatusEffect type="OnBroken" target="this" interval="3" conditional="OR">
-				<Conditional DisplayName="Battle Engineer" />
-				<Conditional DisplayName="Honk Father" />
-				<Conditional DisplayName="Stimpy The Clown" />
-				<SpawnItem identifiers="clowndivingmaskunique" spawnposition="SameInventory" count="1" equip="true"/>
-				<SpawnItem identifiers="clownsuitunique_ruined" spawnposition="SameInventory" count="1" equip="true"/>
+			<StatusEffect type="OnSecondaryUse" target="This,Character" disabledeltatime="true">
+				<Conditional Condition="lte 0" />
+				<GiveTalentInfo talentidentifiers="scst_craft" />
 			</StatusEffect>
 		</Holdable>
 	</Item>
-	<Item Name="" description="" identifier="tomebook" category="Misc" hideinmenus="true" cargocontaineridentifier="metalcrate" Tags="smallitem,skillbook" maxstacksize="1" Scale="0.45" impactsoundtag="impact_soft">
+	<Item Name="" description="" identifier="tomebook" category="Misc" hideinmenus="true" cargocontaineridentifier="metalcrate" Tags="smallitem,skillbook" maxstacksize="1" Scale="0.5" impactsoundtag="impact_soft">
+		<PreferredContainer primary="wreckengcab,wreckmedcab" minamount="0" maxamount="1" spawnprobability="0.01" />
 		<Deconstruct time="20">
 			<Item identifier="incendium" />
 		</Deconstruct>
@@ -106,15 +73,18 @@
 		<Body width="28" height="36" density="20" />
 		<Holdable slots="Any,RightHand+LeftHand" aimable="false" aimpos="40,-20" handle1="5,0" holdangle="260" msg="ItemMsgPickUpSelect">
 			<StatusEffect type="OnSecondaryUse" target="This" Condition="-5.0" />
-			<StatusEffect type="OnBroken" target="This,Character" disabledeltatime="true">
-				<GiveTalentInfo talentidentifiers="scst_craft" />
-				<Affliction identifier="acidburn" strength="5" />
-				<Affliction identifier="Stun" strength="4" />
-				<Affliction identifier="Psychosis" strength="200" />
-				<Explosion range="300" ballastfloradamage="100" itemdamage="2" force="0.1" smoke="true" />
+			<StatusEffect type="OnBroken" target="This" disabledeltatime="true" delay="0.1">
+				<Explosion range="300" ballastfloradamage="100" itemdamage="2" force="0.1" smoke="true" >
+					<Affliction identifier="acidburn" strength="5" />
+					<Affliction identifier="Stun" strength="4" />
+					<Affliction identifier="Psychosis" strength="200" />	
+				</Explosion>
 				<Fire size="1.0" />
 				<Remove />
-				<SpawnItem identifiers="depthchargelauncher" spawnposition="SameInventory" count="1" />
+			</StatusEffect>
+			<StatusEffect type="OnSecondaryUse" target="This,Character" disabledeltatime="true">
+				<Conditional Condition="lte 0" />
+				<GiveTalentInfo talentidentifiers="scst_craft" />
 			</StatusEffect>
 		</Holdable>
 	</Item>

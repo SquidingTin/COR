@@ -14,17 +14,28 @@
 			<Item identifier="copper" />
 			<Item identifier="steel" />
 		</Deconstruct>
-		<Fabricate suitablefabricators="fabricator,milfabricator" requiredtime="20">
+		<Fabricate suitablefabricators="fabricator" requiredtime="20">
 			<RequiredSkill identifier="weapons" level="40" />
 			<RequiredItem identifier="fpgacircuit" />
-			<RequiredItem identifier="batterycell" />
+			<RequiredItem tag="mobilebattery" description="fabricationdescription.battery" header="fabricationheader.battery" defaultitem="batterycell" />
 			<RequiredItem identifier="copper" />
-			<RequiredItem identifier="steel" />
+			<RequiredItem tag="munition_core" amount="2" description="fabricationdescription.munition_core" />
 		</Fabricate>
 		<InventoryIcon texture="%ModDir%/Img/Ammo_Extended_Sprites.png" sourcerect="8,76,64,64" origin="0.5,0.5" />
 		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" sourcerect="141,164,217,33" depth="0.55" origin="0.5,0.5" />
 		<Body width="215" height="30" density="30" />
-		<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
+		<Holdable canbecombined="false" slots="LeftHand,RightHand" holdpos="0,-15" handle1="-30,-5" holdangle="170" aimable="false" msg="ItemMsgPickUpSelect">
+			<!-- slow down the character when holding the item -->
+			<StatValue stattype="MovementSpeed" value="-0.2" />
+			<!-- adjust hold position when swimming -->
+			<StatusEffect type="OnActive" target="This" holdpos="-10,-15" handle1="0,-5" holdangle="70" setvalue="true" interval="1.1">
+				<Conditional InWater="true" />
+			</StatusEffect>
+			<!-- revert hold position adjustment when walking -->
+			<StatusEffect type="OnActive" target="This" holdpos="0,-15" handle1="-30,-5" holdangle="170" setvalue="true" interval="1.1">
+				<Conditional InWater="false" />
+			</StatusEffect>
+		</Holdable>
 		<Projectile characterusable="false" launchimpulse="0" damagedoors="true" maxtargetstohit="1">
 			<Attack structuredamage="5" itemdamage="5" severlimbsprobability="1.5">
 				<Affliction identifier="lacerations" strength="120" />
@@ -41,6 +52,7 @@
 				<ParticleEmitter particle="ElectricShock" copyentityangle="true" anglemin="0" anglemax="360" particleamount="10" velocitymin="100" velocitymax="2000" scalemin="1.0" scalemax="1.0" />
 				<Use />
 			</StatusEffect>
+			<StatusEffect type="OnImpact" target="nearbyItems" range="800" targettags="loadable" condition="-100" />
 			<StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true">
 				<sound file="Content/Items/Weapons/Emp.ogg" range="2000" />
 				<Explosion range="800.0" empstrength="40" structuredamage="20" itemdamage="10" force="20.0" severlimbsprobability="0.1" applyfireeffects="false">
@@ -70,13 +82,24 @@
 			<Price storeidentifier="merchantmine" multiplier="1.25" sold="false" />
 		</Price>
 		<Deconstruct time="20">
-			<Item identifier="steel" />
+			<Item identifier="sodium" />
 			<Item identifier="titanium" />
 		</Deconstruct>
 		<InventoryIcon texture="%ModDir%/Img/Ammo_Extended_Sprites.png" sourcerect="74,74,64,64" origin="0.5,0.5" />
 		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" sourcerect="142,198,215,33" depth="0.55" origin="0.5,0.5" />
 		<Body width="215" height="30" density="30" />
-		<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
+		<Holdable canbecombined="false" slots="LeftHand,RightHand" holdpos="0,-15" handle1="-30,-5" holdangle="170" aimable="false" msg="ItemMsgPickUpSelect">
+			<!-- slow down the character when holding the item -->
+			<StatValue stattype="MovementSpeed" value="-0.2" />
+			<!-- adjust hold position when swimming -->
+			<StatusEffect type="OnActive" target="This" holdpos="-10,-15" handle1="0,-5" holdangle="70" setvalue="true" interval="1.1">
+				<Conditional InWater="true" />
+			</StatusEffect>
+			<!-- revert hold position adjustment when walking -->
+			<StatusEffect type="OnActive" target="This" holdpos="0,-15" handle1="-30,-5" holdangle="170" setvalue="true" interval="1.1">
+				<Conditional InWater="false" />
+			</StatusEffect>
+		</Holdable>
 		<Projectile characterusable="false" launchimpulse="0" damagedoors="true" maxtargetstohit="3">
 			<Attack structuredamage="20" itemdamage="10" severlimbsprobability="1.5" penetration="0.15">
 				<Affliction identifier="lacerations" strength="200" />
@@ -119,23 +142,34 @@
 			<Item identifier="copper" />
 			<Item identifier="steel" mincondition="0.95" />
 		</Deconstruct>
-		<Fabricate suitablefabricators="milfabricator" requiredtime="20">
+		<Fabricate suitablefabricators="fabricator" requiredtime="20">
 			<RequiredSkill identifier="weapons" level="35" />
-			<RequiredItem identifier="copper" />
-			<RequiredItem identifier="steel" />
-			<RequiredItem identifier="magnesium" />
+			<RequiredItem tag="advmunition_tip" description="fabricationdescription.advmunition_tip" />
+			<RequiredItem tag="munition_core" amount="2" description="fabricationdescription.munition_core" />
+			<RequiredItem tag="munition_propulsion" amount="1" description="fabricationdescription.munition_propulsion" />
 		</Fabricate>
-		<Fabricate suitablefabricators="milfabricator" displayname="recycleitem" requiredtime="15">
+		<Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15">
 			<RequiredSkill identifier="weapons" level="25" />
-			<RequiredItem identifier="steel" />
-			<RequiredItem identifier="magnesium" />
+			<RequiredItem tag="munition_core" amount="2" description="fabricationdescription.munition_core" />
+			<RequiredItem tag="munition_propulsion" amount="1" description="fabricationdescription.munition_propulsion" />
 			<RequiredItem identifier="railgun_cartridge_shell" mincondition="0.0" maxcondition="0.1" usecondition="false" />
 		</Fabricate>
 		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" sourcerect="142,267,216,34" depth="0.55" origin="0.5,0.5" />
 		<BrokenSprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" sourcerect="142,300,216,34" depth="0.55" origin="0.5,0.5" maxcondition="0" />
 		<InventoryIcon texture="%ModDir%/Img/Ammo_Extended_Sprites.png" sourcerect="376,226,64,64" origin="0.5,0.5" />
 		<Body width="215" height="30" density="35" />
-		<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
+		<Holdable canbecombined="false" slots="LeftHand,RightHand" holdpos="0,-15" handle1="-30,-5" holdangle="170" aimable="false" msg="ItemMsgPickUpSelect">
+			<!-- slow down the character when holding the item -->
+			<StatValue stattype="MovementSpeed" value="-0.2" />
+			<!-- adjust hold position when swimming -->
+			<StatusEffect type="OnActive" target="This" holdpos="-10,-15" handle1="0,-5" holdangle="70" setvalue="true" interval="1.1">
+				<Conditional InWater="true" />
+			</StatusEffect>
+			<!-- revert hold position adjustment when walking -->
+			<StatusEffect type="OnActive" target="This" holdpos="0,-15" handle1="-30,-5" holdangle="170" setvalue="true" interval="1.1">
+				<Conditional InWater="false" />
+			</StatusEffect>
+		</Holdable>
 		<ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet" spawnwithid="railgun_cartridge_pellet">
 			<StatusEffect type="OnUse" target="This" condition="-100" disabledeltatime="true">
 				<RequiredItem items="railgun_cartridge_pellet" type="Contained" />
@@ -156,17 +190,27 @@
 			<Item identifier="steel" />
 			<Item identifier="carbon" />
 		</Deconstruct>
-		<Fabricate suitablefabricators="fabricator,milfabricator" requiredtime="22">
+		<Fabricate suitablefabricators="fabricator" requiredtime="22">
 			<RequiredSkill identifier="weapons" level="30" />
-			<RequiredItem identifier="steel" />
+			<RequiredItem tag="munition_core" amount="2" description="fabricationdescription.munition_core" />
 			<RequiredItem identifier="chitin" />
 		</Fabricate>
-		<!--<InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="320,128,64,64" />-->
 		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" sourcerect="143,233,215,33" depth="0.55" origin="0.5,0.5" />
 		<BrokenSprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" sourcerect="142,300,216,34" depth="0.55" origin="0.5,0.5" maxcondition="0" />
 		<InventoryIcon texture="%ModDir%/Img/Ammo_Extended_Sprites.png" sourcerect="81,0,64,64" origin="0.5,0.5" />
 		<Body width="215" height="30" density="35" />
-		<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
+		<Holdable canbecombined="false" slots="LeftHand,RightHand" holdpos="0,-15" handle1="-30,-5" holdangle="170" aimable="false" msg="ItemMsgPickUpSelect">
+			<!-- slow down the character when holding the item -->
+			<StatValue stattype="MovementSpeed" value="-0.2" />
+			<!-- adjust hold position when swimming -->
+			<StatusEffect type="OnActive" target="This" holdpos="-10,-15" handle1="0,-5" holdangle="70" setvalue="true" interval="1.1">
+				<Conditional InWater="true" />
+			</StatusEffect>
+			<!-- revert hold position adjustment when walking -->
+			<StatusEffect type="OnActive" target="This" holdpos="0,-15" handle1="-30,-5" holdangle="170" setvalue="true" interval="1.1">
+				<Conditional InWater="false" />
+			</StatusEffect>
+		</Holdable>
 		<ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet" spawnwithid="railgunshell-pellet_сhitin">
 			<StatusEffect type="OnUse" target="Contained" disabledeltatime="true">
 				<Use />
@@ -189,16 +233,27 @@
 		<Deconstruct time="20">
 			<Item identifier="steel" />
 		</Deconstruct>
-		<Fabricate suitablefabricators="fabricator,milfabricator" requiredtime="20">
+		<Fabricate suitablefabricators="fabricator" requiredtime="20">
 			<RequiredSkill identifier="weapons" level="60" />
 			<RequiredItem identifier="sulphuricacid" amount="2" />
 			<RequiredItem identifier="phosphorus" />
-			<RequiredItem identifier="steel" />
+			<RequiredItem tag="munition_core" amount="2" description="fabricationdescription.munition_core" />
 		</Fabricate>
 		<InventoryIcon texture="%ModDir%/Img/Ammo_Extended_Sprites.png" sourcerect="376,303,64,64" origin="0.5,0.5" />
 		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" sourcerect="142,336,217,33" depth="0.55" origin="0.5,0.5" />
 		<Body width="215" height="30" density="30" />
-		<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
+		<Holdable canbecombined="false" slots="LeftHand,RightHand" holdpos="0,-15" handle1="-30,-5" holdangle="170" aimable="false" msg="ItemMsgPickUpSelect">
+			<!-- slow down the character when holding the item -->
+			<StatValue stattype="MovementSpeed" value="-0.2" />
+			<!-- adjust hold position when swimming -->
+			<StatusEffect type="OnActive" target="This" holdpos="-10,-15" handle1="0,-5" holdangle="70" setvalue="true" interval="1.1">
+				<Conditional InWater="true" />
+			</StatusEffect>
+			<!-- revert hold position adjustment when walking -->
+			<StatusEffect type="OnActive" target="This" holdpos="0,-15" handle1="-30,-5" holdangle="170" setvalue="true" interval="1.1">
+				<Conditional InWater="false" />
+			</StatusEffect>
+		</Holdable>
 		<Projectile characterusable="false" launchimpulse="0" damagedoors="true" maxtargetstohit="1">
 			<Attack structuredamage="5" itemdamage="5" severlimbsprobability="1.5">
 				<Affliction identifier="lacerations" strength="120" />
@@ -225,7 +280,7 @@
 		</Projectile>
 	</Item>
 	<!--coilgun-->
-	<Item name="" description="" identifier="dmindammobox" scale="0.5" tags="coilgunequipment,coilgunammobox,coilgunammo" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
+	<Item name="" description="" identifier="dmindammobox" fallbacknameidentifier="coilgunammobox" scale="0.5" tags="coilgunequipment,coilgunammo,ammobox" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
 		<PreferredContainer primary="wreckcoilgun" minamount="1" maxamount="2" spawnprobability="0.1" />
 		<Price baseprice="270">
 			<Price storeidentifier="merchantoutpost" multiplier="1.3" sold="false" />
@@ -238,21 +293,23 @@
 			<Item identifier="steel" mincondition="0.95" />
 			<Item identifier="aluminium" />
 		</Deconstruct>
-		<Fabricate suitablefabricators="fabricator,milfabricator" requiredtime="20">
+		<Fabricate suitablefabricators="fabricator" requiredtime="20">
 			<RequiredSkill identifier="weapons" level="45" />
-			<RequiredItem identifier="steel" />
+			<RequiredItem tag="munition_core" amount="2" description="fabricationdescription.munition_core" />
 			<RequiredItem identifier="aluminium" />
 			<RequiredItem identifier="dementonite" />
 		</Fabricate>
-		<Fabricate suitablefabricators="fabricator,milfabricator" displayname="recycleitem" requiredtime="15">
+		<Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15">
 			<RequiredSkill identifier="weapons" level="45" />
-			<RequiredItem identifier="steel" />
-			<RequiredItem tag="coilgunammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="coilgunammobox" />
+			<RequiredItem tag="munition_core" amount="2" description="fabricationdescription.munition_core" />
+			<RequiredItem tag="coilgunammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="dmindammobox" />
 			<RequiredItem identifier="dementonite" />
 		</Fabricate>
-		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="382,496,110,83" origin="0.5,0.5" />
+		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="366,496,112,85" origin="0.5,0.5" />
 		<Body width="115" height="88" density="50" />
-		<Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
+		<Holdable canbecombined="true" removeoncombined="false" slots="RightHand,LeftHand" holdpos="0,-30" handle1="0,-30" aimable="false" msg="ItemMsgPickUpSelect">
+			<StatValue stattype="MovementSpeed" value="-0.2" />
+		</Holdable>
 		<ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
 			<StatusEffect type="OnUse" target="This" disabledeltatime="true">
 				<SpawnItem identifiers="dementonitebolt" spawnposition="ThisInventory" />
@@ -262,8 +319,11 @@
 			</StatusEffect>
 			<Containable items="dementonitebolt" />
 		</ItemContainer>
+		<Quality>
+			<QualityStat stattype="Condition" value="0.1" />
+		</Quality>
 	</Item>
-	<Item name="" description="" identifier="coilgunammoboxflak" scale="0.5" tags="coilgunequipment,coilgunammobox,coilgunammo,ammobox" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
+	<Item name="" description="" identifier="coilgunammoboxflak" fallbacknameidentifier="coilgunammobox" scale="0.5" tags="coilgunequipment,coilgunammobox,coilgunammo,ammobox" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
 		<PreferredContainer primary="coilgunammocontainer" spawnprobability="0.01" />
 		<Price baseprice="435" soldeverywhere="false">
 			<Price storeidentifier="merchantoutpost" multiplier="1.3" minavailable="1" />
@@ -277,23 +337,25 @@
 			<Item identifier="uex" mincondition="0.95" />
 			<Item identifier="aluminium" />
 		</Deconstruct>
-		<Fabricate suitablefabricators="milfabricator" requiredtime="20">
+		<Fabricate suitablefabricators="fabricator" requiredtime="20">
 			<RequiredSkill identifier="weapons" level="50" />
 			<RequiredItem identifier="ic4block" />
 			<RequiredItem identifier="titanium" />
 			<RequiredItem identifier="aluminium" />
 			<RequiredItem identifier="fpgacircuit" />
 		</Fabricate>
-		<Fabricate suitablefabricators="milfabricator" displayname="recycleitem" requiredtime="15">
+		<Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15">
 			<RequiredSkill identifier="weapons" level="40" />
 			<RequiredItem identifier="ic4block" />
 			<RequiredItem identifier="titanium" />
 			<RequiredItem identifier="fpgacircuit" />
-			<RequiredItem tag="coilgunammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="coilgunammobox" />
+			<RequiredItem tag="coilgunammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="coilgunammoboxflak" />
 		</Fabricate>
-		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="24,496,113,85" origin="0.5,0.5" />
+		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="24,496,112,85" origin="0.5,0.5" />
 		<Body width="115" height="88" density="50" />
-		<Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
+		<Holdable canbecombined="true" removeoncombined="false" slots="RightHand,LeftHand" holdpos="0,-30" handle1="0,-30" aimable="false" msg="ItemMsgPickUpSelect">
+			<StatValue stattype="MovementSpeed" value="-0.2" />
+		</Holdable>
 		<ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
 			<StatusEffect type="OnUse" target="This" disabledeltatime="true">
 				<SpawnItem identifiers="coilgunboltflack" spawnposition="ThisInventory" />
@@ -303,8 +365,11 @@
 			</StatusEffect>
 			<Containable items="coilgunboltflack" />
 		</ItemContainer>
+		<Quality>
+			<QualityStat stattype="Condition" value="0.1" />
+		</Quality>
 	</Item>
-	<Item name="" description="" identifier="coilgunammoboxpiercing_capped" scale="0.5" tags="coilgunequipment,coilgunammobox,coilgunammo,ammobox" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
+	<Item name="" description="" identifier="coilgunammoboxpiercing_capped" fallbacknameidentifier="coilgunammobox" scale="0.5" tags="coilgunequipment,coilgunammobox,coilgunammo,ammobox" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
 		<PreferredContainer primary="coilgunammocontainer" spawnprobability="0.01" />
 		<Price baseprice="310" soldeverywhere="false">
 			<Price storeidentifier="merchantoutpost" multiplier="1.3" sold="false" />
@@ -318,23 +383,25 @@
 			<Item identifier="tin" mincondition="0.95" />
 			<Item identifier="aluminium" />
 		</Deconstruct>
-		<Fabricate suitablefabricators="milfabricator" requiredtime="10">
+		<Fabricate suitablefabricators="fabricator" requiredtime="10">
 			<RequiredSkill identifier="weapons" level="30" />
 			<RequiredItem identifier="coilgunammoboxpiercing" />
 			<RequiredItem identifier="lead" />
 			<RequiredItem identifier="tin" />
 		</Fabricate>
-		<Fabricate suitablefabricators="fabricator,milfabricator" displayname="recycleitem" requiredtime="8">
+		<Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="8">
 			<RequiredSkill identifier="weapons" level="25" />
 			<RequiredItem identifier="titaniumaluminiumalloy" />
-			<RequiredItem identifier="steel" />
+			<RequiredItem tag="munition_core" amount="2" description="fabricationdescription.munition_core" />
 			<RequiredItem identifier="lead" />
 			<RequiredItem identifier="tin" />
-			<RequiredItem tag="coilgunammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="coilgunammobox" />
+			<RequiredItem tag="coilgunammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="coilgunammoboxpiercing_capped" />
 		</Fabricate>
-		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="143,495,112,84" origin="0.5,0.5" />
+		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="138,496,112,85" origin="0.5,0.5" />
 		<Body width="115" height="88" density="50" />
-		<Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
+		<Holdable canbecombined="true" removeoncombined="false" slots="RightHand,LeftHand" holdpos="0,-30" handle1="0,-30" aimable="false" msg="ItemMsgPickUpSelect">
+			<StatValue stattype="MovementSpeed" value="-0.2" />
+		</Holdable>
 		<ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
 			<StatusEffect type="OnUse" target="This" disabledeltatime="true">
 				<SpawnItem identifiers="coilgunboltpiercing_capped" spawnposition="ThisInventory" />
@@ -344,8 +411,11 @@
 			</StatusEffect>
 			<Containable items="coilgunboltpiercing_capped" />
 		</ItemContainer>
+		<Quality>
+			<QualityStat stattype="Condition" value="0.1" />
+		</Quality>
 	</Item>
-	<Item name="" description="" identifier="fulguriumammobox" scale="0.5" tags="coilgunequipment,coilgunammobox,coilgunammo" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
+	<Item name="" description="" identifier="fulguriumammobox" fallbacknameidentifier="coilgunammobox" scale="0.5" tags="coilgunequipment,coilgunammobox,coilgunammo,ammobox" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
 		<PreferredContainer primary="wreckcoilgun" minamount="1" maxamount="2" spawnprobability="0.15" />
 		<Price baseprice="235">
 			<Price storeidentifier="merchantoutpost" multiplier="1.3" sold="false" />
@@ -358,28 +428,30 @@
 			<Item identifier="steel" mincondition="0.95" />
 			<Item identifier="aluminium" />
 		</Deconstruct>
-		<Fabricate suitablefabricators="fabricator,milfabricator" requiredtime="20">
+		<Fabricate suitablefabricators="fabricator" requiredtime="20">
 			<RequiredSkill identifier="weapons" level="35" />
-			<RequiredItem identifier="steel" />
+			<RequiredItem tag="munition_core" amount="2" description="fabricationdescription.munition_core" />
 			<RequiredItem identifier="aluminium" />
 			<RequiredItem identifier="fulgurium" />
-			<RequiredItem identifier="copper" />
+			<RequiredItem tag="advmunition_tip" description="fabricationdescription.advmunition_tip" />
 		</Fabricate>
-		<Fabricate suitablefabricators="fabricator,milfabricator" displayname="recycleitem" requiredtime="15">
+		<Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15">
 			<RequiredSkill identifier="weapons" level="35" />
-			<RequiredItem identifier="steel" />
-			<RequiredItem tag="coilgunammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="coilgunammobox" />
+			<RequiredItem tag="munition_core" amount="2" description="fabricationdescription.munition_core" />
+			<RequiredItem tag="coilgunammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="fulguriumammobox" />
 			<RequiredItem identifier="fulgurium" />
-			<RequiredItem identifier="copper" />
+			<RequiredItem tag="advmunition_tip" description="fabricationdescription.advmunition_tip" />
 		</Fabricate>
-		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="22,253,109,81" origin="0.5,0.5" />
+		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="24,692,112,85" origin="0.5,0.5" />
 		<Body width="115" height="88" density="50" />
-		<Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
+		<Holdable canbecombined="true" removeoncombined="false" slots="RightHand,LeftHand" holdpos="0,-30" handle1="0,-30" aimable="false" msg="ItemMsgPickUpSelect">
+			<StatValue stattype="MovementSpeed" value="-0.2" />
+		</Holdable>
 		<ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
-			<!-- we cheat a bit with ammunition boxes - they don't actually contain hundreds of rounds, 
-			but spawn a new round every time the OnUse effect is triggered. OnUse also reduces the condition
-			of the item, and when the condition is 0, the box is considered empty. -->
-			<!--	-0.5 per usage = 200 shots per box -->
+																								   
+																										
+																				  
+												  
 			<StatusEffect type="OnUse" target="This" disabledeltatime="true">
 				<SpawnItem identifiers="fulguriumbolt" spawnposition="ThisInventory" />
 			</StatusEffect>
@@ -388,8 +460,11 @@
 			</StatusEffect>
 			<Containable items="fulguriumbolt" />
 		</ItemContainer>
+		<Quality>
+			<QualityStat stattype="Condition" value="0.1" />
+		</Quality>
 	</Item>
-	<Item name="" description="" identifier="jetammobox" scale="0.5" tags="coilgunequipment,coilgunammobox,coilgunammo" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
+	<Item name="" description="" identifier="jetammobox" fallbacknameidentifier="coilgunammobox" scale="0.5" tags="coilgunequipment,coilgunammobox,coilgunammo,ammobox" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
 		<PreferredContainer primary="wreckcoilgun" minamount="0" maxamount="3" spawnprobability="0.15" />
 		<Price baseprice="650">
 			<Price storeidentifier="merchantoutpost" multiplier="1.3" sold="false" />
@@ -403,9 +478,11 @@
 			<Item identifier="aluminium" copycondition="false" />
 			<Item identifier="potassium" mincondition="0.95" />
 		</Deconstruct>
-		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="23,164,109,80" origin="0.5,0.5" />
+		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="23,164,112,85" origin="0.5,0.5" />
 		<Body width="115" height="88" density="50" />
-		<Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
+		<Holdable canbecombined="true" removeoncombined="false" slots="RightHand,LeftHand" holdpos="0,-30" handle1="0,-30" aimable="false" msg="ItemMsgPickUpSelect">
+			<StatValue stattype="MovementSpeed" value="-0.2" />
+		</Holdable>
 		<ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
 			<StatusEffect type="OnUse" target="This" disabledeltatime="true">
 				<SpawnItem identifiers="jetbolt" spawnposition="ThisInventory" />
@@ -415,8 +492,11 @@
 			</StatusEffect>
 			<Containable items="jetbolt" />
 		</ItemContainer>
+		<Quality>
+			<QualityStat stattype="Condition" value="0.1" />
+		</Quality>
 	</Item>
-	<Item name="" description="" identifier="scatterammobox_coilgun" scale="0.5" tags="coilgunequipment,coilgunammobox,coilgunammo" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
+	<Item name="" description="" identifier="scatterammobox_coilgun" fallbacknameidentifier="coilgunammobox" scale="0.5" tags="coilgunequipment,coilgunammobox,coilgunammo,ammobox" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
 		<PreferredContainer primary="wreckcoilgun" minamount="0" maxamount="1" spawnprobability="0.1" />
 		<Price baseprice="225">
 			<Price storeidentifier="merchantoutpost" multiplier="1.3" minavailable="1" />
@@ -430,23 +510,23 @@
 			<Item identifier="aluminium" />
 			<Item identifier="ballisticfiber" mincondition="0.95" />
 		</Deconstruct>
-		<Fabricate suitablefabricators="fabricator,milfabricator" requiredtime="20">
+		<Fabricate suitablefabricators="fabricator" requiredtime="20">
 			<RequiredSkill identifier="weapons" level="50" />
-			<RequiredItem identifier="steel" />
-			<RequiredItem identifier="steel" />
+			<RequiredItem tag="munition_core" amount="2" description="fabricationdescription.munition_core" />
 			<RequiredItem identifier="aluminium" />
 			<RequiredItem identifier="ballisticfiber" />
 		</Fabricate>
-		<Fabricate suitablefabricators="fabricator,milfabricator" displayname="recycleitem" requiredtime="15">
+		<Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15">
 			<RequiredSkill identifier="weapons" level="35" />
-			<RequiredItem identifier="steel" />
-			<RequiredItem identifier="steel" />
-			<RequiredItem tag="coilgunammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="coilgunammobox" />
+			<RequiredItem tag="munition_core" amount="2" description="fabricationdescription.munition_core" />
+			<RequiredItem tag="coilgunammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="scatterammobox_coilgun" />
 			<RequiredItem identifier="ballisticfiber" />
 		</Fabricate>
-		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="382,595,109,81" origin="0.5,0.5" />
+		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="366,594,112,85" origin="0.5,0.5" />
 		<Body width="115" height="88" density="50" />
-		<Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
+		<Holdable canbecombined="true" removeoncombined="false" slots="RightHand,LeftHand" holdpos="0,-30" handle1="0,-30" aimable="false" msg="ItemMsgPickUpSelect">
+			<StatValue stattype="MovementSpeed" value="-0.2" />
+		</Holdable>
 		<ItemContainer hideitems="true" capacity="3" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
 			<StatusEffect type="OnUse" target="This" disabledeltatime="true">
 				<SpawnItem identifiers="scatterbolt" spawnposition="ThisInventory" count="3" />
@@ -456,8 +536,11 @@
 			</StatusEffect>
 			<Containable items="scatterbolt" />
 		</ItemContainer>
+		<Quality>
+			<QualityStat stattype="Condition" value="0.1" />
+		</Quality>
 	</Item>
-	<Item name="" description="" identifier="chemicalammobox" scale="0.5" tags="coilgunequipment,coilgunammobox,coilgunammo" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
+	<Item name="" description="" identifier="chemicalammobox" fallbacknameidentifier="coilgunammobox" scale="0.5" tags="coilgunequipment,coilgunammobox,coilgunammo,ammobox" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
 		<PreferredContainer primary="wreckcoilgun" minamount="0" maxamount="2" spawnprobability="0.17" />
 		<Price baseprice="340">
 			<Price storeidentifier="merchantoutpost" multiplier="1.3" sold="false" />
@@ -471,25 +554,27 @@
 			<Item identifier="aluminium" />
 			<Item identifier="phosphorus" mincondition="0.95" />
 		</Deconstruct>
-		<Fabricate suitablefabricators="fabricator,milfabricator" requiredtime="25">
+		<Fabricate suitablefabricators="fabricator" requiredtime="25">
 			<RequiredSkill identifier="weapons" level="70" />
 			<RequiredSkill identifier="medical" level="35" />
-			<RequiredItem identifier="steel" />
+			<RequiredItem tag="munition_core" amount="2" description="fabricationdescription.munition_core" />
 			<RequiredItem identifier="aluminium" />
 			<RequiredItem identifier="sulphuricacid" amount="2" />
 			<RequiredItem identifier="phosphorus" />
 		</Fabricate>
-		<Fabricate suitablefabricators="fabricator,milfabricator" displayname="recycleitem" requiredtime="20">
+		<Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="20">
 			<RequiredSkill identifier="weapons" level="50" />
 			<RequiredSkill identifier="medical" level="15" />
-			<RequiredItem identifier="steel" />
-			<RequiredItem tag="coilgunammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="coilgunammobox" />
+			<RequiredItem tag="munition_core" amount="2" description="fabricationdescription.munition_core" />
+			<RequiredItem tag="coilgunammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="chemicalammobox" />
 			<RequiredItem identifier="sulphuricacid" amount="2" />
 			<RequiredItem identifier="phosphorus" />
 		</Fabricate>
-		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="264,497,109,81" origin="0.5,0.5" />
+		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="252,496,112,85" origin="0.5,0.5" />
 		<Body width="115" height="88" density="50" />
-		<Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
+		<Holdable canbecombined="true" removeoncombined="false" slots="RightHand,LeftHand" holdpos="0,-30" handle1="0,-30" aimable="false" msg="ItemMsgPickUpSelect">
+			<StatValue stattype="MovementSpeed" value="-0.2" />
+		</Holdable>
 		<ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
 			<StatusEffect type="OnUse" target="This" disabledeltatime="true">
 				<SpawnItem identifiers="sulphuricbolt" spawnposition="ThisInventory" />
@@ -499,8 +584,11 @@
 			</StatusEffect>
 			<Containable items="sulphuricbolt" />
 		</ItemContainer>
+		<Quality>
+			<QualityStat stattype="Condition" value="0.1" />
+		</Quality>
 	</Item>
-	<Item name="" description="" identifier="incendiaryammobox" scale="0.5" tags="coilgunequipment,coilgunammobox,coilgunammo" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
+	<Item name="" description="" identifier="incendiaryammobox" fallbacknameidentifier="coilgunammobox" scale="0.5" tags="coilgunequipment,coilgunammobox,coilgunammo,ammobox" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
 		<PreferredContainer primary="wreckcoilgun" minamount="0" maxamount="2" spawnprobability="0.17" />
 		<Price baseprice="395" minleveldifficulty="35">
 			<Price storeidentifier="merchantoutpost" multiplier="1.3" sold="false" />
@@ -514,31 +602,33 @@
 			<Item identifier="aluminium" />
 			<Item identifier="incendium" mincondition="0.95" />
 		</Deconstruct>
-		<Fabricate suitablefabricators="milfabricator" requiredtime="45">
+		<Fabricate suitablefabricators="fabricator" requiredtime="45">
 			<RequiredSkill identifier="weapons" level="65" />
-			<RequiredItem identifier="steel" />
+			<RequiredItem tag="munition_core" amount="2" description="fabricationdescription.munition_core" />
 			<RequiredItem identifier="coilgunammoboxexplosive" />
 			<RequiredItem identifier="incendium" />
 			<RequiredItem identifier="phosphorus" />
 		</Fabricate>
-		<Fabricate suitablefabricators="milfabricator" requiredtime="20">
+		<Fabricate suitablefabricators="fabricator" requiredtime="20">
 			<RequiredSkill identifier="weapons" level="45" />
-			<RequiredItem identifier="steel" />
-			<RequiredItem tag="coilgunammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="coilgunammobox" />
+			<RequiredItem tag="munition_core" amount="2" description="fabricationdescription.munition_core" />
+			<RequiredItem tag="coilgunammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="incendiaryammobox" />
 			<RequiredItem identifier="c4block" />
 			<RequiredItem identifier="incendium" />
 			<RequiredItem identifier="phosphorus" />
 		</Fabricate>
-		<Fabricate suitablefabricators="milfabricator" requiredtime="15">
+		<Fabricate suitablefabricators="fabricator" requiredtime="15">
 			<RequiredSkill identifier="weapons" level="25" />
-			<RequiredItem identifier="steel" />
-			<RequiredItem tag="coilgunammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="coilgunammobox" />
+			<RequiredItem tag="munition_core" amount="2" description="fabricationdescription.munition_core" />
+			<RequiredItem tag="coilgunammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="incendiaryammobox" />
 			<RequiredItem identifier="ic4block" />
 			<RequiredItem identifier="phosphorus" />
 		</Fabricate>
-		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="504,498,109,81" origin="0.5,0.5" />
+		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="480,496,112,85" origin="0.5,0.5" />
 		<Body width="115" height="88" density="50" />
-		<Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
+		<Holdable canbecombined="true" removeoncombined="false" slots="RightHand,LeftHand" holdpos="0,-30" handle1="0,-30" aimable="false" msg="ItemMsgPickUpSelect">
+			<StatValue stattype="MovementSpeed" value="-0.2" />
+		</Holdable>
 		<ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
 			<StatusEffect type="OnUse" target="This" disabledeltatime="true">
 				<SpawnItem identifiers="incendiarybolt" spawnposition="ThisInventory" />
@@ -548,6 +638,9 @@
 			</StatusEffect>
 			<Containable items="incendiarybolt" />
 		</ItemContainer>
+		<Quality>
+			<QualityStat stattype="Condition" value="0.1" />
+		</Quality>
 	</Item>
 	<!--flakcannon-->
 	<Item name="" description="" identifier="flakcannonammoboxstun" scale="0.5" tags="flakcannonequipment,flakcannonammo,ammobox,flakcannonammobox" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
@@ -565,23 +658,25 @@
 			<Item identifier="copper" mincondition="0.95" />
 			<Item identifier="aluminium" />
 		</Deconstruct>
-		<Fabricate suitablefabricators="fabricator,milfabricator" requiredtime="20">
+		<Fabricate suitablefabricators="fabricator" requiredtime="20">
 			<RequiredSkill identifier="weapons" level="55" />
 			<RequiredItem identifier="fulgurium" />
-			<RequiredItem identifier="steel" />
-			<RequiredItem identifier="copper" />
+			<RequiredItem tag="munition_core" amount="2" description="fabricationdescription.munition_core" />
+			<RequiredItem tag="advmunition_tip" description="fabricationdescription.advmunition_tip" />
 			<RequiredItem identifier="aluminium" />
 		</Fabricate>
-		<Fabricate suitablefabricators="fabricator,milfabricator" displayname="recycleitem" requiredtime="15">
+		<Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15">
 			<RequiredSkill identifier="weapons" level="40" />
 			<RequiredItem identifier="fulgurium" />
-			<RequiredItem identifier="steel" />
-			<RequiredItem identifier="copper" />
-			<RequiredItem tag="flakcannonammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="flakcannonammoboxexplosive" />
+			<RequiredItem tag="munition_core" amount="2" description="fabricationdescription.munition_core" />
+			<RequiredItem tag="advmunition_tip" description="fabricationdescription.advmunition_tip" />
+			<RequiredItem tag="flakcannonammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="flakcannonammoboxstun" />
 		</Fabricate>
-		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="504,697,112,84" origin="0.5,0.5" />
+		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="480,692,112,85" origin="0.5,0.5" />
 		<Body width="115" height="88" density="50" />
-		<Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
+		<Holdable canbecombined="true" removeoncombined="false" slots="RightHand,LeftHand" holdpos="0,-30" handle1="0,-30" aimable="false" msg="ItemMsgPickUpSelect">
+			<StatValue stattype="MovementSpeed" value="-0.2" />
+		</Holdable>
 		<ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
 			<StatusEffect type="OnUse" target="This" disabledeltatime="true">
 				<SpawnItem identifiers="flakboltshock" spawnposition="ThisInventory" />
@@ -591,6 +686,9 @@
 			</StatusEffect>
 			<Containable items="flakboltshock" />
 		</ItemContainer>
+		<Quality>
+			<QualityStat stattype="Condition" value="0.1" />
+		</Quality>
 	</Item>
 	<Item name="" description="" identifier="flakcannonammoboxchemical" scale="0.5" tags="flakcannonequipment,flakcannonammo,ammobox,flakcannonammobox" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
 		<PreferredContainer secondary="wreckammoboxcontainer" amount="1" spawnprobability="0.02" />
@@ -607,23 +705,25 @@
 			<Item identifier="phosphorus" mincondition="0.95" />
 			<Item identifier="aluminium" />
 		</Deconstruct>
-		<Fabricate suitablefabricators="fabricator,milfabricator" requiredtime="20">
+		<Fabricate suitablefabricators="fabricator" requiredtime="20">
 			<RequiredSkill identifier="weapons" level="55" />
 			<RequiredItem identifier="sulphuricacid" amount="2" />
 			<RequiredItem identifier="phosphorus" amount="2" />
-			<RequiredItem identifier="steel" />
+			<RequiredItem tag="munition_core" amount="2" description="fabricationdescription.munition_core" />
 			<RequiredItem identifier="aluminium" />
 		</Fabricate>
-		<Fabricate suitablefabricators="fabricator,milfabricator" displayname="recycleitem" requiredtime="15">
+		<Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15">
 			<RequiredSkill identifier="weapons" level="40" />
 			<RequiredItem identifier="sulphuricacid" amount="2" />
 			<RequiredItem identifier="phosphorus" amount="2" />
-			<RequiredItem identifier="steel" />
-			<RequiredItem tag="flakcannonammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="flakcannonammoboxexplosive" />
+			<RequiredItem tag="munition_core" amount="2" description="fabricationdescription.munition_core" />
+			<RequiredItem tag="flakcannonammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="flakcannonammoboxchemical" />
 		</Fabricate>
-		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="382,697,112,84" origin="0.5,0.5" />
+		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="366,692,112,85" origin="0.5,0.5" />
 		<Body width="115" height="88" density="50" />
-		<Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
+		<Holdable canbecombined="true" removeoncombined="false" slots="RightHand,LeftHand" holdpos="0,-30" handle1="0,-30" aimable="false" msg="ItemMsgPickUpSelect">
+			<StatValue stattype="MovementSpeed" value="-0.2" />
+		</Holdable>
 		<ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
 			<StatusEffect type="OnUse" target="This" disabledeltatime="true">
 				<SpawnItem identifiers="flakboltchemical" spawnposition="ThisInventory" />
@@ -633,6 +733,9 @@
 			</StatusEffect>
 			<Containable items="flakboltchemical" />
 		</ItemContainer>
+		<Quality>
+			<QualityStat stattype="Condition" value="0.1" />
+		</Quality>
 	</Item>
 	<Item name="" description="" identifier="flakcannonammoboxsolid" scale="0.5" tags="flakcannonequipment,flakcannonammo,ammobox,flakcannonammobox" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
 		<PreferredContainer secondary="wreckammoboxcontainer" amount="1" spawnprobability="0.12" />
@@ -649,23 +752,25 @@
 			<Item identifier="steel" mincondition="0.95" />
 			<Item identifier="aluminium" />
 		</Deconstruct>
-		<Fabricate suitablefabricators="fabricator,milfabricator" requiredtime="20">
+		<Fabricate suitablefabricators="fabricator" requiredtime="20">
 			<RequiredSkill identifier="weapons" level="25" />
-			<RequiredItem identifier="steel" />
-			<RequiredItem identifier="steel" />
-			<RequiredItem identifier="steel" />
+			<RequiredItem tag="munition_core" amount="2" description="fabricationdescription.munition_core" />
+			<RequiredItem tag="munition_core" amount="2" description="fabricationdescription.munition_core" />
+			<RequiredItem tag="munition_core" amount="2" description="fabricationdescription.munition_core" />
 			<RequiredItem identifier="aluminium" />
 		</Fabricate>
-		<Fabricate suitablefabricators="fabricator,milfabricator" displayname="recycleitem" requiredtime="15">
+		<Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15">
 			<RequiredSkill identifier="weapons" level="20" />
-			<RequiredItem identifier="steel" />
-			<RequiredItem identifier="steel" />
-			<RequiredItem identifier="steel" />
-			<RequiredItem tag="flakcannonammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="flakcannonammoboxexplosive" />
+			<RequiredItem tag="munition_core" amount="2" description="fabricationdescription.munition_core" />
+			<RequiredItem tag="munition_core" amount="2" description="fabricationdescription.munition_core" />
+			<RequiredItem tag="munition_core" amount="2" description="fabricationdescription.munition_core" />
+			<RequiredItem tag="flakcannonammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="flakcannonammoboxsolid" />
 		</Fabricate>
-		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="263,698,112,84" origin="0.5,0.5" />
+		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="252,692,112,85" origin="0.5,0.5" />
 		<Body width="115" height="88" density="50" />
-		<Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
+		<Holdable canbecombined="true" removeoncombined="false" slots="RightHand,LeftHand" holdpos="0,-30" handle1="0,-30" aimable="false" msg="ItemMsgPickUpSelect">
+			<StatValue stattype="MovementSpeed" value="-0.2" />
+		</Holdable>
 		<ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
 			<StatusEffect type="OnUse" target="This" disabledeltatime="true">
 				<SpawnItem identifiers="flakboltsolid" spawnposition="ThisInventory" />
@@ -675,9 +780,12 @@
 			</StatusEffect>
 			<Containable items="flakboltsolid" />
 		</ItemContainer>
+		<Quality>
+			<QualityStat stattype="Condition" value="0.1" />
+		</Quality>
 	</Item>
 	<!--chaingun-->
-	<Item name="" description="" identifier="chaingunammoboxexplosive" scale="0.5" tags="chaingunequipment,chaingunammo,ammobox,chaingunammobox" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
+	<Item name="" description="" identifier="chaingunammoboxexplosive" fallbacknameidentifier="chaingunammobox" scale="0.5" tags="chaingunequipment,chaingunammo,ammobox,chaingunammobox" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
 		<PreferredContainer primary="ammocontainer" spawnprobability="0.0" />
 		<Price baseprice="320" soldeverywhere="false">
 			<Price storeidentifier="merchantoutpost" multiplier="1.3" sold="false" />
@@ -692,7 +800,7 @@
 			<Item identifier="aluminium" />
 			<Item identifier="compoundn" mincondition="0.95" />
 		</Deconstruct>
-		<Fabricate suitablefabricators="fabricator,milfabricator" requiredtime="30">
+		<Fabricate suitablefabricators="fabricator" requiredtime="30">
 			<RequiredSkill identifier="weapons" level="45" />
 			<RequiredItem identifier="lead" />
 			<RequiredItem identifier="compoundn" />
@@ -700,17 +808,19 @@
 			<RequiredItem identifier="titaniumaluminiumalloy" />
 			<RequiredItem identifier="aluminium" />
 		</Fabricate>
-		<Fabricate suitablefabricators="fabricator,milfabricator" displayname="recycleitem" requiredtime="15">
+		<Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15">
 			<RequiredSkill identifier="weapons" level="35" />
 			<RequiredItem identifier="lead" />
 			<RequiredItem identifier="compoundn" />
 			<RequiredItem identifier="compoundn" />
 			<RequiredItem identifier="titaniumaluminiumalloy" />
-			<RequiredItem tag="chaingunammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="chaingunammobox" />
+			<RequiredItem tag="chaingunammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="chaingunammoboxexplosive" />
 		</Fabricate>
-		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="378,395,112,84" origin="0.5,0.5" />
+		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="366,398,112,85" origin="0.5,0.5" />
 		<Body width="115" height="88" density="50" />
-		<Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
+		<Holdable canbecombined="true" removeoncombined="false" slots="RightHand,LeftHand" holdpos="0,-30" handle1="0,-30" aimable="false" msg="ItemMsgPickUpSelect">
+			<StatValue stattype="MovementSpeed" value="-0.2" />
+		</Holdable>
 		<ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
 			<StatusEffect type="OnUse" target="This" disabledeltatime="true">
 				<SpawnItem identifiers="chaingunboltexplosive" spawnposition="ThisInventory" />
@@ -720,8 +830,11 @@
 			</StatusEffect>
 			<Containable items="chaingunboltexplosive" />
 		</ItemContainer>
+		<Quality>
+			<QualityStat stattype="Condition" value="0.1" />
+		</Quality>
 	</Item>
-	<Item name="" description="" identifier="chaingunammoboxscatter" scale="0.5" tags="chaingunequipment,chaingunammo,ammobox,chaingunammobox" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
+	<Item name="" description="" identifier="chaingunammoboxscatter" fallbacknameidentifier="chaingunammobox" scale="0.5" tags="chaingunequipment,chaingunammo,ammobox,chaingunammobox" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
 		<PreferredContainer primary="ammocontainer" spawnprobability="0.0" />
 		<Price baseprice="295" soldeverywhere="false">
 			<Price storeidentifier="merchantoutpost" multiplier="1.3" sold="false" />
@@ -729,32 +842,34 @@
 			<Price storeidentifier="merchantmine" multiplier="1.2" sold="false" />
 		</Price>
 		<Deconstruct time="20">
-			<RequiredItem identifier="steel" />
+			<Item identifier="steel" />
 			<Item identifier="lead" mincondition="0.95" />
 			<Item identifier="titanium" mincondition="0.95" />
 			<Item identifier="aluminium" />
 		</Deconstruct>
-		<Fabricate suitablefabricators="fabricator,milfabricator" requiredtime="40">
+		<Fabricate suitablefabricators="fabricator" requiredtime="40">
 			<RequiredSkill identifier="weapons" level="40" />
-			<RequiredItem identifier="steel" />
+			<RequiredItem tag="munition_core" amount="2" description="fabricationdescription.munition_core" />
 			<RequiredItem identifier="lead" />
 			<RequiredItem identifier="lead" />
 			<RequiredItem identifier="lead" />
 			<RequiredItem identifier="titanium" />
 			<RequiredItem identifier="aluminium" />
 		</Fabricate>
-		<Fabricate suitablefabricators="fabricator,milfabricator" displayname="recycleitem" requiredtime="15">
+		<Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15">
 			<RequiredSkill identifier="weapons" level="30" />
-			<RequiredItem identifier="steel" />
+			<RequiredItem tag="munition_core" amount="2" description="fabricationdescription.munition_core" />
 			<RequiredItem identifier="lead" />
 			<RequiredItem identifier="lead" />
 			<RequiredItem identifier="lead" />
 			<RequiredItem identifier="titanium" />
-			<RequiredItem tag="chaingunammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="chaingunammobox" />
+			<RequiredItem tag="chaingunammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="chaingunammoboxscatter" />
 		</Fabricate>
-		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="139,396,114,84" origin="0.5,0.5" />
+		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="138,398,112,85" origin="0.5,0.5" />
 		<Body width="115" height="88" density="50" />
-		<Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
+		<Holdable canbecombined="true" removeoncombined="false" slots="RightHand,LeftHand" holdpos="0,-30" handle1="0,-30" aimable="false" msg="ItemMsgPickUpSelect">
+			<StatValue stattype="MovementSpeed" value="-0.2" />
+		</Holdable>
 		<ItemContainer hideitems="true" capacity="3" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
 			<StatusEffect type="OnUse" target="This" disabledeltatime="true">
 				<SpawnItem identifiers="scatterpellet" spawnposition="ThisInventory" count="3" />
@@ -764,8 +879,11 @@
 			</StatusEffect>
 			<Containable items="scatterpellet" />
 		</ItemContainer>
+		<Quality>
+			<QualityStat stattype="Condition" value="0.1" />
+		</Quality>
 	</Item>
-	<Item name="" description="" identifier="chaingunammoboxdementonite" scale="0.5" tags="chaingunequipment,chaingunammo,ammobox,chaingunammobox" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
+	<Item name="" description="" identifier="chaingunammoboxdementonite" fallbacknameidentifier="chaingunammobox" scale="0.5" tags="chaingunequipment,chaingunammo,ammobox,chaingunammobox" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
 		<PreferredContainer primary="ammocontainer" spawnprobability="0.0" />
 		<Price baseprice="450" soldeverywhere="false" minleveldifficulty="40">
 			<Price storeidentifier="merchantoutpost" multiplier="1.3" sold="false" />
@@ -778,23 +896,23 @@
 			<Item identifier="dementonite" mincondition="0.95" />
 			<Item identifier="aluminium" />
 		</Deconstruct>
-		<Fabricate suitablefabricators="fabricator,milfabricator" requiredtime="20">
+		<Fabricate suitablefabricators="fabricator" requiredtime="20">
 			<RequiredSkill identifier="weapons" level="50" />
-			<RequiredItem identifier="dementonite" />
-			<RequiredItem identifier="dementonite" />
+			<RequiredItem identifier="dementonite" amount="2" />
 			<RequiredItem identifier="titanium" />
 			<RequiredItem identifier="aluminium" />
 		</Fabricate>
-		<Fabricate suitablefabricators="fabricator,milfabricator" displayname="recycleitem" requiredtime="15">
+		<Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15">
 			<RequiredSkill identifier="weapons" level="35" />
-			<RequiredItem identifier="dementonite" />
-			<RequiredItem identifier="dementonite" />
+			<RequiredItem identifier="dementonite" amount="2" />
 			<RequiredItem identifier="titanium" />
-			<RequiredItem tag="chaingunammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="chaingunammobox" />
+			<RequiredItem tag="chaingunammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="chaingunammoboxdementonite" />
 		</Fabricate>
-		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="143,594,110,82" origin="0.5,0.5" />
+		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="138,594,112,85" origin="0.5,0.5" />
 		<Body width="115" height="88" density="50" />
-		<Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
+		<Holdable canbecombined="true" removeoncombined="false" slots="RightHand,LeftHand" holdpos="0,-30" handle1="0,-30" aimable="false" msg="ItemMsgPickUpSelect">
+			<StatValue stattype="MovementSpeed" value="-0.2" />
+		</Holdable>
 		<ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
 			<StatusEffect type="OnUse" target="This" disabledeltatime="true">
 				<SpawnItem identifiers="chaingunboltdmind" spawnposition="ThisInventory" />
@@ -804,8 +922,11 @@
 			</StatusEffect>
 			<Containable items="chaingunboltdmind" />
 		</ItemContainer>
+		<Quality>
+			<QualityStat stattype="Condition" value="0.1" />
+		</Quality>
 	</Item>
-	<Item name="" description="" identifier="chaingunammobox_depletedfuel" scale="0.5" tags="chaingunequipment,chaingunammo,ammobox,chaingunammobox" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
+	<Item name="" description="" identifier="chaingunammobox_depletedfuel" fallbacknameidentifier="chaingunammobox" scale="0.5" tags="chaingunequipment,chaingunammo,ammobox,chaingunammobox" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
 		<PreferredContainer primary="ammoboxcontainer" mincondition="1" />
 		<Price baseprice="455" minavailable="1" displaynonempty="true">
 			<Price storeidentifier="merchantoutpost" multiplier="1.3" sold="false" />
@@ -820,21 +941,23 @@
 			<Item identifier="depletedfuel" mincondition="0.95" />
 			<Item identifier="aluminium" />
 		</Deconstruct>
-		<Fabricate suitablefabricators="fabricator,milfabricator" requiredtime="20" requiresrecipe="true">
+		<Fabricate suitablefabricators="fabricator" requiredtime="20" requiresrecipe="true">
 			<RequiredSkill identifier="weapons" level="40" />
 			<RequiredItem identifier="depletedfuel" amount="2" />
 			<RequiredItem identifier="titanium" />
 			<RequiredItem identifier="aluminium" />
 		</Fabricate>
-		<Fabricate suitablefabricators="fabricator,milfabricator" displayname="recycleitem" requiredtime="15" requiresrecipe="true">
+		<Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15" requiresrecipe="true">
 			<RequiredSkill identifier="weapons" level="35" />
 			<RequiredItem identifier="depletedfuel" amount="2" />
 			<RequiredItem identifier="titanium" />
-			<RequiredItem tag="chaingunammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="chaingunammobox" />
+			<RequiredItem tag="chaingunammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="chaingunammobox_depletedfuel" />
 		</Fabricate>
-		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="503,395,112,84" origin="0.5,0.5" />
+		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="480,398,112,85" origin="0.5,0.5" />
 		<Body width="115" height="88" density="50" />
-		<Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
+		<Holdable canbecombined="true" removeoncombined="false" slots="RightHand,LeftHand" holdpos="0,-30" handle1="0,-30" aimable="false" msg="ItemMsgPickUpSelect">
+			<StatValue stattype="MovementSpeed" value="-0.2" />
+		</Holdable>
 		<ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
 			<StatusEffect type="OnUse" target="This" disabledeltatime="true">
 				<SpawnItem identifiers="chaingunbolt_depletedfuel" spawnposition="ThisInventory" />
@@ -844,8 +967,11 @@
 			</StatusEffect>
 			<Containable items="chaingunbolt_depletedfuel" />
 		</ItemContainer>
+		<Quality>
+			<QualityStat stattype="Condition" value="0.1" />
+		</Quality>
 	</Item>
-	<Item name="" description="" identifier="chaingunammoboxstabilised" scale="0.5" tags="chaingunequipment,chaingunammo,ammobox,chaingunammobox" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
+	<Item name="" description="" identifier="chaingunammoboxstabilised" fallbacknameidentifier="chaingunammobox" scale="0.5" tags="chaingunequipment,chaingunammo,ammobox,chaingunammobox" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
 		<PreferredContainer primary="chaingunammosource" amount="1" mincondition="0.2" />
 		<Price baseprice="202" minavailable="1" displaynonempty="true">
 			<Price storeidentifier="merchantoutpost" multiplier="1.3" />
@@ -861,21 +987,22 @@
 			<Item identifier="aluminium" />
 			<RequiredItem identifier="tin" mincondition="0.95" />
 		</Deconstruct>
-		<Fabricate suitablefabricators="milfabricator" requiredtime="5">
+		<Fabricate suitablefabricators="fabricator" requiredtime="5">
 			<RequiredSkill identifier="weapons" level="60" />
-			<RequiredItem identifier="chaingunammobox" />
+			<RequiredItem tag="chaingunammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="chaingunammoboxstabilised" />
 			<RequiredItem identifier="tin" amount="2" />
 		</Fabricate>
-		<Fabricate suitablefabricators="milfabricator" displayname="recycleitem" requiredtime="15">
+		<Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15">
 			<RequiredSkill identifier="weapons" level="70" />
 			<RequiredItem identifier="lead" amount="2" />
 			<RequiredItem identifier="titanium" />
 			<RequiredItem identifier="tin" amount="2" />
-			<RequiredItem tag="chaingunammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="chaingunammobox" />
 		</Fabricate>
-		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="142,697,112,84" origin="0.5,0.5" />
+		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="138,692,112,85" origin="0.5,0.5" />
 		<Body width="115" height="88" density="50" />
-		<Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
+		<Holdable canbecombined="true" removeoncombined="false" slots="RightHand,LeftHand" holdpos="0,-30" handle1="0,-30" aimable="false" msg="ItemMsgPickUpSelect">
+			<StatValue stattype="MovementSpeed" value="-0.2" />
+		</Holdable>
 		<ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
 			<StatusEffect type="OnUse" target="This" disabledeltatime="true">
 				<SpawnItem identifiers="chaingunboltstab" spawnposition="ThisInventory" />
@@ -887,7 +1014,7 @@
 		</ItemContainer>
 	</Item>
 	<!--pulselaser-->
-	<Item name="" description="" identifier="piercinglaserbox" scale="0.5" tags="pulselaserequipment,pulselaserammo,ammobox" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
+	<Item name="" description="" identifier="piercinglaserbox" fallbacknameidentifier="pulselaserammobox" scale="0.5" tags="pulselaserequipment,pulselaserammo,ammobox" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
 		<PreferredContainer primary="ammocontainer" spawnprobability="0.0" />
 		<Price baseprice="385" soldeverywhere="false">
 			<Price storeidentifier="merchantoutpost" multiplier="1.3" sold="false" />
@@ -901,24 +1028,26 @@
 			<Item identifier="zinc" mincondition="0.95" />
 			<Item identifier="aluminium" />
 		</Deconstruct>
-		<Fabricate suitablefabricators="milfabricator" requiredtime="20">
+		<Fabricate suitablefabricators="fabricator" requiredtime="20">
 			<RequiredSkill identifier="weapons" level="80" />
 			<RequiredItem identifier="pulselaserammobox" />
 			<RequiredItem identifier="fulgurium" />
 			<RequiredItem identifier="zinc" />
 		</Fabricate>
-		<Fabricate suitablefabricators="milfabricator" displayname="recycleitem" requiredtime="15">
+		<Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15">
 			<RequiredSkill identifier="weapons" level="65" />
 			<RequiredItem identifier="lithium" />
 			<RequiredItem identifier="fulgurium" />
 			<RequiredItem identifier="zinc" />
 			<RequiredItem identifier="alienblood" />
-			<RequiredItem tag="pulselaserammo" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="pulselaserammobox" />
+			<RequiredItem tag="pulselaserammo" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="piercinglaserbox" />
 		</Fabricate>
-		<InventoryIcon texture="%ModDir%/Img/Ammo_Extended_Sprites.png" sourcerect="500,589,117,89" origin="0.50070536,0.43863884" />
-		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="500,589,117,89" origin="0.5,0.5" />
+		<InventoryIcon texture="%ModDir%/Img/Ammo_Extended_Sprites.png" sourcerect="480,594,112,85" origin="0.5,0.5" />
+		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="480,594,112,85" origin="0.5,0.5" />
 		<Body width="115" height="88" density="50" />
-		<Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
+		<Holdable canbecombined="true" removeoncombined="false" slots="RightHand,LeftHand" holdpos="0,-30" handle1="0,-30" aimable="false" msg="ItemMsgPickUpSelect">
+			<StatValue stattype="MovementSpeed" value="-0.2" />
+		</Holdable>
 		<ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
 			<StatusEffect type="OnUse" target="This" disabledeltatime="true">
 				<SpawnItem identifiers="pulselaserboltpiercing" spawnposition="ThisInventory" />
@@ -928,8 +1057,11 @@
 			</StatusEffect>
 			<Containable items="pulselaserboltpiercing" />
 		</ItemContainer>
+		<Quality>
+			<QualityStat stattype="Condition" value="0.1" />
+		</Quality>
 	</Item>
-	<Item name="" description="" identifier="pulselaserminingammobox" scale="0.5" tags="pulselaserequipment,pulselaserammo,ammobox" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
+	<Item name="" description="" identifier="pulselaserminingammobox" fallbacknameidentifier="pulselaserammobox" scale="0.5" tags="pulselaserequipment,pulselaserammo,ammobox" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
 		<PreferredContainer primary="ammocontainer" spawnprobability="0.0" />
 		<Price baseprice="410" soldeverywhere="false">
 			<Price storeidentifier="merchantoutpost" multiplier="1.2" sold="false" />
@@ -944,23 +1076,25 @@
 			<Item identifier="phosphorus" />
 			<Item identifier="aluminium" />
 		</Deconstruct>
-		<Fabricate suitablefabricators="fabricator,milfabricator" requiredtime="22">
+		<Fabricate suitablefabricators="fabricator" requiredtime="22">
 			<RequiredSkill identifier="mechanical" level="55" />
 			<RequiredItem identifier="diamond" />
 			<RequiredItem identifier="chlorine" />
 			<RequiredItem identifier="phosphorus" />
 			<RequiredItem identifier="aluminium" />
 		</Fabricate>
-		<Fabricate suitablefabricators="fabricator,milfabricator" displayname="recycleitem" requiredtime="15">
+		<Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15">
 			<RequiredSkill identifier="mechanical" level="50" />
 			<RequiredItem identifier="diamond" />
 			<RequiredItem identifier="chlorine" />
 			<RequiredItem identifier="phosphorus" />
-			<RequiredItem tag="pulselaserammo" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="pulselaserammobox" />
+			<RequiredItem tag="pulselaserammo" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="pulselaserminingammobox" />
 		</Fabricate>
-		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="255,592,112,83" origin="0.5021509,0.42353407" />
+		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="252,594,112,85" origin="0.5,0.5" />
 		<Body width="115" height="88" density="50" />
-		<Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
+		<Holdable canbecombined="true" removeoncombined="false" slots="RightHand,LeftHand" holdpos="0,-30" handle1="0,-30" aimable="false" msg="ItemMsgPickUpSelect">
+			<StatValue stattype="MovementSpeed" value="-0.2" />
+		</Holdable>
 		<ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
 			<StatusEffect type="OnUse" target="This" disabledeltatime="true">
 				<SpawnItem identifiers="mininglaserbolt" spawnposition="ThisInventory" count="10" delay="1.2" />
@@ -970,8 +1104,11 @@
 			</StatusEffect>
 			<Containable items="mininglaserbolt" />
 		</ItemContainer>
+		<Quality>
+			<QualityStat stattype="Condition" value="0.1" />
+		</Quality>
 	</Item>
-	<Item name="" description="" identifier="unstablelaserbox" scale="0.5" tags="pulselaserequipment,pulselaserammo,ammobox" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
+	<Item name="" description="" identifier="unstablelaserbox" fallbacknameidentifier="pulselaserammobox" scale="0.5" tags="pulselaserequipment,pulselaserammo,ammobox" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
 		<PreferredContainer primary="ammocontainer" spawnprobability="0.0" />
 		<Price baseprice="315" soldeverywhere="false">
 			<Price storeidentifier="merchantoutpost" multiplier="1.3" minavailable="1" />
@@ -986,24 +1123,25 @@
 			<Item identifier="sodium" mincondition="0.95" />
 			<Item identifier="aluminium" />
 		</Deconstruct>
-		<Fabricate suitablefabricators="fabricator,milfabricator" requiredtime="20">
+		<Fabricate suitablefabricators="fabricator" requiredtime="20">
 			<RequiredSkill identifier="weapons" level="60" />
 			<RequiredItem identifier="alienblood" />
 			<RequiredItem identifier="aluminium" />
 			<RequiredItem identifier="zinc" />
 			<RequiredItem identifier="sodium" />
 		</Fabricate>
-		<Fabricate suitablefabricators="fabricator,milfabricator" displayname="recycleitem" requiredtime="15">
+		<Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15">
 			<RequiredSkill identifier="weapons" level="55" />
 			<RequiredItem identifier="sodium" />
 			<RequiredItem identifier="zinc" />
 			<RequiredItem identifier="alienblood" />
-			<RequiredItem tag="pulselaserammo" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="pulselaserammobox" />
+			<RequiredItem tag="pulselaserammo" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="unstablelaserbox" />
 		</Fabricate>
-		<InventoryIcon texture="%ModDir%/Img/Ammo_Extended_Sprites.png" sourcerect="22,393,117,89" origin="0.50070536,0.43863884" />
-		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="22,393,117,89" origin="0.5,0.5" />
+		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="24,398,112,85" origin="0.5,0.5" />
 		<Body width="115" height="88" density="50" />
-		<Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
+		<Holdable canbecombined="true" removeoncombined="false" slots="RightHand,LeftHand" holdpos="0,-30" handle1="0,-30" aimable="false" msg="ItemMsgPickUpSelect">
+			<StatValue stattype="MovementSpeed" value="-0.2" />
+		</Holdable>
 		<ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
 			<StatusEffect type="OnUse" target="This" disabledeltatime="true">
 				<SpawnItem identifiers="unstablelaserbolt" spawnposition="ThisInventory" />
@@ -1013,8 +1151,11 @@
 			</StatusEffect>
 			<Containable items="unstablelaserbolt" />
 		</ItemContainer>
+		<Quality>
+			<QualityStat stattype="Condition" value="0.1" />
+		</Quality>
 	</Item>
-	<Item name="" description="" identifier="pulselaserdischargeammobox" scale="0.5" tags="pulselaserequipment,pulselaserammo,ammobox" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
+	<Item name="" description="" identifier="pulselaserdischargeammobox" fallbacknameidentifier="pulselaserammobox" scale="0.5" tags="pulselaserequipment,pulselaserammo,ammobox" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
 		<PreferredContainer primary="ammocontainer" spawnprobability="0.0" />
 		<Price baseprice="450" soldeverywhere="false">
 			<Price storeidentifier="merchantoutpost" multiplier="1.3" sold="false" />
@@ -1027,23 +1168,25 @@
 			<Item identifier="fulgurium" mincondition="0.95" />
 			<Item identifier="aluminium" />
 		</Deconstruct>
-		<Fabricate suitablefabricators="fabricator,milfabricator" requiredtime="30">
+		<Fabricate suitablefabricators="fabricator" requiredtime="30">
 			<RequiredSkill identifier="weapons" level="50" />
 			<RequiredItem identifier="liquidoxygenite" />
 			<RequiredItem identifier="sulphuricacid" />
 			<RequiredItem identifier="fulgurium" />
 			<RequiredItem identifier="aluminium" />
 		</Fabricate>
-		<Fabricate suitablefabricators="fabricator,milfabricator" displayname="recycleitem" requiredtime="25">
+		<Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="25">
 			<RequiredSkill identifier="weapons" level="45" />
 			<RequiredItem identifier="liquidoxygenite" />
 			<RequiredItem identifier="sulphuricacid" />
 			<RequiredItem identifier="fulgurium" />
-			<RequiredItem tag="pulselaserammo" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="pulselaserammobox" />
+			<RequiredItem tag="pulselaserammo" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="pulselaserdischargeammobox" />
 		</Fabricate>
-		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="25,594,110,84" origin="0.49646956,0.46440125" />
+		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="24,594,112,85" origin="0.5,0.5" />
 		<Body width="115" height="88" density="50" />
-		<Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
+		<Holdable canbecombined="true" removeoncombined="false" slots="RightHand,LeftHand" holdpos="0,-30" handle1="0,-30" aimable="false" msg="ItemMsgPickUpSelect">
+			<StatValue stattype="MovementSpeed" value="-0.2" />
+		</Holdable>
 		<ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
 			<StatusEffect type="OnUse" target="This" disabledeltatime="true">
 				<SpawnItem identifiers="laserdischargebolt" spawnposition="ThisInventory" />
@@ -1053,8 +1196,11 @@
 			</StatusEffect>
 			<Containable items="laserdischargebolt" />
 		</ItemContainer>
+		<Quality>
+			<QualityStat stattype="Condition" value="0.1" />
+		</Quality>
 	</Item>
-	<Item name="" description="" identifier="pulselaserweldingammobox" scale="0.5" tags="pulselaserequipment,pulselaserammo,ammobox" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
+	<Item name="" description="" identifier="pulselaserweldingammobox" fallbacknameidentifier="pulselaserammobox" scale="0.5" tags="pulselaserequipment,pulselaserammo,ammobox" category="Weapon" subcategory="Turret ammunition" linkable="true" impactsoundtag="impact_metal_heavy">
 		<PreferredContainer primary="ammocontainer" spawnprobability="0.0" />
 		<Price baseprice="235" soldeverywhere="false">
 			<Price storeidentifier="merchantoutpost" multiplier="1.1" minavailable="1" />
@@ -1067,23 +1213,25 @@
 			<Item identifier="lithium" mincondition="0.95" />
 			<Item identifier="aluminium" />
 		</Deconstruct>
-		<Fabricate suitablefabricators="fabricator,milfabricator" requiredtime="22">
+		<Fabricate suitablefabricators="fabricator" requiredtime="22">
 			<RequiredSkill identifier="weapons" level="45" />
 			<RequiredItem identifier="lithium" />
 			<RequiredItem identifier="ethanol" />
 			<RequiredItem identifier="phosphorus" />
 			<RequiredItem identifier="aluminium" />
 		</Fabricate>
-		<Fabricate suitablefabricators="fabricator,milfabricator" displayname="recycleitem" requiredtime="15">
+		<Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15">
 			<RequiredSkill identifier="weapons" level="45" />
 			<RequiredItem identifier="lithium" />
 			<RequiredItem identifier="phosphorus" />
 			<RequiredItem identifier="ethanol" />
-			<RequiredItem tag="pulselaserammo" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="pulselaserammobox" />
+			<RequiredItem tag="pulselaserammo" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="pulselaserweldingammobox" />
 		</Fabricate>
-		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="257,395,112,83" origin="0.4961154,0.46817797" />
+		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" depth="0.54" sourcerect="252,398,112,85" origin="0.5,0.5" />
 		<Body width="115" height="88" density="50" />
-		<Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
+		<Holdable canbecombined="true" removeoncombined="false" slots="RightHand,LeftHand" holdpos="0,-30" handle1="0,-30" aimable="false" msg="ItemMsgPickUpSelect">
+			<StatValue stattype="MovementSpeed" value="-0.2" />
+		</Holdable>
 		<ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
 			<StatusEffect type="OnUse" target="This" disabledeltatime="true">
 				<SpawnItem identifiers="pulselaserweldingbolt" spawnposition="ThisInventory" />
@@ -1093,9 +1241,12 @@
 			</StatusEffect>
 			<Containable items="pulselaserweldingbolt" />
 		</ItemContainer>
+		<Quality>
+			<QualityStat stattype="Condition" value="0.1" />
+		</Quality>
 	</Item>
 	<!--Hidden-->
-	<Item name="shockemmiter" identifier="shockemmiter" Scale="1" sonarsize="0" hideinmenus="true" impacttolerance="0.001" health="15" depth="0.1" isdangerous="true" damagedbyexplosions="false">
+	<Item name="Shock Emmiter" identifier="shockemmiter" Scale="1" sonarsize="0" hideinmenus="true" impacttolerance="0.001" health="15" depth="0.1" isdangerous="true" damagedbyexplosions="false">
 		<Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="0,0,2,2" depth="0.55" origin="0.5,0.5" />
 		<Body radius="30" bodytype="kinematic" />
 		<ItemComponent>
@@ -1112,7 +1263,7 @@
 			</StatusEffect>
 		</ItemComponent>
 	</Item>
-	<Item name="acidemitter_sulp_small" identifier="acidemitter_sulp_small" Scale="0.2" tags="" sonarsize="0" impacttolerance="0.001" hideinmenus="true" health="30">
+	<Item name="Sulphuric Acid emitter small" identifier="acidemitter_sulp_small" Scale="0.2" sonarsize="0" impacttolerance="0.001" hideinmenus="true" health="30">
 		<Body radius="85" bodytype="kinematic" />
 		<Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="0,0,2,2" depth="0.55" origin="0.5,0.5" />
 		<ItemComponent>
@@ -1161,7 +1312,7 @@
 			</StatusEffect>
 		</ItemComponent>
 	</Item>
-	<Item name="mininglaserbolt" identifier="mininglaserbolt" category="Weapon" subcategory="Turret ammunition" scale="0.5" sonarsize="2" hideinmenus="true" maxstacksize="10">
+	<Item name="Mining Laser Bolt" identifier="mininglaserbolt" category="Weapon" subcategory="Turret ammunition" scale="0.5" sonarsize="2" hideinmenus="true" maxstacksize="10">
 		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" sourcerect="1,1,1,1" depth="0.55" origin="0.5,0.5" />
 		<Body width="170" height="10" density="20" />
 		<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
@@ -1193,7 +1344,7 @@
 			</StatusEffect>
 		</Projectile>
 	</Item>
-	<Item name="acidemitter_sulp" identifier="acidemitter_sulp" Scale="1" tags="" sonarsize="0" impacttolerance="0.001" hideinmenus="true" health="180">
+	<Item name="Sulphuric Acid Emitter" identifier="acidemitter_sulp" Scale="1" sonarsize="0" impacttolerance="0.001" hideinmenus="true" health="180">
 		<Body radius="200" bodytype="kinematic" />
 		<Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="0,0,2,2" depth="0.55" origin="0.5,0.5" />
 		<ItemComponent>
@@ -1242,7 +1393,7 @@
 			</StatusEffect>
 		</ItemComponent>
 	</Item>
-	<Item name="scatterbolt" identifier="scatterbolt" category="Weapon" tags="deflectable" subcategory="Turret ammunition" scale="0.5" sonarsize="1" hideinmenus="true" maxstacksize="3">
+	<Item name="Scatter Bolt" identifier="scatterbolt" category="Weapon" tags="deflectable" subcategory="Turret ammunition" scale="0.5" sonarsize="1" hideinmenus="true" maxstacksize="3">
 		<Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="143,414,113,9" depth="0.55" />
 		<Body width="170" height="10" density="20" />
 		<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
@@ -1260,6 +1411,8 @@
 				<Remove />
 			</StatusEffect>
 			<StatusEffect type="OnImpact" target="This">
+				<ParticleEmitter particle="impactfirearm" copyentityangle="true" particleamount="1" velocitymin="0" velocitymax="0" scalemin="4.0" scalemax="5.0" colormultiplier="255,150,255" lifetimemultiplier="5" />
+				<ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="10" velocitymin="100" velocitymax="2000" scalemin="0.25" scalemax="0.5" />
 				<Remove />
 			</StatusEffect>
 			<StatusEffect type="OnNotContained" target="This" tags="active" duration="3" stackable="false" />
@@ -1285,7 +1438,7 @@
 		</Projectile>
 		<Upgrade gameversion="0.10.0.0" scale="*0.5" />
 	</Item>
-	<Item name="shockboltflak" identifier="flakboltshock" category="Weapon" subcategory="Turret ammunition" scale="1" sonarsize="2" hideinmenus="true">
+	<Item name="Shock Bolt Flak" identifier="flakboltshock" category="Weapon" subcategory="Turret ammunition" scale="1" sonarsize="2" hideinmenus="true">
 		<Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="143,414,113,9" depth="0.55" />
 		<Body width="170" height="10" density="20" />
 		<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
@@ -1317,7 +1470,7 @@
 			</StatusEffect>
 		</MotionSensor>
 	</Item>
-	<Item name="shockshrapnel" description="" identifier="flakshrapnelshock" category="Weapon" subcategory="Turret ammunition" scale="0.3" sonarsize="1" hideinmenus="true">
+	<Item name="Shock Shrapnel" identifier="flakshrapnelshock" category="Weapon" subcategory="Turret ammunition" scale="0.3" sonarsize="1" hideinmenus="true">
 		<Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="143,414,113,9" depth="0.55" />
 		<Body width="170" height="10" density="20" />
 		<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
@@ -1335,7 +1488,7 @@
 			</StatusEffect>
 		</Projectile>
 	</Item>
-	<Item name="railgunshell-pellet_сhitin" identifier="railgunshell-pellet_сhitin" category="Weapon" subcategory="Turret ammunition" scale="0.5" sonarsize="3" hideinmenus="true">
+	<Item name="Railgunshell-pellet Chitin" identifier="railgunshell-pellet_сhitin" category="Weapon" subcategory="Turret ammunition" scale="0.5" sonarsize="3" hideinmenus="true">
 		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" sourcerect="143,233,215,33" depth="0.55" origin="0.5,0.5" />
 		<Body width="160" height="10" density="20" />
 		<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
@@ -1378,7 +1531,7 @@
 			</StatusEffect>
 		</ItemContainer>
 	</Item>
-	<Item name="railgun_сhitin_pellet" identifier="railgun_сhitin_pellet" category="Weapon" subcategory="Turret ammunition" scale="0.5" sonarsize="2" hideinmenus="true">
+	<Item name="Railgun Chitin Pellet" identifier="railgun_сhitin_pellet" category="Weapon" subcategory="Turret ammunition" scale="0.5" sonarsize="2" hideinmenus="true">
 		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" sourcerect="985,11,29,23" depth="0.55" origin="0.5,0.5" />
 		<Body width="160" height="10" density="20" />
 		<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
@@ -1405,7 +1558,7 @@
 			</StatusEffect>
 		</Projectile>
 	</Item>
-	<Item name="coilgunboltflack" identifier="coilgunboltflack" tags="deflectable" category="Weapon" subcategory="Turret ammunition" scale="0.5" sonarsize="2" hideinmenus="true">
+	<Item name="Coilgun Bolt Flack" identifier="coilgunboltflack" tags="deflectable" category="Weapon" subcategory="Turret ammunition" scale="0.5" sonarsize="2" hideinmenus="true">
 		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" sourcerect="28,345,112,9" depth="0.55" origin="0.5,0.5" />
 		<Body width="150" height="1000" density="20" />
 		<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
@@ -1454,7 +1607,7 @@
 		</Projectile>
 		<Upgrade gameversion="0.10.0.0" scale="*0.5" />
 	</Item>
-	<Item name="capped piercing bolt" identifier="coilgunboltpiercing_capped" category="Weapon" subcategory="Turret ammunition" scale="0.5" sonarsize="2" hideinmenus="true">
+	<Item name="Capped Piercing Bolt" identifier="coilgunboltpiercing_capped" category="Weapon" subcategory="Turret ammunition" scale="0.5" sonarsize="2" hideinmenus="true">
 		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" sourcerect="28,344,112,12" depth="0.55" origin="0.5,0.5" />
 		<Body width="160" height="10" density="20" />
 		<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
@@ -1478,7 +1631,7 @@
 		</Projectile>
 		<Upgrade gameversion="0.10.0.0" scale="*0.5" />
 	</Item>
-	<Item name="d_chaingunround" identifier="chaingunboltdmind" category="Weapon" subcategory="Turret ammunition" scale="0.3" sonarsize="2" hideinmenus="true">
+	<Item name="Dementonite Chaingun Bolt" identifier="chaingunboltdmind" category="Weapon" subcategory="Turret ammunition" scale="0.3" sonarsize="2" hideinmenus="true">
 		<Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="143,310,369,66" depth="0.55" />
 		<Body width="170" height="10" density="10" />
 		<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
@@ -1507,7 +1660,7 @@
 			</StatusEffect>
 		</Projectile>
 	</Item>
-	<Item name="railgun_cartridge_pellet" identifier="railgun_cartridge_pellet" category="Weapon" subcategory="Turret ammunition" scale="0.5" sonarsize="2" hideinmenus="true">
+	<Item name="Railgun Cartridge Pellet" identifier="railgun_cartridge_pellet" category="Weapon" subcategory="Turret ammunition" scale="0.5" sonarsize="2" hideinmenus="true">
 		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" sourcerect="260,268,98,33" depth="0.55" origin="0.5,0.5" />
 		<Body width="160" height="10" density="20" />
 		<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
@@ -1540,7 +1693,7 @@
 			</StatusEffect>
 		</Projectile>
 	</Item>
-	<Item name="scatterpellet" identifier="scatterpellet" category="Weapon" subcategory="Turret ammunition" scale="0.3" sonarsize="1" hideinmenus="true">
+	<Item name="Scatter Pellet" identifier="scatterpellet" category="Weapon" subcategory="Turret ammunition" scale="0.3" sonarsize="1" hideinmenus="true">
 		<Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="143,310,369,66" depth="0.55" />
 		<Body width="170" height="10" density="10" />
 		<Projectile characterusable="false" launchimpulse="0" spread="17" damagedoors="true" staticspread="false" maxtargetstohit="3" removeonhit="true">
@@ -1566,7 +1719,7 @@
 			</StatusEffect>
 		</Projectile>
 	</Item>
-	<Item name="fulguriumbolt" identifier="fulguriumbolt" category="Weapon" tags="deflectable" subcategory="Turret ammunition" scale="0.5" sonarsize="2" hideinmenus="true">
+	<Item name="Fulgurium Bolt" identifier="fulguriumbolt" category="Weapon" tags="deflectable" subcategory="Turret ammunition" scale="0.5" sonarsize="2" hideinmenus="true">
 		<Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="143,414,113,9" depth="0.55" />
 		<Body width="170" height="10" density="20" />
 		<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
@@ -1617,7 +1770,7 @@
 		</Projectile>
 		<Upgrade gameversion="0.10.0.0" scale="*0.5" />
 	</Item>
-	<Item name="weldlaserbolt" identifier="pulselaserweldingbolt" category="Weapon" subcategory="Turret ammunition" scale="0.5" sonarsize="2" hideinmenus="true">
+	<Item name="Pulselaser Welding Bolt" identifier="pulselaserweldingbolt" category="Weapon" subcategory="Turret ammunition" scale="0.5" sonarsize="2" hideinmenus="true">
 		<Sprite texture="%ModDir%/Img/Ammo_Extended_Sprites.png" sourcerect="1,1,1,1" depth="0.55" origin="0.5,0.5" />
 		<Body width="170" height="10" density="20" />
 		<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
@@ -1649,7 +1802,7 @@
 			</StatusEffect>
 		</Projectile>
 	</Item>
-	<Item name="laserdischargebolt" identifier="laserdischargebolt" category="Weapon" subcategory="Turret ammunition" scale="0.5" sonarsize="2" hideinmenus="true">
+	<Item name="Laser Discharge Bolt" identifier="laserdischargebolt" category="Weapon" subcategory="Turret ammunition" scale="0.5" sonarsize="2" hideinmenus="true">
 		<Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="1,1,1,1" depth="0.55" />
 		<Body width="3000" height="2000" density="20" />
 		<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
@@ -1668,7 +1821,7 @@
 		</Projectile>
 		<Upgrade gameversion="0.10.0.0" scale="*0.5" />
 	</Item>
-	<Item name="jetbolt" identifier="jetbolt" category="Weapon" subcategory="Turret ammunition" scale="0.5" sonarsize="2" hideinmenus="true">
+	<Item name="Jet Bolt" identifier="jetbolt" category="Weapon" subcategory="Turret ammunition" scale="0.5" sonarsize="2" hideinmenus="true">
 		<Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="143,414,113,9" depth="0.55" />
 		<Body width="160" height="10" density="20" />
 		<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
@@ -1692,7 +1845,7 @@
 		</Projectile>
 		<Upgrade gameversion="0.10.0.0" scale="*0.5" />
 	</Item>
-	<Item name="chembolt" description="" identifier="flakboltchemical" category="Weapon" subcategory="Turret ammunition" scale="1" sonarsize="2" hideinmenus="true">
+	<Item name="Flak Bolt Chemical" identifier="flakboltchemical" category="Weapon" subcategory="Turret ammunition" scale="1" sonarsize="2" hideinmenus="true">
 		<Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="143,414,113,9" depth="0.55" />
 		<Body width="170" height="10" density="20" />
 		<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
@@ -1724,7 +1877,7 @@
 			</StatusEffect>
 		</MotionSensor>
 	</Item>
-	<Item name="chemschrap" description="" identifier="flakshrapnelchemical" category="Weapon" subcategory="Turret ammunition" scale="0.3" sonarsize="1" hideinmenus="true">
+	<Item name="Flak Shrapnel Chemical" identifier="flakshrapnelchemical" category="Weapon" subcategory="Turret ammunition" scale="0.3" sonarsize="1" hideinmenus="true">
 		<Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="143,414,113,9" depth="0.55" />
 		<Body width="170" height="10" density="20" />
 		<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
@@ -1742,7 +1895,7 @@
 			</StatusEffect>
 		</Projectile>
 	</Item>
-	<Item name="sol" description="" identifier="flakboltsolid" category="Weapon" subcategory="Turret ammunition" scale="1" sonarsize="2" hideinmenus="true">
+	<Item name="Flak Bolt Solid" identifier="flakboltsolid" category="Weapon" subcategory="Turret ammunition" scale="1" sonarsize="2" hideinmenus="true">
 		<Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="143,414,113,9" depth="0.55" />
 		<Body width="170" height="10" density="20" />
 		<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
@@ -1765,7 +1918,7 @@
 			<StatusEffect type="OnImpact" target="This" Condition="-100" stackable="false" />
 		</Projectile>
 	</Item>
-	<Item name="Chaingun explosive bolt" identifier="chaingunboltexplosive" category="Weapon" subcategory="Turret ammunition" scale="0.3" sonarsize="2" hideinmenus="true">
+	<Item name="Chaingun Explosive Bolt" identifier="chaingunboltexplosive" category="Weapon" subcategory="Turret ammunition" scale="0.3" sonarsize="2" hideinmenus="true">
 		<Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="143,310,369,66" depth="0.55" origin="0.5,0.5" />
 		<Body width="170" height="10" density="10" />
 		<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
@@ -1794,7 +1947,7 @@
 			</StatusEffect>
 		</Projectile>
 	</Item>
-	<Item name="unstablelaserbolt" identifier="unstablelaserbolt" category="Weapon" subcategory="Turret ammunition" scale="0.5" sonarsize="2" hideinmenus="true">
+	<Item name="Unstable Laser Bolt" identifier="unstablelaserbolt" category="Weapon" subcategory="Turret ammunition" scale="0.5" sonarsize="2" hideinmenus="true">
 		<Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="143,414,113,9" depth="0.55" />
 		<Body width="170" height="10" density="20" />
 		<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
@@ -1828,7 +1981,7 @@
 			</StatusEffect>
 		</Projectile>
 	</Item>
-	<Item name="depl" identifier="chaingunbolt_depletedfuel" category="Weapon" subcategory="Turret ammunition" scale="0.3" sonarsize="2" hideinmenus="true">
+	<Item name="Depletedfuel Chaingun Bolt" identifier="chaingunbolt_depletedfuel" category="Weapon" subcategory="Turret ammunition" scale="0.3" sonarsize="2" hideinmenus="true">
 		<Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="143,310,369,66" depth="0.55" />
 		<Body width="170" height="10" density="10" />
 		<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
@@ -1865,7 +2018,7 @@
 			</StatusEffect>
 		</Projectile>
 	</Item>
-	<Item name="incendiarybolt" identifier="incendiarybolt" category="Weapon" tags="deflectable" subcategory="Turret ammunition" scale="0.5" sonarsize="3.5" hideinmenus="true">
+	<Item name="Incendiary Bolt" identifier="incendiarybolt" category="Weapon" tags="deflectable" subcategory="Turret ammunition" scale="0.5" sonarsize="3.5" hideinmenus="true">
 		<Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="143,414,113,9" depth="0.55" />
 		<Body width="170" height="10" density="20" />
 		<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
@@ -1916,7 +2069,7 @@
 		</Projectile>
 		<Upgrade gameversion="0.10.0.0" scale="*0.5" />
 	</Item>
-	<Item name="pulselaserboltpiercing" identifier="pulselaserboltpiercing" category="Weapon" subcategory="Turret ammunition" scale="0.5" sonarsize="2" hideinmenus="true">
+	<Item name="Pulselaser Bolt Piercing" identifier="pulselaserboltpiercing" category="Weapon" subcategory="Turret ammunition" scale="0.5" sonarsize="2" hideinmenus="true">
 		<Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="143,414,113,9" depth="0.55" />
 		<Body width="170" height="10" density="20" />
 		<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
@@ -1952,7 +2105,7 @@
 			</StatusEffect>
 		</Projectile>
 	</Item>
-	<Item name="sulphuricbolt" identifier="sulphuricbolt" tags="deflectable" category="Weapon" subcategory="Turret ammunition" scale="0.5" sonarsize="3.5" hideinmenus="true">
+	<Item name="Sulphuric Bolt" identifier="sulphuricbolt" tags="deflectable" category="Weapon" subcategory="Turret ammunition" scale="0.5" sonarsize="3.5" hideinmenus="true">
 		<Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="143,414,113,9" depth="0.55" />
 		<Body width="170" height="10" density="20" />
 		<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
@@ -1970,6 +2123,8 @@
 				<Remove />
 			</StatusEffect>
 			<StatusEffect type="OnImpact" target="This">
+				<ParticleEmitter particle="impactfirearm" copyentityangle="true" particleamount="1" velocitymin="0" velocitymax="0" scalemin="4.0" scalemax="5.0" colormultiplier="255,150,255" lifetimemultiplier="5" />
+				<ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="10" velocitymin="100" velocitymax="2000" scalemin="0.25" scalemax="0.5" />
 				<Remove />
 			</StatusEffect>
 			<StatusEffect type="OnImpact" target="This">
@@ -1998,7 +2153,7 @@
 		</Projectile>
 		<Upgrade gameversion="0.10.0.0" scale="*0.5" />
 	</Item>
-	<Item name="chaingunboltstab" identifier="chaingunboltstab" category="Weapon" subcategory="Turret ammunition" scale="0.3" sonarsize="2" hideinmenus="true">
+	<Item name="Chaingun Bolt Fin-stabilised" identifier="chaingunboltstab" category="Weapon" subcategory="Turret ammunition" scale="0.3" sonarsize="2" hideinmenus="true">
 		<Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="143,310,369,66" depth="0.55" />
 		<Body width="170" height="10" density="10" />
 		<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
@@ -2027,7 +2182,7 @@
 			</StatusEffect>
 		</Projectile>
 	</Item>
-	<Item name="dementonitebolt" identifier="dementonitebolt" tags="deflectable" category="Weapon" subcategory="Turret ammunition" scale="0.5" sonarsize="2" hideinmenus="true">
+	<Item name="Dementonite Bolt" identifier="dementonitebolt" tags="deflectable" category="Weapon" subcategory="Turret ammunition" scale="0.5" sonarsize="2" hideinmenus="true">
 		<Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="143,414,113,9" depth="0.55" />
 		<Body width="170" height="10" density="20" />
 		<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
@@ -2047,6 +2202,8 @@
 				<Remove />
 			</StatusEffect>
 			<StatusEffect type="OnImpact" target="This">
+				<ParticleEmitter particle="impactfirearm" copyentityangle="true" particleamount="1" velocitymin="0" velocitymax="0" scalemin="4.0" scalemax="5.0" colormultiplier="255,150,255" lifetimemultiplier="5" />
+				<ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="10" velocitymin="100" velocitymax="2000" scalemin="0.25" scalemax="0.5" />
 				<Remove />
 			</StatusEffect>
 			<StatusEffect type="OnNotContained" target="This" tags="active" duration="3" stackable="false" />
