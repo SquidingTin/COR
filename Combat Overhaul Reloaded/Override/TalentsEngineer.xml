@@ -33,7 +33,7 @@
 				<Replace tag="[burnincrease]" value="10" color="gui.green" />
 			</Description>
 			<Description tag="talentdescription.unlockrecipe">
-				<Replace tag="[itemname]" value="HHFC-105 Fire cannon" color="gui.orange" />
+				<Replace tag="[itemname]" value="entityname.flamer_co" color="gui.orange" />
 			</Description>
 			<AbilityGroupEffect abilityeffecttype="OnAddDamageAffliction">
 				<Abilities>
@@ -78,7 +78,7 @@
 				<Replace tag="[stunseconds]" value="(Applies a +25% damage vulnurability instead. No attack power penalty)" color="gui.green" />
 			</Description>
 			<Description tag="talentdescription.unlockrecipe">
-				<Replace tag="[itemname]" value="X-129 Pyrogen rifle, Liqud purogen tanks" color="gui.orange" />
+				<Replace tag="[itemname]" value="entityname.pyrogenrifle, entityname.pyrogentank" color="gui.orange" />
 			</Description>
 			<AbilityGroupInterval interval="1">
 				<Abilities>
@@ -129,7 +129,7 @@
 				<Replace tag="[skillname]" value="skillname.weapons" color="gui.orange" />
 			</Description>
 			<Description tag="talentdescription.unlockrecipe">
-				<Replace tag="[itemname]" value="entityname.depletedfuel,entityname.coilgunammoboxdepletedfuel,Depleted Fuel Chaingun Ammo Box, RRG-85 Guided grenade" color="gui.orange" />
+				<Replace tag="[itemname]" value="entityname.depletedfuel, entityname.guidedgrenade, entityname.coilgunammoboxdepletedfuel, entityname.chaingunammobox_depletedfuel" color="gui.orange" />
 			</Description>
 			<AbilityGroupEffect abilityeffecttype="None">
 				<Abilities>
@@ -157,12 +157,13 @@
 			<Icon texture="Content/UI/TalentsIcons1.png" sheetindex="3,7" sheetelementsize="128,128" />
 			<Description tag="talentdescription.nuclearoption" />
 			<Description tag="talentdescription.unlockrecipe">
-				<Replace tag="[itemname]" value="ARG-21 handheld gauss rifle" color="gui.orange" />
+				<Replace tag="[itemname]" value="entityname.nucleargun_alt, entityname.nucleargun_magazine" color="gui.orange" />
 			</Description>
 			<AddedRecipe itemidentifier="nucleargun" />
 			<AddedRecipe itemidentifier="nucleargun_magazine" />
-			<AddedRecipe itemidentifier="nuclearshell" />
-			<AddedRecipe itemidentifier="nucleardepthcharge" />
+			<AddedRecipe itemidentifier="nuclearshellcheap" />
+			<AddedRecipe itemidentifier="nucleardepthchargecheap" />
+			<AddedRecipe itemidentifier="nucleardepthdecoycheap" />
 		</Talent>
 		<Talent identifier="phdinnuclearphysics">
 			<Icon texture="Content/UI/TalentsIcons2.png" sheetindex="3,1" sheetelementsize="128,128" />

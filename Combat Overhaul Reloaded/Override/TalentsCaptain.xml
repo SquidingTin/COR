@@ -7,7 +7,7 @@
 				<Replace tag="[amount]" value="15%(For all 9x19, .44, .38, .45, 5.7x28 weapons)" color="gui.green" />
 			</Description>
 			<Description tag="talentdescription.unlockrecipe">
-				<Replace tag="[itemname]" value="M50 Experimental pistol, 5.7x28 Ammunition" color="gui.orange" />
+				<Replace tag="[itemname]" value="entityname.57_pistol_tallent, entityname.5.7mm_round" color="gui.orange" />
 			</Description>
 			<AddedRecipe itemidentifier="57_pistol_tallent" />
 			<AddedRecipe itemidentifier="5.7mm_round" />
@@ -55,7 +55,7 @@
 		<Talent identifier="gunsmith">
 			<Icon texture="Content/UI/TalentsIcons1.png" sheetindex="5,3" sheetelementsize="128,128" />
 			<Description tag="talentdescription.unlockrecipe">
-				<Replace tag="[itemname]" value="RKX-16 revolver, .38 ammunition" color="gui.orange" />
+				<Replace tag="[itemname]" value="entityname.revolver_38_talent, entityname.38_round" color="gui.orange" />
 			</Description>
 			<AddedRecipe itemidentifier="38_round" />
 			<AddedRecipe itemidentifier="revolver_38_talent" />
@@ -112,7 +112,7 @@
 				<Replace tag="[stunresistance]" value="75" color="gui.green" />
 			</Description>
 			<Description tag="talentdescription.unlockrecipe">
-				<Replace tag="[itemname]" value="entityname.rum" color="gui.orange" />
+				<Replace tag="[itemname]" value="entityname.rum, entityname.molotovcoctail" color="gui.orange" />
 			</Description>
 			<Icon texture="Content/UI/TalentsIcons1.png" sheetindex="3,0" sheetelementsize="128,128" />
 			<AbilityGroupEffect abilityeffecttype="OnAddDamageAffliction">
@@ -143,7 +143,7 @@
 				<Replace tag="[missiontype2]" value="missiontype.nest" color="gui.orange" />
 			</Description>
 			<Description tag="talentdescription.unlockrecipe">
-				<Replace tag="[itemname]" value="R-100 Heavy revolver" color="gui.orange" />
+				<Replace tag="[itemname]" value="entityname.handcannon" color="gui.orange" />
 			</Description>
 			<Icon texture="Content/UI/TalentsIcons1.png" sheetindex="4,0" sheetelementsize="128,128" />
 			<AbilityGroupEffect abilityeffecttype="OnGainMissionMoney">

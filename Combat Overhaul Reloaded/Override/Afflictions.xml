@@ -17,6 +17,54 @@
 		<Icon texture="Content/UI/TalentsIcons2.png" sheetindex="2,7" sheetelementsize="128,128" origin="0,0"/>
 	</Affliction>
 
+	<Affliction identifier="Praiseherlove" type="talentbuff" isbuff="true" hideiconafterdelay="true" limbspecific="false" showiconthreshold="10" maxstrength="10" treatmentthreshold="1000" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+		<Effect minstrength="0" maxstrength="60" strengthchange="0"/>
+			<!--Timer-->
+		<Icon texture="Content/UI/TalentsIcons2.png" sheetindex="2,7" sheetelementsize="128,128" origin="0,0"/>
+	</Affliction>
+
+	<Affliction name="Accuracy Stim" identifier="accuraccystim" type="visionbuff" isbuff="true" limbspecific="false" maxstrength="600" MedicalSkillGain="0.01">
+		<Effect minstrength="0" maxstrength="600" strengthchange="-1" ThermalOverlayRange="1500" ThermalOverlayColor="134,182,253,150"/>
+		<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,896,128,128" color="10,193,114,255" origin="0,0"/>
+	</Affliction>
+
+	<Affliction nameidentifier="outsideinfluence" identifier="a1stcor" type="geneticmaterialdebuff" limbspecific="false" indicatorlimb="Head" hideiconafterdelay="true" showiconthreshold="100000" treatmentthreshold="1000" maxstrength="100" iconcolors="94,54,95;163,73,164;200,191,231">
+		<Effect minstrength="0" maxstrength="100">
+			<StatusEffect target="Character" interval="1" disabledeltatime="true">
+				<Affliction identifier="psychosis" amount="0.05" />
+			</StatusEffect>
+			<Effect minstrength="0" maxstrength="20">
+				<StatusEffect target="Character" interval="0.1" disabledeltatime="true">
+					<ReduceAffliction type="damage" amount="0.01" />
+				</StatusEffect>
+			</Effect>
+			<Effect minstrength="20" maxstrength="40">
+				<StatusEffect target="Character" interval="0.1" disabledeltatime="true">
+					<ReduceAffliction type="damage" amount="0.035" />
+				</StatusEffect>
+			</Effect>
+			<Effect minstrength="40" maxstrength="60">
+				<StatusEffect target="Character" interval="0.1" disabledeltatime="true">
+					<ReduceAffliction type="damage" amount="0.05" />
+				</StatusEffect>
+			</Effect>
+			<Effect minstrength="60" maxstrength="80">
+				<StatusEffect target="Character" interval="0.1" disabledeltatime="true">
+					<ReduceAffliction type="damage" amount="0.065" />
+				</StatusEffect>
+			</Effect>
+			<Effect minstrength="80" maxstrength="100">
+				<StatusEffect target="Character" interval="0.1" disabledeltatime="true">
+					<ReduceAffliction type="damage" amount="0.075" />
+				</StatusEffect>
+			</Effect>
+		</Effect>
+		<icon texture="Content/UI/TalentsIcons3.png" sheetindex="5,0" sheetelementsize="128,128" color="163,73,764,255" origin="0,0"/>
+	</Affliction>
+
+
+	
+
 		<!--Deaths-->
 		
 	<Affliction name="" description="" causeofdeathdescription="" selfcauseofdeathdescription="" identifier="dmind" type="poison" limbspecific="false" indicatorlimb="Head" activationthreshold="20" maxstrength="100">
@@ -131,11 +179,11 @@
 	</Affliction>
 
 	<Affliction name="" description="" identifier="nvgoverlay" type="none" limbspecific="false" indicatorlimb="Head" hideiconafterdelay="true" maxstrength="1" duration="1" damageoverlayalpha="1" showiconthreshold="1000" showicontoothersthreshold="1000" afflictionoverlayalphaislinear="true">
-		<Effect minstrength="0" maxstrength="1" multiplybymaxvitality="true" strengthchange="-200" minvitalitydecrease="0" maxvitalitydecrease="0" />
+		<Effect minstrength="0" maxstrength="1" graincolor="0,0,0,255" mingrainstrength="2.5" maxgrainstrength="3.0" minscreenblur="0.1" maxscreenblur="0.3" />
 		<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,768,128,128" color="195,136,60,255" origin="0,0" />
-		<AfflictionOverlay texture="%ModDir%/Img/nvgoverlay.png" color="255,255,255,128" />
+		<AfflictionOverlay texture="%ModDir%/Img/nvgoverlay.png" color="255,255,255,64" />
 	</Affliction>
-
+	
 	<Affliction name="" description="" identifier="exocarry" type="none" limbspecific="false" indicatorlimb="Head" maxstrength="200" damageoverlayalpha="0" showiconthreshold="1000" showicontoothersthreshold="1000" afflictionoverlayalphaislinear="true">
 		<Effect minstrength="0" maxstrength="200" multiplybymaxvitality="true" strengthchange="-200" minvitalitydecrease="0" maxvitalitydecrease="0" />
 		<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,768,128,128" color="195,136,60,255" origin="0,0" />
@@ -146,12 +194,12 @@
 			<Description textidentifier="afflictiondescription.hallucinating.low" target="Self" minstrength="0" maxstrength="50" />
 			<Description textidentifier="afflictiondescription.hallucinating" target="Self" minstrength="50" maxstrength="100" />
 			<Effect minstrength="0" maxstrength="30" strengthchange="-1.0" />
-			<Effect minstrength="30" maxstrength="100" minscreendistort="0.0" maxscreendistort="5.0" minscreenblur="0.0" maxscreenblur="0.0" minradialdistort="0" maxradialdistort="2" minchromaticaberration="0" maxchromaticaberration="15" strengthchange="-1.0"></Effect>
+			<Effect minstrength="30" maxstrength="100" minscreendistort="0.0" maxscreendistort="5.0" minscreenblur="0.0" maxscreenblur="0.0" minradialdistort="0" maxradialdistort="2" minchromaticaberration="0" maxchromaticaberration="15" strengthchange="-1.0"/>
 			<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,640,128,128" color="150,26,26,255" origin="0,0" />
 		</Affliction>
 
 		<Affliction identifier="revengesquad" type="talentbuff" isbuff="true" limbspecific="false" maxstrength="60" duration="60" treatmentthreshold="1000" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
-			<Effect minstrength="0" maxstrength="60" strengthchange="-1" resistancefor="damage" minresistance="0.1" maxresistance="0.1"></Effect>
+			<Effect minstrength="0" maxstrength="60" strengthchange="-1" resistancefor="damage" minresistance="0.1" maxresistance="0.1"/>
 			<Icon texture="Content/UI/TalentsIcons4.png" sheetindex="0,0" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
 		</Affliction>
 
@@ -192,6 +240,5 @@
 			</Effect>
 			<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,896,128,128" color="10,193,114,10" origin="0,0" />
 		</Affliction>
-
 	</Override>
 </Afflictions>

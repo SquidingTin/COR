@@ -2,7 +2,7 @@
 <!-- Here are the overrides for all vanilla weapons, These items are vanilla items but are using modded names and changed to use the modded version. -->
 <Override>
 	<Items>
-		<Item name="" descriptionidentifier="modded_smgmagazinedepletedfuel" identifier="smgmagazinedepletedfuel" variantof="smgmagazine" allowasextracargo="true" inventoryiconcolor="110,120,110,255" spritecolor="110,120,110">
+		<Item name="" descriptionidentifier="modded_smgmagazinedepletedfuel" identifier="smgmagazinedepletedfuel" variantof="smgmagazine" allowasextracargo="true" inventoryiconcolor="110,120,110,255" spritecolor="110,120,110" impactsoundtag="magimpact">
 			<Price baseprice="160" sold="false" />
 			<Deconstruct time="15">
 				<Item identifier="depletedfuel" mincondition="0.95" />
@@ -16,7 +16,7 @@
 			</ItemContainer>
 		</Item>
 		
-		<Item name="" descriptionidentifier="modded_riflebullet" identifier="riflebullet" aliases="7.62mm_round_rifle" category="Weapon" maxstacksize="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,rifleammo,riflemanbonus" Scale="0.5" impactsoundtag="impact_metal_light">
+		<Item name="" descriptionidentifier="modded_riflebullet" identifier="riflebullet" aliases="7.62mm_round_rifle" category="Weapon" maxstacksize="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,rifleammo,riflemanbonus" Scale="0.5" impactsoundtag="bullet_small_impact">
 			<InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="128,832,64,64" origin="0.5,0.5" />
 			<Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="233,163,23,9" depth="0.55" origin="0.5,0.5" />
 			<Body width="23" height="9" density="40" />
@@ -49,112 +49,169 @@
 				<StatusEffect type="OnImpact" target="UseTarget">
 					<Conditional entitytype="eq Structure" />
 					<Conditional hastag="eq door" />
-					<Sound file="%ModDir%/Sounds/impact1.ogg" range="500" selectionmode="Random" />
-					<Sound file="%ModDir%/Sounds/impact2.ogg" range="500" />
-					<Sound file="%ModDir%/Sounds/impact3.ogg" range="500" />
-					<Sound file="%ModDir%/Sounds/impact4.ogg" range="500" volume="0.7" />
+					<Sound file="%ModDir%/Sounds/Impact/impact1.ogg" range="500" selectionmode="Random" />
+					<Sound file="%ModDir%/Sounds/Impact/impact2.ogg" range="500" />
+					<Sound file="%ModDir%/Sounds/Impact/impact3.ogg" range="500" />
+					<Sound file="%ModDir%/Sounds/Impact/impact4.ogg" range="500" volume="0.7" />
 					<ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
 				</StatusEffect>
 			</Projectile>
 		</Item>
 
-		<Item nameidentifier="smg9mm" descriptionidentifier="smg9mm" identifier="machinepistol" aliases="smg9mm" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,mountableweapon,mountableweapon,gun,gunsmith" Scale="0.45" impactsoundtag="impact_metal_light">
-			<Deconstruct time="1">
-				<Item identifier="smg9mm" />
+		<Item nameidentifier="9mm_pistol_water2" descriptionidentifier="9mm_pistol_water2" identifier="machinepistol" aliases="9mm_pistol_water2" category="weapon" cargocontaineridentifier="metalcrate" tags="mountableweapon,smallitem,weapon,gun,pistolitem,gunsmith,919_gun" Scale="0.45" impactsoundtag="smallwepimpact">
+			<PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="1" spawnprobability="0.06" />
+			<PreferredContainer primary="abandonedsecarmcab" minamount="0" maxamount="1" spawnprobability="0.05" />
+			<PreferredContainer primary="abandonedarmcab" minamount="0" maxamount="1" spawnprobability="0.06" />
+			<PreferredContainer primary="wreckarmcab" minamount="0" maxamount="1" spawnprobability="0.05" />
+			<PreferredContainer primary="armcab" minamount="1" maxamount="2" spawnprobability="1" notcampaign="true" />
+			<PreferredContainer primary="wreckreactorcab" minamount="0" maxamount="1" spawnprobability="0.03" />
+			<PreferredContainer primary="wreckmedcab" minamount="0" maxamount="1" spawnprobability="0.03" />
+			<PreferredContainer primary="wreckengcab" minamount="0" maxamount="1" spawnprobability="0.02" />
+			<PreferredContainer primary="armcab" />
+			<PreferredContainer secondary="secarmcab" />
+			<Price baseprice="235" soldeverywhere="false" buyingpricemultiplier="4">
+				<Price storeidentifier="merchantoutpost" multiplier="1" sold="false" />
+				<Price storeidentifier="merchantcity" multiplier="1" sold="false" />
+				<Price storeidentifier="merchantresearch" multiplier="1" sold="false" />
+				<Price storeidentifier="merchantarmory" multiplier="1" sold="false" />
+				<Price storeidentifier="merchantmine" multiplier="1" sold="false" />
+				<Price storeidentifier="merchantmilitary" multiplier="1.4" minavailable="1" />
+			</Price>
+			<Deconstruct time="10">
+				<Item identifier="titaniumaluminiumalloy" />
+				<Item identifier="plastic" />
 			</Deconstruct>
-			<InventoryIcon texture="%ModDir%/Img/CO_spritelist.png" sourcerect="303,0,154,64" origin="0.5,0.5" scale="0.35" />
-			<Sprite texture="%ModDir%/Img/CO_spritelist.png" sourcerect="303,0,154,64" depth="0.55" origin="0.5,0.5" scale="0.45" />
+			<InventoryIcon texture="%ModDir%/Img/CO_spritelist.png" sourcerect="591,134,87,63" origin="0.5,0.5" scale="0.35" />
+			<Sprite texture="%ModDir%/Img/CO_spritelist.png" sourcerect="600,142,66,47" depth="0.55" origin="0.5,0.5" scale="0.45" />
+			<BrokenSprite texture="%ModDir%/Img/CO_spritelist_pistols.png" sourcerect="590,143,75,44" depth="0.55" origin="0.44399473,0.5107761" maxcondition="98" />
 			<Body width="72" height="40" density="50" />
-			<Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-10" aimpos="45,-10" handle1="-30,-15" handle2="26,5" holdangle="-35" msg="ItemMsgPickUpSelect">
-				<StatusEffect type="oncontained" target="this" interval="3">
-					<SpawnItem identifiers="smg9mm" spawnposition="SameInventory" />
-					<Remove />
+			<Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="64,12" handle1="-20,-8" handle2="-20,-10" msg="ItemMsgPickUpSelect">
+				<StatusEffect type="OnActive" target="This" tags="suppressed" duration="0.05" setvalue="true">
+					<RequiredItem items="9x19_suppressor" type="Contained" />
 				</StatusEffect>
-				<StatusEffect type="onnotcontained" target="this" interval="3">
-					<SpawnItem identifiers="smg9mm" spawnposition="This" />
-					<Remove />
+				<StatusEffect type="OnActive" target="This" tags="compensated" duration="0.05" setvalue="true">
+					<RequiredItem items="9x19_compensator" type="Contained" />
 				</StatusEffect>
-			</Holdable>
-			<RangedWeapon reload="0.15" barrelpos="70,15" weapondamagemodifier="1.1" spread="5" unskilledspread="15" combatPriority="90" drawhudwhenequipped="true" crosshairscale="0.2">
-				<Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
-				<CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
-				<StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
-					<Sound file="%ModDir%/Sounds/9mm_smg1.ogg" type="OnUse" range="3000" selectionmode="Random" />
-					<Sound file="%ModDir%/Sounds/9mm_smg2.ogg" type="OnUse" range="3000" />
-					<Sound file="%ModDir%/Sounds/9mm_smg3.ogg" type="OnUse" range="3000" />
-					<Conditional HasStatusTag="neq suppressed" />
-				</StatusEffect>
-				<StatusEffect type="Always" target="This" barrelpos="110,15" stackable="false" setvalue="true">
+				<StatusEffect type="OnActive" target="This" barrelpos="55,2" stackable="false" setvalue="true">
 					<Conditional HasStatusTag="suppressed" />
 				</StatusEffect>
-				<StatusEffect type="Always" target="This" barrelpos="70,15" stackable="false" setvalue="true">
+				<StatusEffect type="OnActive" target="This" barrelpos="15,2" stackable="false" setvalue="true" comparison="AND">
+					<Conditional HasStatusTag="neq suppressed" />
+					<Conditional HasStatusTag="neq extended" />
+				</StatusEffect>
+				<StatusEffect type="OnActive" target="this" showtexts="false" disabledeltatime="true" setvalue="true" conditional="or">
+					<Conditional hasstatustag="neq medical" />
+					<Conditional hasstatustag="worn" />
+				</StatusEffect>
+				<StatusEffect type="OnActive" target="this" showtexts="true" disabledeltatime="true" setvalue="true" comparison="AND">
+					<Conditional hasstatustag="medical" />
+					<RequiredItems items="medscanner_t" type="Contained" />
+					<Conditional hasstatustag="neq worn" />
+				</StatusEffect>
+				<StatusEffect type="OnActive" target="Contained" tags="medattached" duration="0.05" stackable="false" />
+				<StatusEffect type="OnActive" target="This" tags="extended" barrelpos="45,2" duration="0.05" setvalue="true">
+					<RequiredItem items="919_extender" type="Contained" />
+				</StatusEffect>
+				<StatusEffect type="OnActive" target="Nearbyitems,This" tags="shock" targettags="919_ammo,ek_handgun_round" range="35" duration="1.1" interval="1" comparison="And">
+					<RequiredItems items="empattachment" type="Contained" />
+				</StatusEffect>
+				<StatusEffect type="OnActive" target="Nearbyitems,This" tags="rad" targettags="bullet" range="35" duration="1.1" interval="1" comparison="And">
+					<RequiredItems items="radiationattachment" type="Contained" />
+				</StatusEffect>
+				<StatusEffect type="OnActive" target="Character,This" disabledeltatime="true" targetlimb="head" setvalue="true">
+					<Affliction identifier="crit" amount="1" />
+					<RequiredItems items="critattachment" type="Contained" />
+					<GiveTalentInfo talentidentifiers="critboosted" />
+				</StatusEffect>
+				<StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.6" setvalue="true" disabledeltatime="true" />
+				<StatusEffect type="OnSecondaryUse" target="Character,This" SpeedMultiplier="1.3" setvalue="true" disabledeltatime="true">
+					<Conditional HasStatusTag="laser" />
+				</StatusEffect>
+			</Holdable>
+			<SkillRequirementHint identifier="weapons" level="60" />
+			<StatusHUD drawhudwhenequipped="true" range="2700" thermalgoggles="false" showdeadcharacters="false" showtexts="false" overlaycolor="0,0,0,0" />
+			<Rangedweapon reload="0.1" barrelpos="15,2" weapondamagemodifier="0.8" spread="8" unskilledspread="28" combatPriority="67" drawhudwhenequipped="true" crosshairscale="0.2">
+				<Crosshair texture="Content/Items/weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+				<CrosshairPointer texture="Content/Items/weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+				<StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
+					<Sound file="%ModDir%/Sounds/9mm_pistol_auto.ogg" type="OnUse" target="This" range="3000" />
 					<Conditional HasStatusTag="neq suppressed" />
 				</StatusEffect>
 				<StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
-					<Sound file="%ModDir%/Sounds/22k_sup.ogg" range="300" volume="1.5" />
+					<Sound file="%ModDir%/Sounds/m71_sup.ogg" type="OnUse" target="This" range="300" volume="1.1" />
 					<Conditional HasStatusTag="suppressed" />
 				</StatusEffect>
 				<ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
-				<StatusEffect type="OnUse">
-					<Explosion range="150.0" force="0.7" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="10.0" />
+				<StatusEffect type="OnUse" target="This">
+					<Explosion range="150.0" force="1.6" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="17.0" />
 				</StatusEffect>
-				<RequiredItems items="919_ammo" type="Contained" />
-				<RequiredSkill identifier="weapons" level="40" />
+				<StatusEffect type="OnUse" target="this" Condition="100" stackable="false" delay="0.12" SetValue="true" />
+				<StatusEffect type="OnUse" target="this" Condition="95" stackable="false" SetValue="true" />
+				<RequiredItems items="919_ammo,ek_handgun_round" type="Contained" />
+				<RequiredSkill identifier="weapons" level="60" />
+				<StatusEffect type="OnUse" target="This" reload="0.5" setvalue="true" delay="0.2" />
+				<StatusEffect type="OnUse" target="This" reload="0.1" setvalue="true" delay="0.5" />
 				<StatusEffect type="OnUse" target="contained">
 					<Use />
 				</StatusEffect>
-				<StatusEffect type="Always" target="This" Condition="1000" disabledeltatime="true" delay="6" stackable="false" checkconditionalalways="true" comparison="And">
-					<Sound file="%ModDir%/Sounds/weapon_unjam.ogg" type="OnUse" range="300" />
-					<Conditional InWater="false" />
-					<Conditional Condition="0" />
+				<StatusEffect type="Always" target="this" spread="4" unskilledspread="4.2" stackable="true" setvalue="false" disabledeltatime="true" comparison="and">
+					<Conditional Spread="lt 30" />
+					<Conditional HasStatusTag="neq compensated" />
 				</StatusEffect>
-				<StatusEffect type="OnUse" target="this" spread="2.2" unskilledspread="3.4" stackable="true" setvalue="false" disabledeltatime="true">
-					<Conditional Spread="lt 36" />
+				<StatusEffect type="Always" target="this" spread="2.75" unskilledspread="3.4" stackable="true" setvalue="false" disabledeltatime="true" comparison="and">
+					<Conditional Spread="lt 22" />
+					<Conditional HasStatusTag="compensated" />
 				</StatusEffect>
-				<StatusEffect type="Always" target="this" spread="-0.21" stackable="true" disabledeltatime="true" setvalue="false" conditional="or">
-					<Conditional Spread="gt 5" />
+				<StatusEffect type="Always" target="this" spread="-0.215" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
+					<Conditional Spread="gt 8" />
+					<Conditional HasStatusTag="neq extended" />
 				</StatusEffect>
-				<StatusEffect type="Always" target="this" unskilledspread="-0.2" stackable="true" disabledeltatime="true" setvalue="false" conditional="or">
-					<Conditional unskilledspread="gt 15" />
+				<StatusEffect type="Always" target="this" unskilledspread="-0.2" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
+					<Conditional unskilledspread="gt 28" />
+					<Conditional HasStatusTag="neq extended" />
 				</StatusEffect>
-			</RangedWeapon>
-			<ItemContainer capacity="1" maxstacksize="1" hideitems="false" showcontainedstateindicator="false" itempos="15,-20" containedspritedepths="0.551">
-				<Containable items="smg9mm_magazine,smg9mm_magazine_ap" />
-				<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
+				<StatusEffect type="Always" target="this" spread="-0.215" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
+					<Conditional Spread="gt 6" />
+					<Conditional HasStatusTag="extended" />
+				</StatusEffect>
+				<StatusEffect type="Always" target="this" unskilledspread="-0.2" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
+					<Conditional unskilledspread="gt 18.5" />
+					<Conditional HasStatusTag="extended" />
+				</StatusEffect>
+				<StatusEffect type="Always" target="this" spread="0.3" stackable="true" disabledeltatime="true" setvalue="false" comparison="and">
+					<Conditional Spread="lt 8" />
+					<Conditional HasStatusTag="neq extended" />
+				</StatusEffect>
+				<StatusEffect type="Always" target="this" unskilledspread="0.3" stackable="true" disabledeltatime="true" setvalue="false" comparison="and">
+					<Conditional unskilledspread="lt 28" />
+					<Conditional HasStatusTag="neq extended" />
+				</StatusEffect>
+			</Rangedweapon>
+			<ItemContainer capacity="1" maxstacksize="1" hideitems="false" showcontainedstateindicator="true" autofill="true" itempos="-13,-3" containedspritedepths="0.551">
+				<Containable items="pistol9mm_magazine,ek_handgun_mags,pistol9mm_magazine_ap,9mmpistolammo" />
+				<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="1,523,240,240" origin="0.45,0.5" />
 				<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
 				<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
 				<SubContainer capacity="1" maxstacksize="1">
-					<Containable items="attachment_light" itempos="17,1">
-						<StatusEffect type="OnContaining" targettype="This" Voltage="1.0" setvalue="true">
-							<Conditional HasStatusTag="powered" />
-						</StatusEffect>
-					</Containable>
+					<Containable items="flashlight,attachment_light" setactive="true" itempos="11,2" hide="false" />
 				</SubContainer>
 				<SubContainer capacity="1" maxstacksize="1">
-					<Containable items="attachment_suppressor_919" itempos="45,8">
-						<StatusEffect type="OnContaining" targettype="This" tags="suppressed" duration="0.05" setvalue="true">
-							<RequiredItem items="attachment_suppressor_919" type="Contained" />
-						</StatusEffect>
-					</Containable>
+					<Containable items="attachment_suppressor_919" itempos="25,6" />
 				</SubContainer>
 			</ItemContainer>
-			<LightComponent LightColor="0.5,0.5,0.5,1.0" Flicker="0.02" range="1400" powerconsumption="10" IsOn="true" canbeselected="true" allowingameediting="false">
-				<LightTexture texture="Content/Lights/lightcone.png" origin="0.0, 0.5" size="2.0,2.0" />
-				<StatusEffect type="OnActive" targettype="Contained" targetslot="1" tags="attached" duration="0.05" stackable="false" />
-			</LightComponent>
 			<CustomInterface canbeselected="true" drawhudwhenequipped="true">
 				<GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,128" style="ItemUI" />
 				<TickBox text="interaction.tlight_toggle">
-					<StatusEffect type="OnUse" target="This" IsOn="true" />
-					<StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+					<StatusEffect type="OnUse" target="Contained" tags="on" duration="0.05" disabledeltatime="true" />
+					<StatusEffect type="OnSecondaryUse" target="Contained" tags="off" duration="0.05" disabledeltatime="true" />
 				</TickBox>
 			</CustomInterface>
 			<aitarget sightrange="3000" soundrange="4000" fadeouttime="2">
-				<StatusEffect type="Always" target="This" sightrange="30" soundrange="40" stackable="false" setvalue="true">
+				<StatusEffect type="OnActive" target="This" sightrange="30" soundrange="40" stackable="false" setvalue="true">
 					<Conditional HasStatusTag="suppressed" />
 				</StatusEffect>
-				<StatusEffect type="Always" target="This" sightrange="3000" soundrange="4000" stackable="false" setvalue="true">
-					<Conditional HasStatusTag=" neq suppressed" />
+				<StatusEffect type="OnActive" target="This" sightrange="3000" soundrange="4000" stackable="false" setvalue="true">
+					<Conditional HasStatusTag="neq suppressed" />
 				</StatusEffect>
 			</aitarget>
 		</Item>
@@ -181,173 +238,6 @@
 			</Projectile>
 		</Item>
 
-			<!--Modded vanilla magazines (rework needed)-->
-
-		<Item nameidentifier="mg_magazine" descriptionidentifier="mg_magazine" identifier="hmgmagazine" Scale="0.45" category="weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,kurz_ammo,magazine,mg_magazine" impactsoundtag="impact_metal_light">
-			<Deconstruct time="10">
-				<Item identifier="plastic" />
-			</Deconstruct>
-			<InventoryIcon texture="%ModDir%/Img/CO_spritelist.png" sourcerect="855,700,64,64" origin="0.5,0.5" />
-			<Sprite texture="%ModDir%/Img/CO_spritelist.png" depth="0.551" sourcerect="876,594,38,45" origin="0.5,0.5" />
-			<Body width="30" height="40" density="50" />
-			<ItemContainer hideitems="true" capacity="4" maxstacksize="20" drawinventory="true" canbeselected="true" autofill="true" showcontainedstateindicator="false">
-				<Containable items="mg_round" />
-				<StatusEffect type="OnUse" target="This" disabledeltatime="true">
-					<ParticleEmitter particle="co_shellcasing" emitinterval="2.1" particleamount="1" particlespersecond="50" anglemin="70" anglemax="100" velocitymin="100" velocitymax="200" copyentityangle="true" scalemin="0.5" scalemax="0.5" />
-					<RequiredItem items="mg_round" type="Contained" />
-				</StatusEffect>
-				<StatusEffect type="Always" targettype="This" tags="loaded" duration="0.05" stackable="false">
-					<RequiredItem items="bullet" type="Contained" />
-				</StatusEffect>
-				<StatusEffect type="Always" targettype="This" Condition="100" SetValue="true">
-					<Conditional HasStatusTag="loaded" />
-				</StatusEffect>
-				<StatusEffect type="OnContained" targettype="This" Condition="0" SetValue="true">
-					<Conditional HasStatusTag="neq loaded" />
-				</StatusEffect>
-			</ItemContainer>
-			<!--Magazines can be combined to raise condition.-->
-			<Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
-			<Upgrade gameversion="0.10.0.0" Scale="0.45" />
-		</Item>
-
-		<Item nameidentifier="38_round" descriptionidentifier="38_round" identifier="revolverround" category="Weapon" maxstacksize="7" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,pistolammoitem,38_ammo,bullet" impactsoundtag="impact_metal_light" scale="0.5">
-			<InventoryIcon texture="%ModDir%/Img/CO_spritelist.png" sourcerect="468,766,64,64" origin="0.5,0.5" />
-			<Sprite texture="%ModDir%/Img/CO_spritelist.png" sourcerect="992,898,16,4" depth="0.55" origin="0.50153744,0.44822764" />
-			<Body width="40" height="14" density="40" />
-			<Pickable slots="Any" msg="ItemMsgPickUpSelect" />
-			<Projectile characterusable="false" hitscan="true" removeonhit="true">
-				<ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,255,115,175" scalemultiplier="1,0.6" />
-				<Attack structuredamage="2.5" targetforce="5" itemdamage="30" severlimbsprobability="0.05" penetration="0.2">
-					<Affliction identifier="bleeding" strength="40" />
-					<Affliction identifier="gunshotwound" strength="53" />
-					<Affliction identifier="stun" strength="0.1" />
-				</Attack>
-				<StatusEffect type="OnImpact" target="UseTarget">
-					<ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" />
-				</StatusEffect>
-				<StatusEffect type="oncontained" target="this" interval="3">
-					<SpawnItem identifiers="38_round" spawnposition="SameInventory" />
-					<Remove />
-				</StatusEffect>
-				<StatusEffect type="OnImpact" target="UseTarget">
-					<Conditional entitytype="eq Structure" />
-					<Conditional hastag="eq door" />
-					<ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
-				</StatusEffect>
-			</Projectile>
-			<Upgrade gameversion="0.10.0.0" scale="0.5" />
-		</Item>
-
-		<Item nameidentifier="38_round_df" descriptionidentifier="38_round_df" identifier="revolverrounddepletedfuel" maxstacksize="7" impactsoundtag="impact_metal_light" tags="smallitem,pistolammoitem,38_ammo,bullet,revolverround" inventoryiconcolor="110,120,110,255" spritecolor="110,120,110" scale="0.5">
-			<InventoryIcon texture="%ModDir%/Img/CO_spritelist.png" sourcerect="468,766,64,64" origin="0.5,0.5" />
-			<Sprite texture="%ModDir%/Img/CO_spritelist.png" sourcerect="992,898,16,4" depth="0.55" origin="0.50153744,0.44822764" />
-			<Body width="40" height="14" density="40" />
-			<Pickable slots="Any" msg="ItemMsgPickUpSelect" />
-			<Projectile characterusable="false" hitscan="true" removeonhit="true" maxtargetstohit="2">
-				<ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="105,255,105,175" scalemultiplier="1,0.6" />
-				<Attack structuredamage="4" targetforce="6" itemdamage="80" severlimbsprobability="0.05" penetration="0.45">
-					<Affliction identifier="bleeding" strength="40" />
-					<Affliction identifier="gunshotwound" strength="35" />
-					<Affliction identifier="stun" strength="0.03" />
-				</Attack>
-				<StatusEffect type="OnImpact" target="UseTarget">
-					<ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" />
-				</StatusEffect>
-				<StatusEffect type="oncontained" target="this" interval="3">
-					<SpawnItem identifiers="38_round" spawnposition="SameInventory" />
-					<Remove />
-				</StatusEffect>
-				<StatusEffect type="OnImpact" target="UseTarget">
-					<Conditional entitytype="eq Structure" />
-					<Conditional hastag="eq door" />
-					<ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
-				</StatusEffect>
-			</Projectile>
-		</Item>
-
-		<Item nameidentifier="9x39_magazine" descriptionidentifier="9x39_magazine" identifier="assaultriflemagazine" maxstacksize="1" scale="0.45" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,9x39mm_magazine,smgmammo,939_ammo,magazine" impactsoundtag="impact_metal_light">
-			<Deconstruct time="10">
-				<Item identifier="titanium" />
-			</Deconstruct>
-			<InventoryIcon texture="%ModDir%/Img/CO_spritelist.png" sourcerect="530,700,64,64" origin="0.5,0.5" />
-			<Sprite texture="%ModDir%/Img/CO_spritelist.png" depth="0.551" sourcerect="971,500,28,38" origin="0.5,0.5" />
-			<Body width="30" height="40" density="50" />
-			<ItemContainer hideitems="true" capacity="4" maxstacksize="5" drawinventory="true" canbeselected="true" showcontainedstateindicator="false">
-				<Containable items="9x39mm_round" />
-				<StatusEffect type="OnUse" target="This" disabledeltatime="true">
-					<ParticleEmitter particle="co_shellcasing" emitinterval="2.1" particleamount="1" particlespersecond="50" anglemin="70" anglemax="100" velocitymin="100" velocitymax="200" copyentityangle="true" scalemin="0.5" scalemax="0.5" />
-					<RequiredItem items="9x39mm_round" type="Contained" />
-				</StatusEffect>
-				<StatusEffect type="Always" targettype="This" tags="loaded" duration="0.05" stackable="false">
-					<RequiredItem items="bullet" type="Contained" />
-				</StatusEffect>
-				<StatusEffect type="Always" targettype="This" Condition="100" SetValue="true">
-					<Conditional HasStatusTag="loaded" />
-				</StatusEffect>
-				<StatusEffect type="OnContained" targettype="This" Condition="0" SetValue="true">
-					<Conditional HasStatusTag="neq loaded" />
-				</StatusEffect>
-			</ItemContainer>
-			<!--Magazines can be combined to raise condition.-->
-			<Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
-			<Upgrade gameversion="0.10.0.0" scale="0.5" />
-		</Item>
-
-		<Item nameidentifier="smg9mm_magazine" descriptionidentifier="smg9mm_magazine" identifier="smgmagazine" aliases="smg9mm_magazine,smg9mm_magazine_window" maxstacksize="1" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,smg9mm_magazine,919_ammo,magazine,smgmagazine,smgammo" impactsoundtag="magimpact">
-			<PreferredContainer primary="secarmcab" />
-			<PreferredContainer secondary="armcab" />
-			<Price baseprice="250" soldeverywhere="false" buyingpricemultiplier="2">
-				<Price storeidentifier="merchantoutpost" multiplier="1.5" sold="false" />
-				<Price storeidentifier="merchantcity" multiplier="1.25" sold="false" />
-				<Price storeidentifier="merchantresearch" multiplier="1.25" sold="false" />
-				<Price storeidentifier="merchantarmory" multiplier="0.9" sold="false" />
-				<Price storeidentifier="merchantmine" multiplier="1.25" sold="false" />
-			</Price>
-			<Deconstruct time="5">
-				<Item identifier="iron" />
-			</Deconstruct>
-			<InventoryIcon texture="%ModDir%/Img/CO_spritelist.png" sourcerect="933,768,64,64" origin="0.5,0.5" />
-			<Sprite texture="%ModDir%/Img/CO_spritelist.png" depth="0.54" sourcerect="951,761,32,73" origin="0.5,0.5" />
-			<Body width="30" height="40" density="50" />
-			<ItemContainer hideitems="true" capacity="4" maxstacksize="5" drawinventory="true" canbeselected="true" showcontainedstateindicator="false">
-				<Containable items="9mm_round" />
-				<StatusEffect type="OnUse" target="This" disabledeltatime="true">
-					<ParticleEmitter particle="co_shellcasing_smg" emitinterval="2.1" particleamount="1" particlespersecond="50" anglemin="70" anglemax="100" velocitymin="100" velocitymax="200" copyentityangle="true" scalemin="0.5" scalemax="0.5" />
-					<RequiredItem items="9mm_round" type="Contained" />
-				</StatusEffect>
-				<StatusEffect type="Always" targettype="This" tags="loaded" duration="0.05" stackable="false">
-					<RequiredItem items="bullet" type="Contained" />
-				</StatusEffect>
-				<StatusEffect type="Always" targettype="This" Condition="100" SetValue="true">
-					<Conditional HasStatusTag="loaded" />
-				</StatusEffect>
-				<StatusEffect type="OnContained" targettype="This" Condition="0" SetValue="true">
-					<Conditional HasStatusTag="neq loaded" />
-				</StatusEffect>
-				<StatusEffect type="OnSpawn">
-					<SpawnItem identifier="9mm_round" spawnposition="ThisInventory" spawnifcantbecontained="false" amount="12" />
-				</StatusEffect>
-			</ItemContainer>
-			<!--Magazines can be combined to raise condition.-->
-			<Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
-				<StatusEffect type="OnContained" target="This" tags="ingun" duration="0.6" interval="0.5" delay="0.1" AllowWhenBroken="true">
-					<Conditional hastag="gun" targetcontainer="true" />
-				</StatusEffect>
-				<StatusEffect type="Always" target="This" comparison="And" interval="2" AllowWhenBroken="true">
-					<Conditional hasstatustag="ingun" />
-					<Conditional hastag="neq gun" targetcontainer="true" />
-					<Sound file="%ModDir%/Sounds/magout_919.ogg" range="300" loop="false" />
-				</StatusEffect>
-				<StatusEffect type="Always" target="This" comparison="And" interval="2" AllowWhenBroken="true">
-					<Conditional hasstatustag="neq ingun" />
-					<Conditional hastag="gun" targetcontainer="true" />
-					<Sound file="%ModDir%/Sounds/magin_919.ogg" range="300" loop="false" />
-				</StatusEffect>
-			</Holdable>
-			<Upgrade gameversion="0.10.0.0" scale="0.5" />
-		</Item>
-
 			<!--Modded vanilla guns-->
 
 		<Item nameidentifier="shotgun_air" descriptionidentifier="shotgun_air" identifier="shotgun" aliases="shotgun_air" category="Weapon" cargocontaineridentifier="metalcrate" tags="mountableweapon,mediumitem,weapon,gun,gunsmith,12_gun" Scale="0.45" impactsoundtag="mediumwepimpact">
@@ -368,7 +258,7 @@
 				<Item identifier="titaniumaluminiumalloy" />
 			</Deconstruct>
 			<Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
-				<StatusEffect type="OnWearing" targettype="This" tags="worn" duration="0.05" setvalue="true" thermalgoggles="false" showtexts="false" overlaycolor="176,0,0,0" />
+				<StatusEffect type="OnWearing" target="This" tags="worn" duration="0.05" setvalue="true" thermalgoggles="false" showtexts="false" overlaycolor="176,0,0,0" />
 				<sprite name="SG600 Worn" texture="%ModDir%/Img/CO_spritelist.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="7,733,243,54" limb="Torso" ignorelimbscale="true" scale="0.45" origin="0.5,0.9" />
 			</Wearable>
 			<InventoryIcon texture="%ModDir%/Img/CO_spritelist_icons.png" sourcerect="3,713,253,92" origin="0.5,0.5" />
@@ -383,7 +273,7 @@
 					<Conditional HasStatusTag="neq suppressed" />
 					<Conditional HasStatusTag="neq underwater" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" targettype="This" tags="suppressed" duration="0.05" setvalue="true">
+				<StatusEffect type="OnActive" target="This" tags="suppressed" duration="0.05" setvalue="true">
 					<RequiredItem items="12_suppressor" type="Contained" />
 				</StatusEffect>
 				<StatusEffect type="OnActive" target="this" showtexts="false" disabledeltatime="true" setvalue="true" conditional="or">
@@ -395,8 +285,8 @@
 					<RequiredItems items="medscanner_t" type="Contained" />
 					<Conditional hasstatustag="neq worn" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" targettype="Contained" tags="medattached" duration="0.05" stackable="false" />
-				<StatusEffect type="Always" targettype="This" tags="underwater" duration="0.05" setvalue="true">
+				<StatusEffect type="OnActive" target="Contained" tags="medattached" duration="0.05" stackable="false" />
+				<StatusEffect type="Always" target="This" tags="underwater" duration="0.05" setvalue="true">
 					<RequiredItem items="co_shootunderwater" type="Contained" />
 				</StatusEffect>
 				<StatusEffect type="OnActive" target="This" reload="1.5" stackable="false" setvalue="true">
@@ -423,32 +313,32 @@
 				<CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
 				<ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
 				<StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
-					<Sound file="%ModDir%/Sounds/shotgun_2.ogg" type="OnUse" range="3000" />
+					<Sound file="%ModDir%/Sounds/shotgun_2.ogg" type="OnUse" target="This" range="3000" />
 					<Conditional HasStatusTag="neq suppressed" />
 				</StatusEffect>
 				<StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
 					<Sound file="%ModDir%/Sounds/asg_sup.ogg" range="300" volume="1.25" />
 					<Conditional HasStatusTag="suppressed" />
 				</StatusEffect>
-				<StatusEffect type="OnUse">
+				<StatusEffect type="OnUse" target="This">
 					<Explosion range="150.0" force="3.5" shockwave="false" smoke="false" flash="true" sparks="false" flames="false" underwaterbubble="false" camerashake="30.0" />
 				</StatusEffect>
 				<StatusEffect type="OnUse" target="this" Condition="100" stackable="false" delay="1.4" SetValue="true" />
 				<StatusEffect type="OnUse" target="this" Condition="95" stackable="false" SetValue="true" delay="1.1" />
-				<StatusEffect type="OnUse" delay="1.2">
+				<StatusEffect type="OnUse" target="This" delay="1.2">
 					<Explosion range="150.0" force="0.5" shockwave="false" smoke="false" flash="false" sparks="false" flames="false" underwaterbubble="false" camerashake="35.0" />
 					<ParticleEmitter particle="co_shellcasing_shotgun" emitinterval="2.1" particleamount="1" particlespersecond="50" anglemin="70" anglemax="100" velocitymin="100" velocitymax="200" copyentityangle="true" scalemin="0.5" scalemax="0.5" />
-					<Sound file="%ModDir%/Sounds/shotgun_cock2.ogg" type="OnUse" range="3000" />
+					<Sound file="%ModDir%/Sounds/shotgun_cock2.ogg" type="OnUse" target="This" range="3000" />
 				</StatusEffect>
 				<RequiredItems items="shotgunammo" type="Contained" msg="ItemMsgAmmoRequired" />
 				<RequiredSkill identifier="weapons" level="45" />
-				<StatusEffect type="Always" targettype="This" Condition="0" SetValue="true" comparison="AND" delay="0.02" checkconditionalalways="true">
+				<StatusEffect type="Always" target="This" Condition="0" SetValue="true" comparison="AND" delay="0.02" checkconditionalalways="true">
 					<!-- jam in water -->
 					<Conditional InWater="true" />
 					<Conditional HasStatusTag="neq underwater" />
 				</StatusEffect>
 				<StatusEffect type="Always" target="This" Condition="1000" disabledeltatime="true" delay="6" stackable="false" checkconditionalalways="true" comparison="And">
-					<Sound file="%ModDir%/Sounds/shotgun_cock2.ogg" type="OnUse" range="3000" />
+					<Sound file="%ModDir%/Sounds/shotgun_cock2.ogg" type="OnUse" target="This" range="3000" />
 					<Conditional InWater="false" />
 					<Conditional Condition="0" />
 				</StatusEffect>
@@ -484,7 +374,6 @@
 					<Conditional HasStatusTag=" neq suppressed" />
 				</StatusEffect>
 			</aitarget>
-			<Upgrade gameversion="0.10.0.0" scale="0.5" />
 		</Item>
 	
 		<Item nameidentifier="machinegun_alt" descriptionidentifier="machinegun_alt" identifier="hmg" aliases="machinegun_alt" category="weapon" cargocontaineridentifier="metalcrate" tags="mountableweapon,mediumitem,weapon,gun,gunsmith,kurz_gun" Scale="0.45" impactsoundtag="bigwepimpact">
@@ -498,8 +387,8 @@
 			<PreferredContainer primary="armcab" />
 			<PreferredContainer secondary="secarmcab" />
 			<Deconstruct time="10">
-				<Item identifier="titaniumalloy" />
-				<Item identifier="titaniumalloy" />
+				<Item identifier="titaniumaluminiumalloy" />
+				<Item identifier="titaniumaluminiumalloy" />
 				<Item identifier="dementonite" />
 				<Item identifier="plastic" />
 			</Deconstruct>
@@ -520,7 +409,7 @@
 			<Sprite texture="%ModDir%/Img/CO_spritelist_mod3.png" sourcerect="9,13,251,76" depth="0.55" origin="0.5,0.5" scale="0.45" />
 			<Body width="72" height="40" density="50" />
 			<Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="52,-15" aimpos="65,-2" handle1="-39,-19" handle2="15,5" holdangle="-35" msg="ItemMsgPickUpSelect">
-				<StatusEffect type="OnActive" targettype="This" tags="compensated" duration="0.05" setvalue="true">
+				<StatusEffect type="OnActive" target="This" tags="compensated" duration="0.05" setvalue="true">
 					<RequiredItem items="kurz_compensator" type="Contained" />
 				</StatusEffect>
 				<StatusEffect type="OnActive" target="this" showtexts="false" disabledeltatime="true" setvalue="true" conditional="or">
@@ -532,14 +421,14 @@
 					<RequiredItems items="medscanner_t" type="Contained" />
 					<Conditional hasstatustag="neq worn" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" targettype="Contained" tags="medattached" duration="0.05" stackable="false" />
-				<StatusEffect type="OnActive" targettype="This" barrelpos="145,18" tags="extended" duration="0.05" setvalue="true">
+				<StatusEffect type="OnActive" target="Contained" tags="medattached" duration="0.05" stackable="false" />
+				<StatusEffect type="OnActive" target="This" barrelpos="145,18" tags="extended" duration="0.05" setvalue="true">
 					<RequiredItem items="kurz_extender" type="Contained" />
 				</StatusEffect>
 				<StatusEffect type="OnActive" target="This" barrelpos="115,18" stackable="false" setvalue="true">
 					<Conditional HasStatusTag="neq extended" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" target="Nearbyitems,This" tags="shock" targettags="kurz_ammo" range="35" duration="1.1" interval="1" comparison="And">
+				<StatusEffect type="OnActive" target="Nearbyitems,This" tags="shock" targettags="hmgammo,kurz_ammo,ek_drumlmg_mags,gpmgammo" range="35" duration="1.1" interval="1" comparison="And">
 					<RequiredItems items="empattachment" type="Contained" />
 					<Conditional hasstatustag="neq worn" />
 				</StatusEffect>
@@ -565,59 +454,62 @@
 			</Holdable>
 			<SkillRequirementHint identifier="weapons" level="95" />
 			<StatusHUD drawhudwhenequipped="true" range="2700" thermalgoggles="false" showdeadcharacters="false" showtexts="false" overlaycolor="0,0,0,0" />
-			<Rangedweapon reload="0.139" barrelpos="115,18" spread="6" weapondamagemodifier="1.1" unskilledspread="25" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2">
+			<Rangedweapon reload="0.139" barrelpos="115,18" spread="3" weapondamagemodifier="1.1" unskilledspread="8" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2">
 				<Crosshair texture="Content/Items/weapons/Crosshairs.png" sourcerect="0,256,256,256" />
 				<CrosshairPointer texture="Content/Items/weapons/Crosshairs.png" sourcerect="256,256,256,256" />
-				<Sound file="%ModDir%/Sounds/mg_alt_2.ogg" type="OnUse" range="3000" />
+				<Sound file="%ModDir%/Sounds/mg.ogg" type="OnUse" target="This" range="3000" selectionmode="Random" />
+				<Sound file="%ModDir%/Sounds/mg_alt1.ogg" type="OnUse" target="This" range="3000" />
+				<Sound file="%ModDir%/Sounds/mg_alt2.ogg" type="OnUse" target="This" range="3000" />
+				<Sound file="%ModDir%/Sounds/mg_alt_2.ogg" type="OnUse" target="This" range="3000" />
 				<ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
-				<StatusEffect type="OnUse">
+				<StatusEffect type="OnUse" target="This">
 					<Explosion range="150.0" force="0.7" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="14.0" />
 				</StatusEffect>
-				<RequiredItems items="kurz_ammo" type="Contained" />
+				<RequiredItems items="hmgammo,kurz_ammo,ek_drumlmg_mags,gpmgammo" type="Contained" />
 				<RequiredSkill identifier="weapons" level="95" />
 				<StatusEffect type="OnUse" target="contained">
 					<Use />
 				</StatusEffect>
-				<StatusEffect type="OnUse" target="this" spread="1.8" unskilledspread="3.2" stackable="true" setvalue="false" disabledeltatime="true" comparison="and">
+				<StatusEffect type="Always" target="this" spread="1.8" unskilledspread="3.2" stackable="true" setvalue="false" disabledeltatime="true" comparison="and">
 					<Conditional Spread="lt 35" />
 					<Conditional HasStatusTag="neq compensated" />
 				</StatusEffect>
-				<StatusEffect type="OnUse" target="this" spread="1.3" unskilledspread="2.1" stackable="true" setvalue="false" disabledeltatime="true" comparison="and">
+				<StatusEffect type="Always" target="this" spread="1.3" unskilledspread="2.1" stackable="true" setvalue="false" disabledeltatime="true" comparison="and">
 					<Conditional Spread="lt 25" />
 					<Conditional HasStatusTag="compensated" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" target="this" spread="-0.15" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
+				<StatusEffect type="Always" target="this" spread="-0.15" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
 					<Conditional Spread="gt 6" />
 					<Conditional HasStatusTag="neq extended" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" target="this" unskilledspread="-0.17" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
+				<StatusEffect type="Always" target="this" unskilledspread="-0.17" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
 					<Conditional unskilledspread="gt 25" />
 					<Conditional HasStatusTag="neq extended" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" target="this" spread="0.3" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
+				<StatusEffect type="Always" target="this" spread="0.3" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
 					<Conditional Spread="lt 6" />
 					<Conditional HasStatusTag="neq extended" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" target="this" unskilledspread="0.3" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
+				<StatusEffect type="Always" target="this" unskilledspread="0.3" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
 					<Conditional unskilledspread="lt 25" />
 					<Conditional HasStatusTag="neq extended" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" target="this" spread="-0.15" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
+				<StatusEffect type="Always" target="this" spread="-0.15" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
 					<Conditional Spread="gt 3.6" />
 					<Conditional HasStatusTag="extended" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" target="this" unskilledspread="-0.17" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
+				<StatusEffect type="Always" target="this" unskilledspread="-0.17" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
 					<Conditional unskilledspread="gt 18" />
 					<Conditional HasStatusTag="extended" />
 				</StatusEffect>
 			</Rangedweapon>
 			<Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="false" pickkey="Select">
-				<StatusEffect type="OnWearing" targettype="This" tags="worn" duration="0.05" setvalue="true" thermalgoggles="false" showtexts="false" overlaycolor="176,0,0,0" />
+				<StatusEffect type="OnWearing" target="This" tags="worn" duration="0.05" setvalue="true" thermalgoggles="false" showtexts="false" overlaycolor="176,0,0,0" />
 				<StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.8" setvalue="true" />
 				<sprite name="MG54 Worn" texture="%ModDir%/Img/CO_spritelist_mod3.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="9,14,251,74" limb="Torso" ignorelimbscale="true" scale="0.45" origin="0.5,0.9" />
 			</Wearable>
 			<ItemContainer capacity="1" maxstacksize="1" hideitems="false" showcontainedstateindicator="true" itempos="2,-1" containedspritedepths="0.551">
-				<Containable items="hmgammo" />
+				<Containable items="hmgammo,hmgammo,kurz_ammo,ek_drumlmg_mags,gpmgammo,ek_drumlmg_mags,gpmgammo" />
 				<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
 				<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
 				<SlotIcon slotindex="2" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
@@ -636,7 +528,6 @@
 				</TickBox>
 			</CustomInterface>
 			<aitarget sightrange="3000" soundrange="4000" fadeouttime="2" />
-			<Upgrade gameversion="0.10.0.0" Scale="0.45" />
 		</Item>
 
 		<Item nameidentifier="shotgun_talent" descriptionidentifier="shotgun_talent" identifier="autoshotgun" aliases="shotgun_talent" category="Weapon" cargocontaineridentifier="metalcrate" tags="mountableweapon,smallitem,weapon,gun,gunsmith,12_gun" Scale="0.45" impactsoundtag="mediumwepimpact">
@@ -671,7 +562,7 @@
 				<StatusEffect type="OnActive" target="This" barrelpos="92,15" stackable="false" setvalue="true">
 					<Conditional HasStatusTag="neq suppressed" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" targettype="This" tags="suppressed" duration="0.05" setvalue="true">
+				<StatusEffect type="OnActive" target="This" tags="suppressed" duration="0.05" setvalue="true">
 					<RequiredItem items="12_suppressor" type="Contained" />
 				</StatusEffect>
 				<StatusEffect type="OnActive" target="this" showtexts="false" disabledeltatime="true" setvalue="true" conditional="or">
@@ -683,7 +574,7 @@
 					<RequiredItems items="medscanner_t" type="Contained" />
 					<Conditional hasstatustag="neq worn" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" targettype="Contained" tags="medattached" duration="0.05" stackable="false" />
+				<StatusEffect type="OnActive" target="Contained" tags="medattached" duration="0.05" stackable="false" />
 				<StatusEffect type="OnActive" target="NearbyItems,This" targettags="shotgunammo" range="35" tags="choke" duration="1" interval="1" stackable="false">
 					<RequiredItems items="co_choke" type="Contained" />
 				</StatusEffect>
@@ -700,8 +591,8 @@
 				<Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
 				<CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
 				<StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
-					<Sound file="%ModDir%/Sounds/un_sg1.ogg" type="OnUse" range="3000" selectionmode="Random" />
-					<Sound file="%ModDir%/Sounds/un_sg2.ogg" type="OnUse" range="3000" />
+					<Sound file="%ModDir%/Sounds/un_sg1.ogg" type="OnUse" target="This" range="3000" selectionmode="Random" />
+					<Sound file="%ModDir%/Sounds/un_sg2.ogg" type="OnUse" target="This" range="3000" />
 					<Conditional HasStatusTag="neq suppressed" />
 				</StatusEffect>
 				<StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
@@ -709,7 +600,7 @@
 					<Conditional HasStatusTag="suppressed" />
 				</StatusEffect>
 				<ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
-				<StatusEffect type="OnUse">
+				<StatusEffect type="OnUse" target="This">
 					<Explosion range="100.0" force="1.55" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="24.0" />
 					<ParticleEmitter particle="co_shellcasing_shotgun" emitinterval="2.1" particleamount="1" particlespersecond="50" anglemin="70" anglemax="100" velocitymin="100" velocitymax="200" copyentityangle="true" scalemin="0.5" scalemax="0.5" />
 				</StatusEffect>
@@ -718,10 +609,10 @@
 				<StatusEffect type="OnUse" target="this" spread="8" unskilledspread="12" stackable="true" setvalue="false" disabledeltatime="true">
 					<Conditional Spread="lt 50" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" target="this" spread="-0.23" stackable="true" disabledeltatime="true" setvalue="false" conditional="or">
+				<StatusEffect type="Always" target="this" spread="-0.23" stackable="true" disabledeltatime="true" setvalue="false" conditional="or">
 					<Conditional Spread="gt 1" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" target="this" unskilledspread="-0.2" stackable="true" disabledeltatime="true" setvalue="false" conditional="or">
+				<StatusEffect type="Always" target="this" unskilledspread="-0.2" stackable="true" disabledeltatime="true" setvalue="false" conditional="or">
 					<Conditional unskilledspread="gt 5" />
 				</StatusEffect>
 			</RangedWeapon>
@@ -753,7 +644,6 @@
 					<Conditional HasStatusTag=" neq suppressed" />
 				</StatusEffect>
 			</aitarget>
-			<Upgrade gameversion="0.10.0.0" scale="0.5" />
 		</Item>
 
 		<Item nameidentifier="shotgun_toz" descriptionidentifier="shotgun_toz" identifier="shotgununique" aliases="shotgun_toz" category="Weapon" cargocontaineridentifier="metalcrate" tags="mountableweapon,mediumitem,weapon,gun" Scale="0.45" impactsoundtag="mediumwepimpact" allowasextracargo="true">
@@ -787,7 +677,7 @@
 					<RequiredItems items="medscanner_t" type="Contained" />
 					<Conditional hasstatustag="neq worn" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" targettype="Contained" tags="medattached" duration="0.05" stackable="false" />
+				<StatusEffect type="OnActive" target="Contained" tags="medattached" duration="0.05" stackable="false" />
 				<StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.6" setvalue="true" disabledeltatime="true" />
 				<StatusEffect type="OnSecondaryUse" target="Character,This" SpeedMultiplier="1.3" setvalue="true" disabledeltatime="true">
 					<Conditional HasStatusTag="laser" />
@@ -798,20 +688,20 @@
 				<Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
 				<CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
 				<ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
-				<Sound file="%ModDir%/Sounds/shotgun_2.ogg" type="OnUse" range="3000" />
-				<StatusEffect type="OnUse">
+				<Sound file="%ModDir%/Sounds/shotgun_2.ogg" type="OnUse" target="This" range="3000" />
+				<StatusEffect type="OnUse" target="This">
 					<Explosion range="150.0" force="1.1" shockwave="false" smoke="false" flash="true" sparks="false" flames="false" underwaterbubble="false" camerashake="14.0" />
 				</StatusEffect>
 				<RequiredItems items="shotgunammo" type="Contained" msg="ItemMsgAmmoRequired" />
 				<RequiredSkill identifier="weapons" level="55" />
 				<StatusEffect type="OnUse" target="this" Condition="100" stackable="false" delay="1.50" SetValue="true">
-					<Sound file="%ModDir%/Sounds/close.ogg" type="OnUse" range="800" volume="1.2" />
+					<Sound file="%ModDir%/Sounds/close.ogg" type="OnUse" target="This" range="800" volume="1.2" />
 				</StatusEffect>
 				<StatusEffect type="OnUse" target="this" delay="0.82">
 					<ParticleEmitter particle="co_shellcasing_shotgun" emitinterval="2.1" particleamount="1" particlespersecond="50" anglemin="90" anglemax="270" velocitymin="180" velocitymax="270" copyentityangle="true" scalemin="0.4" scalemax="0.4" />
 				</StatusEffect>
 				<StatusEffect type="OnUse" target="this" Condition="95" stackable="false" SetValue="true" delay="0.55">
-					<Sound file="%ModDir%/Sounds/open.ogg" type="OnUse" range="800" volume="1.2" />
+					<Sound file="%ModDir%/Sounds/open.ogg" type="OnUse" target="This" range="800" volume="1.2" />
 				</StatusEffect>
 				<StatusEffect type="OnUse" target="This" reload="1.8" setvalue="true" />
 				<StatusEffect type="OnUse" target="This" reload="0" setvalue="true" delay="1.8" />
@@ -856,7 +746,7 @@
 			</Deconstruct>
 			<InventoryIcon texture="%ModDir%/Img/CO_spritelist_icons.png" sourcerect="287,0,186,82" origin="0.5,0.5" scale="0.35" />
 			<Sprite texture="%ModDir%/Img/CO_spritelist.png" sourcerect="303,0,154,64" depth="0.55" origin="0.5,0.5" scale="0.45" />
-			<BrokenSprite texture="%ModDir%/Img/CO_spritelist_anims.png" sourcerect="303,0,154,64" depth="0.55" origin="0.5,0.5" scale="0.45" maxcondition="98" />
+			<BrokenSprite texture="%ModDir%/Img/CO_spritelist_weapons.png" sourcerect="556,443,154,64" depth="0.55" origin="0.5,0.5" scale="0.45" maxcondition="98" />
 			<Body width="72" height="40" density="50" />
 			<Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-10" aimpos="45,-10" handle1="-30,-15" handle2="26,5" holdangle="-35" msg="ItemMsgPickUpSelect">
 			<StatusEffect type="OnActive" target="This" barrelpos="110,15" stackable="false" setvalue="true">
@@ -867,10 +757,10 @@
 				<Conditional HasStatusTag="neq underwater" />
 				<Conditional HasStatusTag="neq extended" />
 			</StatusEffect>
-			<StatusEffect type="OnActive" targettype="This" tags="suppressed" duration="0.05" setvalue="true">
+			<StatusEffect type="OnActive" target="This" tags="suppressed" duration="0.05" setvalue="true">
 				<RequiredItem items="9x19_suppressor" type="Contained" />
 			</StatusEffect>
-			<StatusEffect type="OnActive" targettype="This" tags="compensated" duration="0.05" setvalue="true">
+			<StatusEffect type="OnActive" target="This" tags="compensated" duration="0.05" setvalue="true">
 				<RequiredItem items="9x19_compensator" type="Contained" />
 			</StatusEffect>
 			<StatusEffect type="OnActive" target="this" showtexts="false" disabledeltatime="true" setvalue="true" conditional="or">
@@ -882,8 +772,8 @@
 				<RequiredItems items="medscanner_t" type="Contained" />
 				<Conditional hasstatustag="neq worn" />
 			</StatusEffect>
-			<StatusEffect type="OnActive" targettype="Contained" tags="medattached" duration="0.05" stackable="false" />
-			<StatusEffect type="Always" targettype="This" tags="underwater" duration="0.05" setvalue="true">
+			<StatusEffect type="OnActive" target="Contained" tags="medattached" duration="0.05" stackable="false" />
+			<StatusEffect type="Always" target="This" tags="underwater" duration="0.05" setvalue="true">
 				<RequiredItem items="co_shootunderwater" type="Contained" />
 			</StatusEffect>
 			<StatusEffect type="OnActive" target="This" reload="0.15" stackable="false" setvalue="true">
@@ -892,7 +782,7 @@
 			<StatusEffect type="OnActive" target="This" reload="0.185" barrelpos="117,15" stackable="false" setvalue="true">
 				<Conditional HasStatusTag="underwater" />
 			</StatusEffect>
-			<StatusEffect type="OnActive" targettype="This" tags="extended" barrelpos="100,15" duration="0.05" setvalue="true">
+			<StatusEffect type="OnActive" target="This" tags="extended" barrelpos="100,15" duration="0.05" setvalue="true">
 				<RequiredItem items="919_extender" type="Contained" />
 			</StatusEffect>
 			<StatusEffect type="OnActive" target="Contained,This" tags="rad_mag" duration="0.05" setvalue="true">
@@ -917,9 +807,9 @@
 				<Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
 				<CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
 				<StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
-					<Sound file="%ModDir%/Sounds/9mm_smg1.ogg" type="OnUse" range="3000" selectionmode="Random" />
-					<Sound file="%ModDir%/Sounds/9mm_smg2.ogg" type="OnUse" range="3000" />
-					<Sound file="%ModDir%/Sounds/9mm_smg3.ogg" type="OnUse" range="3000" />
+					<Sound file="%ModDir%/Sounds/9mm_smg1.ogg" type="OnUse" target="This" range="3000" selectionmode="Random" />
+					<Sound file="%ModDir%/Sounds/9mm_smg2.ogg" type="OnUse" target="This" range="3000" />
+					<Sound file="%ModDir%/Sounds/9mm_smg3.ogg" type="OnUse" target="This" range="3000" />
 					<Conditional HasStatusTag="neq suppressed" />
 				</StatusEffect>
 				<StatusEffect type="OnUse" target="this" Condition="100" stackable="false" delay="0.14" SetValue="true" />
@@ -929,7 +819,7 @@
 					<Conditional HasStatusTag="suppressed" />
 				</StatusEffect>
 				<ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
-				<StatusEffect type="OnUse">
+				<StatusEffect type="OnUse" target="This">
 					<Explosion range="150.0" force="0.7" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="10.0" />
 				</StatusEffect>
 				<RequiredItems items="919_ammo" type="Contained" />
@@ -937,13 +827,13 @@
 				<StatusEffect type="OnUse" target="contained">
 					<Use />
 				</StatusEffect>
-				<StatusEffect type="Always" targettype="This" Condition="0" SetValue="true" comparison="AND" delay="0.02" checkconditionalalways="true">
+				<StatusEffect type="Always" target="This" Condition="0" SetValue="true" comparison="AND" delay="0.02" checkconditionalalways="true">
 					<!-- jam in water -->
 					<Conditional InWater="true" />
 					<Conditional HasStatusTag="neq underwater" />
 				</StatusEffect>
 				<StatusEffect type="Always" target="This" Condition="1000" disabledeltatime="true" delay="6" stackable="false" checkconditionalalways="true" comparison="And">
-					<Sound file="%ModDir%/Sounds/weapon_unjam.ogg" type="OnUse" range="300" />
+					<Sound file="%ModDir%/Sounds/weapon_unjam.ogg" type="OnUse" target="This" range="300" />
 					<Conditional InWater="false" />
 					<Conditional Condition="0" />
 				</StatusEffect>
@@ -1033,7 +923,7 @@
 			<PreferredContainer primary="abandonedsecarmcab" minamount="0" maxamount="1" spawnprobability="0.03" />
 			<InventoryIcon texture="%ModDir%/Img/CO_spritelist_mod.png" sourcerect="288,755,197,82" origin="0.5,0.5" />
 			<Sprite texture="%ModDir%/Img/CO_spritelist_mod.png" sourcerect="289,755,196,82" depth="0.55" origin="0.5,0.5" />
-			<BrokenSprite texture="%ModDir%/Img/CO_spritelist_animation.png" sourcerect="279,357,196,82" depth="0.55" origin="0.5,0.5" maxcondition="98" />
+			<BrokenSprite texture="%ModDir%/Img/CO_spritelist_weapons.png" sourcerect="279,357,196,82" depth="0.55" origin="0.5,0.5" maxcondition="98" />
 			<Body width="140" height="60" density="50" />
 			<Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="45,-15" aimpos="52,-10" handle1="-25,-15" handle2="45,6" holdangle="-35" msg="ItemMsgPickUpSelect">
 				<StatusEffect type="OnActive" target="This" barrelpos="120,19" stackable="false" setvalue="true">
@@ -1043,13 +933,13 @@
 					<Conditional HasStatusTag="neq suppressed" />
 					<Conditional HasStatusTag="neq extended" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" targettype="This" tags="suppressed" duration="0.05" setvalue="true">
+				<StatusEffect type="OnActive" target="This" tags="suppressed" duration="0.05" setvalue="true">
 					<RequiredItem items="9x19_suppressor" type="Contained" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" targettype="This" tags="compensated" duration="0.05" setvalue="true">
+				<StatusEffect type="OnActive" target="This" tags="compensated" duration="0.05" setvalue="true">
 					<RequiredItem items="9x19_compensator" type="Contained" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" targettype="This" tags="extended" barrelpos="110,19" duration="0.05" setvalue="true">
+				<StatusEffect type="OnActive" target="This" tags="extended" barrelpos="110,19" duration="0.05" setvalue="true">
 					<RequiredItem items="919_extender" type="Contained" />
 				</StatusEffect>
 				<StatusEffect type="OnActive" target="Nearbyitems,This" tags="shock" targettags="919_ammo" range="35" duration="1.1" interval="1" comparison="And">
@@ -1071,8 +961,8 @@
 				<CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
 				<ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
 				<StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
-					<Sound file="%ModDir%/Sounds/tc1.ogg" type="OnUse" range="3000" selectionmode="Random" />
-					<Sound file="%ModDir%/Sounds/tc2.ogg" type="OnUse" range="3000" />
+					<Sound file="%ModDir%/Sounds/tc1.ogg" type="OnUse" target="This" range="3000" selectionmode="Random" />
+					<Sound file="%ModDir%/Sounds/tc2.ogg" type="OnUse" target="This" range="3000" />
 					<Conditional HasStatusTag="neq suppressed" />
 				</StatusEffect>
 				<StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
@@ -1081,7 +971,7 @@
 				</StatusEffect>
 				<StatusEffect type="OnUse" target="this" Condition="100" stackable="false" delay="0.1" SetValue="true" />
 				<StatusEffect type="OnUse" target="this" Condition="95" stackable="false" SetValue="true" />
-				<StatusEffect type="OnUse">
+				<StatusEffect type="OnUse" target="This">
 					<Explosion range="150.0" force="0.9" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="15.0" />
 				</StatusEffect>
 				<StatusEffect type="OnUse" target="This" reload="0.5" setvalue="true" delay="0.2" />
@@ -1091,35 +981,35 @@
 				</StatusEffect>
 				<RequiredItems items="919_ammo" type="Contained" msg="ItemMsgAmmoRequired" />
 				<RequiredSkill identifier="weapons" level="50" />
-				<StatusEffect type="OnUse" target="this" spread="2" unskilledspread="3.5" stackable="true" setvalue="false" disabledeltatime="true" comparison="and">
+				<StatusEffect type="Always" target="this" spread="2" unskilledspread="3.5" stackable="true" setvalue="false" disabledeltatime="true" comparison="and">
 					<Conditional Spread="lt 20" />
 					<Conditional HasStatusTag="neq compensated" />
 				</StatusEffect>
-				<StatusEffect type="OnUse" target="this" spread="1.5" unskilledspread="2.5" stackable="true" setvalue="false" disabledeltatime="true" comparison="and">
+				<StatusEffect type="Always" target="this" spread="1.5" unskilledspread="2.5" stackable="true" setvalue="false" disabledeltatime="true" comparison="and">
 					<Conditional Spread="lt 15" />
 					<Conditional HasStatusTag="compensated" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" target="this" spread="-0.2" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
+				<StatusEffect type="Always" target="this" spread="-0.2" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
 					<Conditional Spread="gt 5" />
 					<Conditional HasStatusTag="neq extended" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" target="this" unskilledspread="-0.19" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
+				<StatusEffect type="Always" target="this" unskilledspread="-0.19" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
 					<Conditional unskilledspread="gt 20" />
 					<Conditional HasStatusTag="neq extended" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" target="this" spread="-0.2" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
+				<StatusEffect type="Always" target="this" spread="-0.2" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
 					<Conditional Spread="gt 2" />
 					<Conditional HasStatusTag="extended" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" target="this" unskilledspread="-0.19" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
+				<StatusEffect type="Always" target="this" unskilledspread="-0.19" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
 					<Conditional unskilledspread="gt 14" />
 					<Conditional HasStatusTag="extended" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" target="this" spread="0.3" stackable="true" disabledeltatime="true" setvalue="false" comparison="and">
+				<StatusEffect type="Always" target="this" spread="0.3" stackable="true" disabledeltatime="true" setvalue="false" comparison="and">
 					<Conditional Spread="lt 5" />
 					<Conditional HasStatusTag="neq extended" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" target="this" unskilledspread="0.3" stackable="true" disabledeltatime="true" setvalue="false" comparison="and">
+				<StatusEffect type="Always" target="this" unskilledspread="0.3" stackable="true" disabledeltatime="true" setvalue="false" comparison="and">
 					<Conditional unskilledspread="lt 20" />
 					<Conditional HasStatusTag="neq extended" />
 				</StatusEffect>
@@ -1127,9 +1017,14 @@
 			<ItemContainer capacity="1" maxstacksize="1" hideitems="false" showcontainedstateindicator="true" itempos="15,-15" containedspritedepths="0.551">
 				<SlotIcon slotindex="0" texture="%ModDir%/Img/magazineicons.png" sourcerect="242,523,240,240" origin="0.45,0.5" />
 				<SlotIcon slotindex="1" texture="%ModDir%/Img/magazineicons.png" sourcerect="724,523,240,240" origin="0.45,0.5" />
+				<SlotIcon slotindex="2" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
 				<Containable items="smg9mm_magazine_ap,smg9mm_magazine" />
 				<SubContainer capacity="1" maxstacksize="1">
 					<Containable items="attachment_suppressor_919" itempos="52,6" />
+				</SubContainer><SubContainer capacity="1" maxstacksize="1">
+					<Containable items="mobilebattery">
+						<StatusEffect type="OnContaining" target="This" Voltage="1.0" setvalue="true" />
+					</Containable>
 				</SubContainer>
 			</ItemContainer>
 			<LightComponent LightColor="0.5,0.5,0.5,1.0" Flicker="0.02" range="1400" powerconsumption="0" IsOn="true" canbeselected="true" allowingameediting="false">
@@ -1183,10 +1078,10 @@
 					<Conditional HasStatusTag="neq underwater" />
 					<Conditional HasStatusTag="neq extended" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" targettype="This" tags="suppressed" duration="0.05" setvalue="true">
+				<StatusEffect type="OnActive" target="This" tags="suppressed" duration="0.05" setvalue="true">
 					<RequiredItem items="38_suppressor" type="Contained" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" targettype="This" tags="compensated" duration="0.05" setvalue="true">
+				<StatusEffect type="OnActive" target="This" tags="compensated" duration="0.05" setvalue="true">
 					<RequiredItem items="38_compensator" type="Contained" />
 				</StatusEffect>
 				<StatusEffect type="OnActive" target="this" showtexts="false" disabledeltatime="true" setvalue="true" conditional="or">
@@ -1198,8 +1093,8 @@
 					<RequiredItems items="medscanner_t" type="Contained" />
 					<Conditional hasstatustag="neq worn" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" targettype="Contained" tags="medattached" duration="0.05" stackable="false" />
-				<StatusEffect type="OnActive" targettype="This" tags="underwater" duration="0.05" setvalue="true">
+				<StatusEffect type="OnActive" target="Contained" tags="medattached" duration="0.05" stackable="false" />
+				<StatusEffect type="OnActive" target="This" tags="underwater" duration="0.05" setvalue="true">
 					<RequiredItem items="co_shootunderwater" type="Contained" />
 				</StatusEffect>
 				<StatusEffect type="OnActive" target="This" reload="0.65" stackable="false" setvalue="true">
@@ -1208,16 +1103,16 @@
 				<StatusEffect type="OnActive" target="This" reload="0.72" barrelpos="59,11" stackable="false" setvalue="true">
 					<Conditional HasStatusTag="underwater" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" targettype="This" barrelpos="49,11" tags="extended" duration="0.05" setvalue="true">
+				<StatusEffect type="OnActive" target="This" barrelpos="49,11" tags="extended" duration="0.05" setvalue="true">
 					<RequiredItem items="38_extender" type="Contained" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" targettype="This" reload="0.51" tags="trigger" duration="0.05" setvalue="true">
+				<StatusEffect type="OnActive" target="This" reload="0.51" tags="trigger" duration="0.05" setvalue="true">
 					<RequiredItem items="co_trigger" type="Contained" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" targettype="This" reload="0.65" setvalue="true">
+				<StatusEffect type="OnActive" target="This" reload="0.65" setvalue="true">
 					<Conditional hasstatustag="neq trigger" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" targettype="This" tags="coil" duration="0.05" maxchargetime="0.85" weapondamagemodifier="1.3" setvalue="true">
+				<StatusEffect type="OnActive" target="This" tags="coil" duration="0.05" maxchargetime="0.85" weapondamagemodifier="1.3" setvalue="true">
 					<RequiredItem items="co_riflecoil" type="Contained" />
 				</StatusEffect>
 				<StatusEffect type="OnActive" target="This" maxchargetime="0.00001" weapondamagemodifier="1" setvalue="true">
@@ -1243,9 +1138,9 @@
 				<CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
 				<ChargeSound file="%ModDir%/Sounds/exoloop.ogg" range="350" volume="0.8" />
 				<StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
-					<Sound file="%ModDir%/Sounds/revolver_38_1.ogg" type="OnUse" range="3000" selectionmode="Random" />
-					<Sound file="%ModDir%/Sounds/revolver_38_2.ogg" type="OnUse" range="3000" />
-					<Sound file="%ModDir%/Sounds/revolver_38_3.ogg" type="OnUse" range="3000" />
+					<Sound file="%ModDir%/Sounds/revolver_38_1.ogg" type="OnUse" target="This" range="3000" selectionmode="Random" />
+					<Sound file="%ModDir%/Sounds/revolver_38_2.ogg" type="OnUse" target="This" range="3000" />
+					<Sound file="%ModDir%/Sounds/revolver_38_3.ogg" type="OnUse" target="This" range="3000" />
 					<Conditional HasStatusTag="neq suppressed" />
 				</StatusEffect>
 				<StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
@@ -1253,18 +1148,18 @@
 					<Conditional HasStatusTag="suppressed" />
 				</StatusEffect>
 				<ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
-				<StatusEffect type="OnUse">
+				<StatusEffect type="OnUse" target="This">
 					<Explosion range="50.0" force="2.5" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="16.0" />
 				</StatusEffect>
 				<RequiredItems items="38_ammo" type="Contained" />
 				<RequiredSkill identifier="weapons" level="40" />
-				<StatusEffect type="Always" targettype="This" Condition="0" SetValue="true" comparison="AND">
+				<StatusEffect type="Always" target="This" Condition="0" SetValue="true" comparison="AND">
 				<!-- jam in water -->
 				<Conditional InWater="true" />
 				<Conditional HasStatusTag="neq underwater" />
 				</StatusEffect>
 				<StatusEffect type="Always" target="This" Condition="1000" disabledeltatime="true" delay="6" stackable="false" checkconditionalalways="true" comparison="And">
-					<Sound file="%ModDir%/Sounds/revolver_unjam.ogg" type="OnUse" range="300" />
+					<Sound file="%ModDir%/Sounds/revolver_unjam.ogg" type="OnUse" target="This" range="300" />
 					<Conditional InWater="false" />
 					<Conditional Condition="0" />
 				</StatusEffect>
@@ -1276,32 +1171,32 @@
 					<Conditional Spread="lt 22" />
 					<Conditional HasStatusTag="compensated" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" target="this" spread="-0.18" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
+				<StatusEffect type="Always" target="this" spread="-0.18" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
 					<Conditional Spread="gt 9" />
 					<Conditional HasStatusTag="neq extended" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" target="this" unskilledspread="-0.16" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
+				<StatusEffect type="Always" target="this" unskilledspread="-0.16" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
 					<Conditional unskilledspread="gt 18" />
 					<Conditional HasStatusTag="neq extended" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" target="this" spread="-0.18" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
+				<StatusEffect type="Always" target="this" spread="-0.18" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
 					<Conditional Spread="gt 6" />
 					<Conditional HasStatusTag="extended" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" target="this" unskilledspread="-0.16" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
+				<StatusEffect type="Always" target="this" unskilledspread="-0.16" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
 					<Conditional unskilledspread="gt 10" />
 					<Conditional HasStatusTag="extended" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" target="this" spread="0.3" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
+				<StatusEffect type="Always" target="this" spread="0.3" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
 					<Conditional Spread="lt 9" />
 					<Conditional HasStatusTag="neq extended" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" target="this" unskilledspread="0.3" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
+				<StatusEffect type="Always" target="this" unskilledspread="0.3" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
 					<Conditional unskilledspread="lt 18" />
 					<Conditional HasStatusTag="neq extended" />
 				</StatusEffect>
 				<StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true" delay="0.40">
-					<Sound file="%ModDir%/Sounds/rev_cock.ogg" type="OnUse" range="500" />
+					<Sound file="%ModDir%/Sounds/rev_cock.ogg" type="OnUse" target="This" range="500" />
 					<Conditional HasStatusTag="neq trigger" />
 				</StatusEffect>
 			</RangedWeapon>
@@ -1332,7 +1227,6 @@
 					<Conditional HasStatusTag=" neq suppressed" />
 				</StatusEffect>
 			</aitarget>
-			<Upgrade gameversion="0.10.0.0" scale="0.5" />
 		</Item>
 
 		<Item nameidentifier="rifle_co" descriptionidentifier="rifle_co" identifier="rifle" aliases="rifle_co" category="weapon" cargocontaineridentifier="metalcrate" tags="mountableweapon,mediumitem,weapon,gun,gunsmith" Scale="0.45" impactsoundtag="bigwepimpact">
@@ -1355,7 +1249,7 @@
 			<RequiredSkill identifier="weapons" level="50" />
 			<RequiredItem identifier="titanium" amount="4" />
 			<RequiredItem identifier="carbon" amount="2" />
-			<RequiredItem identifier="iron" amount="2" />
+			<RequiredItem tag="munition_jacket" amount="2" defaultitem="iron" description="fabricationdescription.munition_jacket" />
 		</Fabricate>
 		<InventoryIcon texture="%ModDir%/Img/CO_spritelist_mod2.png" sourcerect="627,121,305,60" origin="0.5,0.5" />
 		<Sprite texture="%ModDir%/Img/CO_spritelist_mod2.png" sourcerect="628,120,305,59" depth="0.55" origin="0.5,0.25" />
@@ -1370,7 +1264,7 @@
 				<Conditional hasstatustag="thermal" />
 				<Conditional hasstatustag="neq worn" />
 			</StatusEffect>
-			<StatusEffect type="OnActive" targettype="This" tags="thermal" duration="0.05" setvalue="true">
+			<StatusEffect type="OnActive" target="This" tags="thermal" duration="0.05" setvalue="true">
 				<RequiredItem items="thermalsight" type="Contained" />
 			</StatusEffect>
 			<StatusEffect type="OnActive" target="this" showtexts="false" disabledeltatime="true" setvalue="true" conditional="or">
@@ -1382,8 +1276,8 @@
 				<RequiredItems items="medscanner_t" type="Contained" />
 				<Conditional hasstatustag="neq worn" />
 			</StatusEffect>
-			<StatusEffect type="OnActive" targettype="Contained" tags="medattached" duration="0.05" stackable="false" />
-			<StatusEffect type="OnActive" targettype="This" tags="bolt" duration="0.05" setvalue="true">
+			<StatusEffect type="OnActive" target="Contained" tags="medattached" duration="0.05" stackable="false" />
+			<StatusEffect type="OnActive" target="This" tags="bolt" duration="0.05" setvalue="true">
 				<RequiredItem items="co_bolt" type="Contained" />
 			</StatusEffect>
 			<StatusEffect type="OnActive" target="This" reload="2.2" stackable="false" setvalue="true">
@@ -1392,7 +1286,7 @@
 			<StatusEffect type="OnActive" target="This" reload="2.4" stackable="false" setvalue="true">
 				<Conditional HasStatusTag="neq bolt" />
 			</StatusEffect>
-			<StatusEffect type="OnActive" targettype="This" tags="coil" duration="0.05" maxchargetime="0.85" weapondamagemodifier="1.35" setvalue="true">
+			<StatusEffect type="OnActive" target="This" tags="coil" duration="0.05" maxchargetime="0.85" weapondamagemodifier="1.35" setvalue="true">
 				<RequiredItem items="co_riflecoil" type="Contained" />
 			</StatusEffect>
 			<StatusEffect type="OnActive" target="This" maxchargetime="0.00001" weapondamagemodifier="1.05" setvalue="true">
@@ -1415,31 +1309,31 @@
 			<Crosshair texture="Content/Items/weapons/Crosshairs.png" sourcerect="0,256,256,256" />
 			<CrosshairPointer texture="Content/Items/weapons/Crosshairs.png" sourcerect="256,256,256,256" />
 			<ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
-			<Sound file="%ModDir%/Sounds/762_40.ogg" type="OnUse" range="3000" selectionmode="Random" />
+			<Sound file="%ModDir%/Sounds/762_40.ogg" type="OnUse" target="This" range="3000" selectionmode="Random" />
 			<ChargeSound file="%ModDir%/Sounds/exoloop.ogg" range="350" volume="0.8" />
-			<StatusEffect type="OnUse">
+			<StatusEffect type="OnUse" target="This">
 				<RequiredItem items="grenade" type="Contained" targetslot="0" forceplaysounds="true" />
-				<Sound file="Content/Items/Weapons/WEAPON_rifleGrenadeShot1.ogg" type="OnUse" range="3000" selectionmode="Random" />
-				<Sound file="Content/Items/Weapons/WEAPON_rifleGrenadeShot2.ogg" type="OnUse" range="3000" />
-				<Sound file="Content/Items/Weapons/WEAPON_rifleGrenadeShot3.ogg" type="OnUse" range="3000" />
+				<Sound file="Content/Items/Weapons/WEAPON_rifleGrenadeShot1.ogg" type="OnUse" target="This" range="3000" selectionmode="Random" />
+				<Sound file="Content/Items/Weapons/WEAPON_rifleGrenadeShot2.ogg" type="OnUse" target="This" range="3000" />
+				<Sound file="Content/Items/Weapons/WEAPON_rifleGrenadeShot3.ogg" type="OnUse" target="This" range="3000" />
 			</StatusEffect>
-			<StatusEffect type="OnUse">
+			<StatusEffect type="OnUse" target="This">
 				<Explosion range="150.0" force="3" shockwave="false" smoke="false" flash="true" sparks="false" flames="false" underwaterbubble="false" camerashake="35.0" />
 			</StatusEffect>
 			<StatusEffect type="OnUse" target="this" Condition="100" stackable="false" delay="1.7" SetValue="true" />
 			<StatusEffect type="OnUse" target="this" Condition="95" stackable="false" SetValue="true" delay="1.28" />
-			<StatusEffect type="OnUse" delay="0.9">
-				<Sound file="%ModDir%/Sounds/boltaction.ogg" type="OnUse" range="3000" selectionmode="Random" />
+			<StatusEffect type="OnUse" target="This" delay="0.9">
+				<Sound file="%ModDir%/Sounds/boltaction.ogg" type="OnUse" target="This" range="3000" selectionmode="Random" />
 			</StatusEffect>
-			<StatusEffect type="OnUse" delay="1.24">
+			<StatusEffect type="OnUse" target="this" delay="1.24">
 				<Explosion range="150.0" force="0.5" shockwave="false" smoke="false" flash="false" sparks="false" flames="false" underwaterbubble="false" camerashake="35.0" />
 				<ParticleEmitter particle="co_shellcasing_rifle" emitinterval="2.1" particleamount="1" particlespersecond="50" anglemin="70" anglemax="100" velocitymin="100" velocitymax="200" copyentityangle="true" scalemin="0.5" scalemax="0.5" />
 			</StatusEffect>
-			<RequiredItems items="762_ammo,grenade" type="Contained" />
+			<RequiredItems items="762_ammo,7.62mm_round,44ammo,grenade" type="Contained" />
 			<RequiredSkill identifier="weapons" level="65" />
 		</Rangedweapon>
 		<Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
-			<StatusEffect type="OnWearing" targettype="This" tags="worn" duration="0.05" setvalue="true" thermalgoggles="false" showtexts="false" overlaycolor="176,0,0,0" />
+			<StatusEffect type="OnWearing" target="This" tags="worn" duration="0.05" setvalue="true" thermalgoggles="false" showtexts="false" overlaycolor="176,0,0,0" />
 			<sprite name="Rifle_Worn40" texture="%ModDir%/Img/CO_spritelist_mod2.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="627,121,305,59" limb="Torso" ignorelimbscale="true" scale="0.45" origin="0.5,0.9" />
 		</Wearable>
 		<ItemContainer capacity="1" maxstacksize="1" slotsperrow="2" hideitems="flase" showcontainedstateindicator="false" itempos="-13,4" containedspritedepths="0.561,0.561,0.561,0.561">
@@ -1452,7 +1346,7 @@
 				<Containable items="flashlight,attachment_light" setactive="true" itempos="10,0" />
 			</SubContainer>
 			<SubContainer capacity="5" maxstacksize="1">
-				<Containable items="7.62mm_round" hide="true" />
+				<Containable items="762_ammo,7.62mm_round,44ammo" hide="true" />
 			</SubContainer>
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="attachment_rifle,boltattachment,coilattachment" itempos="0,7" />
@@ -1467,7 +1361,6 @@
 		</CustomInterface>
 		<StatusHUD drawhudwhenequipped="true" range="3000" thermalgoggles="true" showdeadcharacters="false" showtexts="false" />
 		<aitarget sightrange="3000" soundrange="5000" fadeouttime="5" />
-		<Upgrade gameversion="0.10.0.0" Scale="0.45" />
 	</Item>
 		
 		<Item nameidentifier="939_ar_tallent" descriptionidentifier="939_ar_tallent" identifier="assaultrifle" aliases="939_ar_tallent" category="Weapon" cargocontaineridentifier="metalcrate" tags="mountableweapon,mediumitem,weapon,gunsmith,939_gun,gun" Scale="0.45" impactsoundtag="mediumwepimpact">
@@ -1490,7 +1383,7 @@
 			<PreferredContainer secondary="secarmcab" />
 			<InventoryIcon texture="%ModDir%/Img/CO_spritelist.png" sourcerect="706,352,197,56" origin="0.5,0.5" scale="0.35" />
 			<Sprite texture="%ModDir%/Img/CO_spritelist.png" sourcerect="706,353,197,55" depth="0.55" origin="0.5,0.5" scale="0.45" />
-			<BrokenSprite texture="%ModDir%/Img/CO_spritelist_anims.png" sourcerect="706,353,197,55" depth="0.55" origin="0.5,0.5" scale="0.45" maxcondition="98" />
+			<BrokenSprite texture="%ModDir%/Img/CO_spritelist_weapons.png" sourcerect="556,507,197,55" depth="0.55" origin="0.5,0.5" scale="0.45" maxcondition="98" />
 			<Body width="72" height="40" density="50" />
 			<Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="55,-12" aimpos="60,0" handle1="-35,-8" handle2="35,5" holdangle="-35" msg="ItemMsgPickUpSelect">
 				<StatusEffect type="OnActive" target="This" barrelpos="155,10" stackable="false" setvalue="true">
@@ -1500,10 +1393,10 @@
 					<Conditional HasStatusTag="neq suppressed" />
 					<Conditional HasStatusTag="neq extended" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" targettype="This" tags="suppressed" duration="0.05" setvalue="true">
+				<StatusEffect type="OnActive" target="This" tags="suppressed" duration="0.05" setvalue="true">
 					<RequiredItem items="939_suppressor" type="Contained" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" targettype="This" tags="compensated" duration="0.05" setvalue="true">
+				<StatusEffect type="OnActive" target="This" tags="compensated" duration="0.05" setvalue="true">
 					<RequiredItem items="939_compensator" type="Contained" />
 				</StatusEffect>
 				<StatusEffect type="OnActive" target="this" showtexts="false" disabledeltatime="true" setvalue="true" conditional="or">
@@ -1515,8 +1408,8 @@
 					<RequiredItems items="medscanner_t" type="Contained" />
 					<Conditional hasstatustag="neq worn" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" targettype="Contained" tags="medattached" duration="0.05" stackable="false" />
-				<StatusEffect type="OnActive" targettype="This" tags="extended" barrelpos="115,10" duration="0.05" setvalue="true">
+				<StatusEffect type="OnActive" target="Contained" tags="medattached" duration="0.05" stackable="false" />
+				<StatusEffect type="OnActive" target="This" tags="extended" barrelpos="115,10" duration="0.05" setvalue="true">
 					<RequiredItem items="939_extender" type="Contained" />
 				</StatusEffect>
 				<StatusEffect type="OnActive" target="Nearbyitems,This" tags="rad" targettags="bullet" range="35" duration="1.1" interval="1" comparison="And">
@@ -1536,9 +1429,9 @@
 				<Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
 				<CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
 				<StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
-					<Sound file="%ModDir%/Sounds/ar939_t1.ogg" type="OnUse" range="2000" selectionmode="Random" />
-					<Sound file="%ModDir%/Sounds/ar939_t2.ogg" type="OnUse" range="2000" />
-					<Sound file="%ModDir%/Sounds/ar939_t3.ogg" type="OnUse" range="2000" />
+					<Sound file="%ModDir%/Sounds/ar939_t1.ogg" type="OnUse" target="This" range="2000" selectionmode="Random" />
+					<Sound file="%ModDir%/Sounds/ar939_t2.ogg" type="OnUse" target="This" range="2000" />
+					<Sound file="%ModDir%/Sounds/ar939_t3.ogg" type="OnUse" target="This" range="2000" />
 					<Conditional HasStatusTag="neq suppressed" />
 				</StatusEffect>
 				<StatusEffect type="OnUse" target="this" Condition="100" stackable="false" delay="0.20" SetValue="true" />
@@ -1548,7 +1441,7 @@
 					<Conditional HasStatusTag="suppressed" />
 				</StatusEffect>
 				<ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
-				<StatusEffect type="OnUse">
+				<StatusEffect type="OnUse" target="This">
 					<Explosion range="150.0" force="0.8" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="16.0" />
 				</StatusEffect>
 				<RequiredItems items="939_ammo" type="Contained" />
@@ -1564,27 +1457,27 @@
 					<Conditional Spread="lt 20" />
 					<Conditional HasStatusTag="compensated" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" target="this" spread="-0.2" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
+				<StatusEffect type="Always" target="this" spread="-0.2" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
 					<Conditional Spread="gt 3" />
 					<Conditional HasStatusTag="neq extended" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" target="this" unskilledspread="-0.17" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
+				<StatusEffect type="Always" target="this" unskilledspread="-0.17" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
 					<Conditional unskilledspread="gt 12" />
 					<Conditional HasStatusTag="neq extended" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" target="this" spread="-0.2" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
+				<StatusEffect type="Always" target="this" spread="-0.2" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
 					<Conditional Spread="gt 1.5" />
 					<Conditional HasStatusTag="extended" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" target="this" unskilledspread="-0.17" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
+				<StatusEffect type="Always" target="this" unskilledspread="-0.17" stackable="true" disabledeltatime="true" setvalue="false" comparison="AND">
 					<Conditional unskilledspread="gt 9" />
 					<Conditional HasStatusTag="extended" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" target="this" spread="0.3" stackable="true" disabledeltatime="true" setvalue="false" comparison="and">
+				<StatusEffect type="Always" target="this" spread="0.3" stackable="true" disabledeltatime="true" setvalue="false" comparison="and">
 					<Conditional Spread="lt 3" />
 					<Conditional HasStatusTag="neq extended" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" target="this" unskilledspread="0.3" stackable="true" disabledeltatime="true" setvalue="false" comparison="and">
+				<StatusEffect type="Always" target="this" unskilledspread="0.3" stackable="true" disabledeltatime="true" setvalue="false" comparison="and">
 					<Conditional unskilledspread="lt 12" />
 					<Conditional HasStatusTag="neq extended" />
 				</StatusEffect>
@@ -1619,7 +1512,6 @@
 					<Conditional HasStatusTag=" neq suppressed" />
 				</StatusEffect>
 			</aitarget>
-			<Upgrade gameversion="0.10.0.0" scale="0.5" />
 		</Item>
 
 		<Item nameidentifier="revolver_762" descriptionidentifier="revolver_762" identifier="handcannon" aliases="revolver_762" category="weapon" cargocontaineridentifier="metalcrate" tags="mountableweapon,smallitem,weapon,gun,gunsmith" Scale="0.45" impactsoundtag="smallwepimpact">
@@ -1657,14 +1549,14 @@
 					<RequiredItems items="medscanner_t" type="Contained" />
 					<Conditional hasstatustag="neq worn" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" targettype="Contained" tags="medattached" duration="0.05" stackable="false" />
-				<StatusEffect type="OnActive" targettype="This" reload="1.25" tags="trigger" duration="0.05" setvalue="true">
+				<StatusEffect type="OnActive" target="Contained" tags="medattached" duration="0.05" stackable="false" />
+				<StatusEffect type="OnActive" target="This" reload="1.25" tags="trigger" duration="0.05" setvalue="true">
 					<RequiredItem items="co_trigger" type="Contained" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" targettype="This" reload="1.6" setvalue="true">
+				<StatusEffect type="OnActive" target="This" reload="1.6" setvalue="true">
 					<Conditional hasstatustag="neq trigger" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" targettype="This" tags="coil" duration="0.05" maxchargetime="0.85" weapondamagemodifier="1.3" setvalue="true">
+				<StatusEffect type="OnActive" target="This" tags="coil" duration="0.05" maxchargetime="0.85" weapondamagemodifier="1.3" setvalue="true">
 					<RequiredItem items="co_riflecoil" type="Contained" />
 				</StatusEffect>
 				<StatusEffect type="OnActive" target="This" maxchargetime="0.00001" weapondamagemodifier="1" setvalue="true">
@@ -1687,25 +1579,25 @@
 			<Rangedweapon reload="1.6" barrelpos="32,2" spread="2" weapondamagemodifier="1" unskilledspread="30" combatPriority="55" drawhudwhenequipped="true" crosshairscale="0.2">
 				<Crosshair texture="Content/Items/weapons/Crosshairs.png" sourcerect="0,256,256,256" />
 				<CrosshairPointer texture="Content/Items/weapons/Crosshairs.png" sourcerect="256,256,256,256" />
-				<Sound file="%ModDir%/Sounds/toz.ogg" type="OnUse" range="3000" />
+				<Sound file="%ModDir%/Sounds/toz.ogg" type="OnUse" target="This" range="3000" />
 				<ChargeSound file="%ModDir%/Sounds/exoloop.ogg" range="350" volume="0.8" />
 				<ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
-				<StatusEffect type="OnUse">
+				<StatusEffect type="OnUse" target="This">
 					<Explosion range="150.0" force="5" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="40.0" />
 				</StatusEffect>
-				<RequiredItems items="762_ammo" type="Contained" />
+				<RequiredItems items="762_ammo,7.62mm_round,44ammo" type="Contained" />
 				<RequiredSkill identifier="weapons" level="85" />
 				<StatusEffect type="OnUse" target="this" spread="8" unskilledspread="15" stackable="true" setvalue="false" disabledeltatime="true">
 					<Conditional Spread="lt 50" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" target="this" spread="-0.1" stackable="true" disabledeltatime="true" setvalue="false" conditional="or">
+				<StatusEffect type="Always" target="this" spread="-0.1" stackable="true" disabledeltatime="true" setvalue="false" conditional="or">
 					<Conditional Spread="gt 2" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" target="this" unskilledspread="-0.088" stackable="true" disabledeltatime="true" setvalue="false" conditional="or">
+				<StatusEffect type="Always" target="this" unskilledspread="-0.088" stackable="true" disabledeltatime="true" setvalue="false" conditional="or">
 					<Conditional unskilledspread="gt 30" />
 				</StatusEffect>
 				<StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true" delay="1.3">
-					<Sound file="%ModDir%/Sounds/rev_cock.ogg" type="OnUse" range="500" />
+					<Sound file="%ModDir%/Sounds/rev_cock.ogg" type="OnUse" target="This" range="500" />
 					<Conditional HasStatusTag="neq trigger" />
 				</StatusEffect>
 			</Rangedweapon>
@@ -1729,7 +1621,6 @@
 				</TickBox>
 			</CustomInterface>
 			<aitarget sightrange="3000" soundrange="6000" fadeouttime="2" />
-			<Upgrade gameversion="0.10.0.0" Scale="0.45" />
 		</Item>
 
 		<Item nameidentifier="grenadelauncher_m500" descriptionidentifier="grenadelauncher_m500" identifier="grenadelauncher" aliases="grenadelauncher_m500" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,mountableweapon,gun,gunsmith" Scale="0.45" impactsoundtag="impact_metal_light">
@@ -1765,8 +1656,8 @@
 					<RequiredItems items="medscanner_t" type="Contained" />
 					<Conditional hasstatustag="neq worn" />
 				</StatusEffect>
-				<StatusEffect type="OnActive" targettype="Contained" tags="medattached" duration="0.05" stackable="false" />
-				<StatusEffect type="OnActive" targettype="This" tags="coil" duration="0.05" setvalue="true">
+				<StatusEffect type="OnActive" target="Contained" tags="medattached" duration="0.05" stackable="false" />
+				<StatusEffect type="OnActive" target="This" tags="coil" duration="0.05" setvalue="true">
 					<RequiredItem items="co_boostercoil" type="Contained" />
 				</StatusEffect>
 				<StatusEffect type="OnActive" target="This" launchimpulse="20" weapondamagemodifier="1.1" stackable="false" setvalue="true">
@@ -1787,8 +1678,8 @@
 				<CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
 				<ParticleEmitter particle="muzzleflashchaingun" particleamount="1" velocitymin="0" velocitymax="0" scalemin="0.5" scalemax="0.6" />
 				<ParticleEmitter particle="explosionsmoke" particleamount="1" velocitymin="0" velocitymax="0" scalemin="0.5" scalemax="0.6" />
-				<Sound file="%ModDir%/Sounds/m500.ogg" type="OnUse" range="1500" />
-				<StatusEffect type="OnUse">
+				<Sound file="%ModDir%/Sounds/m500.ogg" type="OnUse" target="This" range="1500" />
+				<StatusEffect type="OnUse" target="This">
 					<Explosion range="150.0" force="2" shockwave="false" smoke="false" flames="false" flash="true" sparks="false" underwaterbubble="false" applyfireeffects="false" camerashake="30.0" />
 				</StatusEffect>
 				<RequiredItems items="grenade" type="Contained" msg="ItemMsgAmmoRequired" />
@@ -1816,7 +1707,6 @@
 				</TickBox>
 			</CustomInterface>
 			<aitarget sightrange="500" soundrange="500" fadeouttime="3" />
-			<Upgrade gameversion="0.10.0.0" scale="0.5" />
 		</Item>
 
 		<Item nameidentifier="nucleargun_alt" descriptionidentifier="nucleargun_alt" identifier="nucleargun" aliases="nucleargun_alt" category="Weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,mountableweapon,gun" Scale="0.45" impactsoundtag="impact_metal_heavy">
@@ -1850,8 +1740,8 @@
 				<RangedWeapon reload="1.9" barrelpos="50,10" spread="0" unskilledspread="3" weapondamagemodifier="0.7" combatPriority="55" drawhudwhenequipped="true" crosshairscale="0.2">
 					<Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
 					<CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
-					<Sound file="%ModDir%/Sounds/gauss_shot1.ogg" type="OnUse" range="3000" />
-					<StatusEffect type="OnUse">
+					<Sound file="%ModDir%/Sounds/gauss_shot1.ogg" type="OnUse" target="This" range="3000" />
+					<StatusEffect type="OnUse" target="This">
 						<Explosion range="80.0" force="1.5" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="32.0">
 							<Affliction identifier="radiationsickness" amount="8" />
 						</Explosion>
@@ -1863,11 +1753,11 @@
 					</StatusEffect>
 					<StatusEffect type="OnUse" target="this" Condition="95" setvalue="true" />
 					<StatusEffect type="OnUse" target="this" delay="1.5" Condition="100" setvalue="true">
-						<Sound file="%ModDir%/Sounds/gauss_holster.ogg" type="OnUse" range="3000" />
+						<Sound file="%ModDir%/Sounds/gauss_holster.ogg" type="OnUse" target="This" range="3000" />
 					</StatusEffect>
 				</RangedWeapon>
 				<Sprite texture="%ModDir%/Img/CO_spritelist_mod2.png" sourcerect="303,665,219,71" depth="0.55" origin="0.5,0.5" />
-				<BrokenSprite texture="%ModDir%/Img/CO_spritelist_animation.png" sourcerect="279,286,219,71" depth="0.55" origin="0.5,0.5" maxcondition="98" />
+				<BrokenSprite texture="%ModDir%/Img/CO_spritelist_weapons.png" sourcerect="279,286,219,71" depth="0.55" origin="0.5,0.5" maxcondition="98" />
 				<Body width="238" height="63" density="70" />
 				<Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="60,-15" aimpos="60,-8" handle1="-50,-15" handle2="-30,-3" holdangle="-25">
 					<StatusEffect type="OnActive" target="this" showtexts="false" disabledeltatime="true" setvalue="true" conditional="or">
@@ -1879,7 +1769,7 @@
 						<RequiredItems items="medscanner_t" type="Contained" />
 						<Conditional hasstatustag="neq worn" />
 					</StatusEffect>
-					<StatusEffect type="OnActive" targettype="Contained" tags="medattached" duration="0.05" stackable="false" />
+					<StatusEffect type="OnActive" target="Contained" tags="medattached" duration="0.05" stackable="false" />
 					<StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.6" setvalue="true" disabledeltatime="true" />
 					<StatusEffect type="OnSecondaryUse" target="Character,This" SpeedMultiplier="1.3" setvalue="true" disabledeltatime="true">
 						<Conditional HasStatusTag="laser" />
@@ -1888,7 +1778,7 @@
 				<SkillRequirementHint identifier="weapons" level="80" />
 				<StatusHUD drawhudwhenequipped="true" range="2700" thermalgoggles="false" showdeadcharacters="false" showtexts="false" overlaycolor="0,0,0,0" />
 				<Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
-					<StatusEffect type="OnWearing" targettype="This" tags="worn" duration="0.05" setvalue="true" thermalgoggles="false" showtexts="false" overlaycolor="176,0,0,0" />
+					<StatusEffect type="OnWearing" target="This" tags="worn" duration="0.05" setvalue="true" thermalgoggles="false" showtexts="false" overlaycolor="176,0,0,0" />
 					<sprite Name="ARG-12 Worn" texture="%ModDir%/Img/CO_spritelist_mod2.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="304,665,217,72" limb="Torso" scale="0.5" origin="0.5,0.8" />
 				</Wearable>
 				<ItemContainer capacity="1" itemrotation="20" maxstacksize="1" hideitems="false" itempos="16,-7" containedspritedepth="0.56" showcontainedstateindicator="false">
@@ -1911,7 +1801,6 @@
 
 		<Item nameidentifier="powersword" descriptionidentifier="powersword" identifier="ceremonialsword" aliases="powersword" category="Weapon" Tags="smallitem,weapon,stunner,gunsmith,mountableweapon" Scale="0.5" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" RequireAimToUse="True">
 			<PreferredContainer primary="secarmcab" secondary="armcab" />
-			<Upgrade gameversion="0.9.2.0" scale="0.5" />
 			<Price baseprice="420" sold="false" />
 			<Deconstruct time="10">
 				<Item identifier="steel" />
@@ -1959,10 +1848,10 @@
 					<RequiredItem items="fulguriumbatterycell" type="Contained" msg="ItemMsgBatteryCellRequired" />
 					<Explosion range="100.0" force="5.5" empstrength="90" shockwave="true" flames="false" smoke="true" underwaterbubble="false" camerashake="25.0" />
 				</StatusEffect>
-				<StatusEffect type="OnUse" target="Contained" Condition="-100.0" disabledeltatime="true">
+				<StatusEffect type="OnUse" target="Contained" Condition="-25.0" disabledeltatime="true">
 					<RequiredItem items="mobilebattery" excludedidentifiers="fulguriumbatterycell" type="Contained" msg="ItemMsgBatteryCellRequired" />
 				</StatusEffect>
-				<StatusEffect type="OnUse" target="Contained" Condition="-120.0" disabledeltatime="true">
+				<StatusEffect type="OnUse" target="Contained" Condition="-24.0" disabledeltatime="true">
 					<RequiredItem items="fulguriumbatterycell" type="Contained" msg="ItemMsgBatteryCellRequired" />
 				</StatusEffect>
 				<StatusEffect type="OnUse" target="This" reload="0.95" setvalue="true" delay="4" />
